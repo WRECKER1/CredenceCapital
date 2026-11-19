@@ -19,5 +19,13 @@
     <div class="stat-row"><% (c.stats || []).forEach(x => { %><div class="stat reveal"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %></div>
   </div>
 </section>
+<% if ((c.press || []).length) { %>
+<section class="section section-tint" id="press">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Media coverage</p><h2>In the press</h2></div>
+    <%- include('partials/press') %>
+  </div>
+</section>
+<% } %>
 <%- include('partials/cta', { title: (c.home || {}).ctaTitle, body: (c.home || {}).ctaBody }) %>
 <%- include('partials/bottom') %>

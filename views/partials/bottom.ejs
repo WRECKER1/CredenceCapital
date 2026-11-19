@@ -28,10 +28,11 @@
       <% if (s.sponsorEmail || s.email) { %><a href="mailto:<%= s.sponsorEmail || s.email %>"><%= s.sponsorEmail || s.email %></a><% } %>
       <% if (s.phone) { %><a href="tel:<%= s.phone.replace(/\s/g,'') %>"><%= s.phone %></a><% } %>
       <div class="socials">
-        <% [['linkedin','LinkedIn'],['instagram','Instagram'],['twitter','X'],['youtube','YouTube']].forEach(([k,l]) => { if (s[k]) { %><a href="<%= s[k] %>" target="_blank" rel="noopener"><%= l %></a><% } }) %>
+        <% [['linkedin','LinkedIn'],['instagram','Instagram'],['facebook','Facebook'],['twitter','X'],['youtube','YouTube']].forEach(([k,l]) => { if (s[k]) { %><a href="<%= s[k] %>" target="_blank" rel="noopener"><%= l %></a><% } }) %>
       </div>
     </div>
   </div>
+  <% if (s.disclaimer) { %><div class="wrap footer-disclaimer"><%= s.disclaimer %></div><% } %>
   <div class="wrap footer-base">
     <span>© <%= new Date().getFullYear() %> <%= s.siteName %>, <%= s.institute %>.</span>
     <a href="/admin/">CMS login</a>

@@ -30,6 +30,8 @@ On first boot an admin account is created. If `ADMIN_PASSWORD` isn't set, a rand
 | **Sponsors & partners** | The logo wall. Empty spots show as "Your brand here" slots that link to the enquiry form |
 | **Events** | Upcoming and past events are split by date automatically. Events marked "Open for sponsorship" get a *Sponsor this event* button |
 | **Research, Team, Testimonials, Key numbers** | The matching sections of the site |
+| **Press & track record** | Media coverage. Items with a highlight figure (e.g. 175%) appear in the track-record band |
+| **Past speakers** | The "Speakers who have joined us" grid shown to sponsors |
 | **Pages & Site settings** | Hero copy, About, Partner page text, contact details, socials, announcement bar, sponsorship deck PDF, logo |
 | **Media library** | Upload images and PDFs (drag & drop) and pick them from any field |
 | **Users** | *Admins* can do everything. *Editors* can edit content, media and leads, but can't manage users or backups |
@@ -59,14 +61,32 @@ The app needs a host with a **persistent disk**, because content and uploads are
 
 Back up `DATA_DIR` and `UPLOAD_DIR` regularly. You can also use *Backup & restore* in the CMS.
 
-## Before going live
+## Content imported from the old site
 
-The seed content in `data/seed.json` is a **starting point**. Replace it from the CMS:
+`data/seed.json` is filled with content from the current Wix site (credencecapital.in):
 
-- Team names and photos (currently role placeholders)
-- Key numbers and campaign figures. These are illustrative, so use your real numbers
-- Testimonials, research PDFs and past sponsors
-- Contact email, socials and the sponsorship deck PDF
+- Club description, founding year (2005) and the fund disclaimer
+- Contact details and Facebook/X links
+- The 2023–25 fund managers, with 2022–24 listed as alumni
+- Faculty testimonials and media coverage, with the documented returns
+- Nivesh 2018/2019/2021 and the Screener.in workshop
+- Past speakers
+- All sector reports, *The Bottom Line* issues and blog posts
+
+**Copy the PDFs off Wix before you shut it down.** The research links still point at files hosted on credencecapital.in (134 MB in total). Once the new site is running, run this command. It downloads each file into the media library and rewrites the links:
+
+```bash
+npm run import-files -- --dry-run   # preview
+npm run import-files
+```
+
+## Still to update in the CMS
+
+- **Team:** add the current batch of fund managers. The newest batch on the old site was 2023–25. Also add photos and the faculty advisor.
+- **Upcoming events and campaigns:** Nivesh 2027 and Investowise 2027 have *placeholder dates and fundraising goals*. "Raised" starts at ₹0.
+- **Sponsors:** add past and current partners. Empty spots on the logo wall show as "Your brand here".
+- **Missing details:** LinkedIn and Instagram URLs, the sponsorship deck PDF and your logo.
+- **Not migrated:** fund performance charts and Nivesh 2022–23 and 2023–24 were image-only on the old site, so add them by hand.
 
 ## Security notes
 

@@ -1,0 +1,21 @@
+<% const press = h.byDateDesc(c.press); const hi = press.filter(p => p.highlight); %>
+<% if (hi.length) { %>
+<div class="record">
+  <% hi.forEach(p => { %>
+    <div class="record-item reveal">
+      <b><%= p.highlight %></b>
+      <span><%= p.highlightLabel %></span>
+      <small>Source: <% if (p.url) { %><a href="<%= p.url %>" target="_blank" rel="noopener"><%= p.outlet %></a><% } else { %><%= p.outlet %><% } %>, <%= h.date(p.date, { month: 'short', year: 'numeric' }) %></small>
+    </div>
+  <% }) %>
+</div>
+<% } %>
+<div class="press-list">
+  <% press.forEach(p => { %>
+    <a class="press-item reveal" <% if (p.url) { %>href="<%= p.url %>" target="_blank" rel="noopener"<% } %>>
+      <span class="press-outlet"><%= p.outlet %></span>
+      <span class="press-title"><%= p.title %></span>
+      <span class="muted small"><%= h.date(p.date) %></span>
+    </a>
+  <% }) %>
+</div>

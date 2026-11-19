@@ -12,8 +12,9 @@
     <div class="papers">
       <% list.forEach(r => { const href = r.file || r.link; %>
         <article class="paper reveal" data-type="<%= r.type %>">
-          <div class="paper-meta"><span class="tag"><%= r.type %></span><span class="muted small"><%= h.date(r.date) %></span></div>
+          <div class="paper-meta"><span class="tag"><%= r.type %></span><span class="muted small"><%= h.date(r.date, { month: 'short', year: 'numeric' }) %></span></div>
           <h3><%= r.title %></h3>
+          <% if (r.author) { %><p class="paper-author">By <%= r.author %></p><% } %>
           <p><%= r.summary %></p>
           <% if (href) { %><a class="link" href="<%= href %>" target="_blank" rel="noopener"><%= r.file ? 'Read the PDF →' : 'Read more →' %></a><% } %>
         </article>

@@ -33,6 +33,16 @@
   </div>
 </section>
 
+<% if ((c.speakers || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Your peers on stage</p><h2>Who has spoken at Nivesh</h2>
+      <p class="lead">Our summit has hosted CIOs, fund managers and investors from India's leading asset managers and private equity firms.</p></div>
+    <%- include('partials/speakers') %>
+  </div>
+</section>
+<% } %>
+
 <section class="section section-dark" id="tiers">
   <div class="wrap">
     <div class="section-head"><p class="eyebrow eyebrow-light">Packages</p><h2>Sponsorship tiers</h2></div>

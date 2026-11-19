@@ -53,6 +53,18 @@
   </div>
 </section>
 
+<% if ((c.press || []).length) { %>
+<section class="section section-compact-top">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Track record</p><h2>Covered by the people who cover markets</h2></div>
+      <a class="link" href="/about#press">All coverage →</a>
+    </div>
+    <%- include('partials/press') %>
+  </div>
+</section>
+<% } %>
+
 <section class="section section-tint">
   <div class="wrap">
     <div class="section-head">
@@ -99,6 +111,18 @@
     <%- include('partials/sponsors') %>
   </div>
 </section>
+
+<% if ((c.speakers || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">On our stage</p><h2>Speakers who have joined us</h2></div>
+      <a class="link" href="/partner#enquire">Host a session →</a>
+    </div>
+    <%- include('partials/speakers') %>
+  </div>
+</section>
+<% } %>
 
 <% if (up.length) { %>
 <section class="section">
