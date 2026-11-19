@@ -1,0 +1,7 @@
+<% const gl = (c.gallery || []).filter(g => g.image); if (gl.length) { %>
+<div class="gallery">
+  <% gl.forEach((g, i) => { %>
+    <figure class="gallery-item reveal <%= i === 0 ? 'gallery-wide' : '' %>"><img src="<%= g.image %>" alt="<%= g.caption %>" loading="lazy"><% if (g.caption) { %><figcaption class="mono-label"><%= g.caption %></figcaption><% } %></figure>
+  <% }) %>
+</div>
+<% } %>

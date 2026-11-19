@@ -1,0 +1,5 @@
+<div class="pillars">
+  <% (c.pillars || []).forEach(pl => { %>
+    <div class="pillar reveal"><span class="pillar-icon"><%- h.icon(pl.icon) %></span><h3><%= pl.title %></h3><p class="muted"><%= pl.body %></p></div>
+  <% }) %>
+</div>

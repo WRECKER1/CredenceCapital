@@ -25,7 +25,7 @@
     <a class="brand" href="/" aria-label="<%= s.siteName %> home"><%- include('logo') %><span><%= s.siteName %></span></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav-links" aria-label="Primary">
-      <% [['/about','About'],['/partner','Partners'],['/events','Events'],['/research','Research'],['/team','Team']].forEach(([href,label]) => { %>
+      <% [['/about','About'],['/nivesh','Nivesh'],['/partner','Partners'],['/events','Events'],['/research','Research'],['/team','Team']].forEach(([href,label]) => { %>
         <a href="<%= href %>" class="<%= page === href.slice(1) ? 'active' : '' %>"><%= label %></a>
       <% }) %>
       <a href="/contact" class="btn btn-dark btn-nav">Contact</a>

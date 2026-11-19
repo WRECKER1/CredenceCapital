@@ -80,13 +80,28 @@ npm run import-files -- --dry-run   # preview
 npm run import-files
 ```
 
+## Content from the Nivesh 2026 sponsorship deck
+
+The site also uses the club's Nivesh 2026 deck:
+
+- **Nivesh page (`/nivesh`):** the summit format, Investowise year-on-year numbers and participating campuses.
+- **Sponsorship brackets:** Title (₹2L+) and Power (₹1L+), with a benefits table generated from each tier's benefits list.
+- **About page:** the IIM Lucknow section and the institute's notable speakers.
+- **Club pillars:** the four "what we do" points.
+- **Past speakers:** the full list.
+- **Team:** Credence Team 2026–27 and 2027–28, with photos.
+- **Partners:** Motilal Oswal and Screener as past Investowise partners.
+- **Mint:** the 2023 article.
+- **Gallery:** campus and event photos.
+
+The deck's photos ship in `public/img/seed/` as starting content. Uploads made through the CMS go to the media library.
+
 ## Still to update in the CMS
 
-- **Team:** add the current batch of fund managers. The newest batch on the old site was 2023–25. Also add photos and the faculty advisor.
-- **Upcoming events and campaigns:** Nivesh 2027 and Investowise 2027 have *placeholder dates and fundraising goals*. "Raised" starts at ₹0.
-- **Sponsors:** add past and current partners. Empty spots on the logo wall show as "Your brand here".
-- **Missing details:** LinkedIn and Instagram URLs, the sponsorship deck PDF and your logo.
-- **Not migrated:** fund performance charts and Nivesh 2022–23 and 2023–24 were image-only on the old site, so add them by hand.
+- **Dates and goals:** Nivesh 2026 and Investowise 2026–27 have *placeholder dates and fundraising goals*. "Raised" starts at ₹0.
+- **Links:** add the Mint article's URL under *Press & track record*.
+- **Images:** speaker photos, sponsor logos, the sponsorship deck PDF and your logo.
+- **Details:** LinkedIn and Instagram URLs, and team members' LinkedIn profiles.
 
 ## Security notes
 

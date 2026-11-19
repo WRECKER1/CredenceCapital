@@ -11,12 +11,41 @@
     <div class="prose"><%- h.paras(a.story) %></div>
   </div>
 </section>
+<% if ((c.pillars || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">What we do</p><h2>Four things we do</h2></div>
+    <%- include('partials/pillars') %>
+  </div>
+</section>
+<% } %>
 <section class="section">
   <div class="wrap cards-2">
     <div class="panel mv reveal"><p class="eyebrow">Mission</p><p class="mv-text"><%= a.mission %></p></div>
     <div class="panel mv reveal"><p class="eyebrow">Vision</p><p class="mv-text"><%= a.vision %></p></div>
   </div>
 </section>
+<% if (a.iimTitle) { %>
+<section class="section" id="iim-lucknow">
+  <div class="wrap split iim">
+    <% if (a.iimImage) { %><img class="iim-photo reveal" src="<%= a.iimImage %>" alt="IIM Lucknow campus"><% } %>
+    <div>
+      <p class="eyebrow">Our institute</p>
+      <h2><%= a.iimTitle %></h2>
+      <% if (a.iimQuote) { %><blockquote class="iim-quote"><%= a.iimQuote %></blockquote><% } %>
+      <div class="prose"><%- h.paras(a.iimBody) %></div>
+    </div>
+  </div>
+</section>
+<% } %>
+<% if ((c.speakers || []).some(sp => sp.scope === 'IIM Lucknow')) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">At IIM Lucknow</p><h2>Notable speakers hosted by the institute</h2></div>
+    <%- include('partials/speakers', { scope: 'IIM Lucknow' }) %>
+  </div>
+</section>
+<% } %>
 <% if ((c.testimonials || []).length) { %>
 <section class="section">
   <div class="wrap">
@@ -34,6 +63,14 @@
   <div class="wrap">
     <div class="section-head"><p class="eyebrow">Media coverage</p><h2>In the press</h2></div>
     <%- include('partials/press') %>
+  </div>
+</section>
+<% } %>
+<% if ((c.gallery || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Gallery</p><h2>Life at Credence</h2></div>
+    <%- include('partials/gallery') %>
   </div>
 </section>
 <% } %>

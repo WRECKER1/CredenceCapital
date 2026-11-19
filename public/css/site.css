@@ -342,6 +342,99 @@ details[open] .faq-icon::after { transform: rotate(0); }
 .footer-meta a:hover { color: #fff; }
 .footer-disclaimer { grid-column: 1 / -1; font-size: 12px; color: rgba(255, 255, 255, .35); margin: 0; }
 
+/* Pillars */
+.intro { margin-bottom: 64px; align-items: start; }
+.intro h2 { max-width: 520px; }
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.pillar { padding: 32px 28px 8px 0; }
+.pillar + .pillar { padding-left: 28px; border-left: 1px solid var(--line); }
+.pillar-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--panel); margin-bottom: 28px; }
+.pillar-icon svg { width: 22px; height: 22px; }
+.pillar h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.pillar p { font-size: 14.5px; margin: 0; }
+
+/* Nivesh feature (home) */
+.btn-light { background: #fff; color: #000; }
+.btn-light:hover { background: #e9e9e9; }
+.btn-ghost { background: rgba(255, 255, 255, .1); color: #fff; }
+.btn-ghost:hover { background: rgba(255, 255, 255, .18); }
+.nivesh-feature { display: grid; grid-template-columns: 1.05fr 1fr; background: #0b0b0b; color: rgba(255, 255, 255, .7); border-radius: var(--r-lg); overflow: hidden; min-height: 520px; }
+.nivesh-copy { padding: clamp(32px, 5vw, 64px); display: flex; flex-direction: column; justify-content: center; }
+.nivesh-copy h2 { color: #fff; font-size: clamp(2.4rem, 4.6vw, 3.6rem); letter-spacing: -.035em; line-height: 1; }
+.nivesh-copy > p { max-width: 460px; }
+.nivesh-steps { list-style: none; padding: 0; margin: 12px 0 36px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255, 255, 255, .12); }
+.nivesh-steps li { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, .12); color: #fff; font: 500 15px var(--head); display: flex; gap: 12px; }
+.nivesh-steps li .mono { font-size: 11px; color: rgba(255, 255, 255, .45); padding-top: 3px; }
+.nivesh-photo { background: center / cover no-repeat; filter: grayscale(.25); min-height: 320px; }
+
+/* Nivesh page */
+.hero-photo { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: var(--r-lg); }
+.formats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.format { padding: 28px; display: flex; flex-direction: column; min-height: 300px; }
+.format-n { font-size: 12px; color: var(--muted); margin-bottom: auto; padding-bottom: 48px; }
+.format h3 { font-size: 1.35rem; letter-spacing: -.02em; }
+.format p { font-size: 14.5px; margin: 0; }
+.campuses-label { margin-top: 28px; }
+.campuses { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.matrix-title { margin: 56px 0 20px; }
+.tier-count { flex: 1; margin-top: 8px; }
+
+/* Tables */
+.matrix-wrap { background: var(--card); border-radius: var(--r-lg); padding: 8px 28px; overflow-x: auto; }
+.matrix { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.matrix th { text-align: left; font: 500 15px var(--head); padding: 22px 12px 18px; border-bottom: 1px solid var(--line); vertical-align: bottom; }
+.matrix th:first-child { padding-left: 0; }
+.matrix th .mono-label { display: block; margin-top: 4px; }
+.matrix th:not(:first-child), .matrix td.c { text-align: center; width: 18%; }
+.matrix td { padding: 14px 12px; border-bottom: 1px solid var(--line); }
+.matrix td:first-child { padding-left: 0; }
+.matrix tr:last-child td { border-bottom: 0; }
+.matrix .row-n { margin-right: 16px; }
+.matrix .tick-box { display: inline-block; vertical-align: middle; }
+.matrix .dash { color: #c4c4c4; }
+.matrix-stats td.num { font-size: 18px; letter-spacing: -.02em; }
+.matrix-stats td.c { width: 30%; }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.gallery-item { margin: 0; position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3; background: var(--panel); }
+.gallery-wide { grid-column: span 2; grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .5s, transform .6s; }
+.gallery-item:hover img { filter: none; transform: scale(1.02); }
+.gallery-item figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255, 255, 255, .92); color: #000; padding: 6px 9px; border-radius: 6px; }
+
+/* About: IIM Lucknow */
+.iim { align-items: center; gap: 64px; }
+.iim-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-lg); filter: grayscale(.35); }
+.iim-quote { margin: 8px 0 24px; padding-left: 18px; border-left: 2px solid var(--accent); font: 500 19px/1.35 var(--head); letter-spacing: -.01em; }
+
+/* Team photos */
+.people-photos { grid-template-columns: repeat(4, 1fr); }
+.people-photos .person-top { flex-direction: column; align-items: flex-start; }
+.people-photos .person img, .people-photos .person .avatar { width: 88px; height: 88px; }
+
+@media (max-width: 1080px) {
+  .pillars, .formats { grid-template-columns: 1fr 1fr; }
+  .pillar:nth-child(3) { padding-left: 0; border-left: 0; }
+  .pillar:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .nivesh-feature { grid-template-columns: 1fr; }
+  .people-photos { grid-template-columns: repeat(3, 1fr); }
+  .iim { gap: 32px; }
+}
+@media (max-width: 640px) {
+  .pillars, .formats { grid-template-columns: 1fr; }
+  .pillar, .pillar + .pillar { padding: 28px 0 20px; border-left: 0; }
+  .pillar + .pillar { border-top: 1px solid var(--line); }
+  .format { min-height: 0; }
+  .nivesh-steps { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .people-photos { grid-template-columns: 1fr 1fr; }
+  .matrix-wrap { padding: 4px 16px; border-radius: 18px; }
+  .matrix { font-size: 13px; }
+  .matrix .row-n { display: none; }
+  .hero-photo { aspect-ratio: 4 / 3; }
+}
+
 /* Reveal on scroll */
 .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.in { opacity: 1; transform: none; }

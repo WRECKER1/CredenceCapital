@@ -31,7 +31,9 @@
 <section class="section" id="tiers">
   <div class="wrap">
     <div class="section-head"><p class="eyebrow">Packages</p><h2>Sponsorship tiers</h2></div>
-    <%- include('partials/tiers') %>
+    <%- include('partials/tiers', { compact: true }) %>
+    <h3 class="matrix-title">Benefits by bracket</h3>
+    <%- include('partials/matrix') %>
     <div class="panel custom-note">
       <div><h3><%= p.customTitle %></h3><p class="muted"><%= p.customBody %></p></div>
       <a class="btn btn-dark" href="#enquire">Design a package</a>
@@ -45,6 +47,15 @@
     <div class="section-head"><p class="eyebrow">Fundraising</p><h2>Campaigns you can back today</h2>
       <p class="lead">Corporates, alumni and well-wishers can pledge towards specific initiatives. Every rupee is accounted for in a post-campaign report.</p></div>
     <div class="cards-2"><% camps.forEach(x => { %><%- include('partials/campaign', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.investowise || []).length) { %>
+<section class="section">
+  <div class="wrap split">
+    <div><p class="eyebrow">Reach</p><h2>Investowise, year on year</h2><p class="lead"><%= (c.nivesh || {}).investowiseBody %></p></div>
+    <div><%- include('partials/investowise') %></div>
   </div>
 </section>
 <% } %>

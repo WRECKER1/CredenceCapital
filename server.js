@@ -44,6 +44,7 @@ function render(page, res, extra = {}) {
 const pages = {
   '/': ['home', null],
   '/about': ['about', 'About'],
+  '/nivesh': ['nivesh', 'Nivesh'],
   '/partner': ['partner', 'Partner with us'],
   '/events': ['events', 'Events'],
   '/research': ['research', 'Research'],

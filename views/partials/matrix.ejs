@@ -1,0 +1,15 @@
+<% const mt = c.tiers || []; const rows = []; mt.forEach(t => (t.perks || []).forEach(p => { if (!rows.includes(p)) rows.push(p); })); %>
+<% if (mt.length && rows.length) { %>
+<div class="matrix-wrap reveal">
+  <table class="matrix">
+    <thead><tr><th scope="col">Offerings</th><% mt.forEach(t => { %><th scope="col"><%= t.name %><span class="mono-label"><%= t.price %></span></th><% }) %></tr></thead>
+    <tbody>
+      <% rows.forEach((r, i) => { %>
+        <tr><td><span class="mono-label row-n"><%= String(i + 1).padStart(2, '0') %></span><%= r %></td>
+          <% mt.forEach(t => { const on = (t.perks || []).includes(r); %><td class="c"><% if (on) { %><span class="tick-box" role="img" aria-label="Included"></span><% } else { %><span class="dash" aria-label="Not included">—</span><% } %></td><% }) %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<% } %>

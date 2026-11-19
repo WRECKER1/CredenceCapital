@@ -5,7 +5,7 @@
       <span class="mono-label">Contribution</span>
       <p class="tier-price"><%= t.price %></p>
       <p class="muted tier-blurb"><%= t.blurb %></p>
-      <ul class="list-check"><% (t.perks || []).forEach(p => { %><li><%= p %></li><% }) %></ul>
+      <% if (typeof compact === 'undefined' || !compact) { %><ul class="list-check"><% (t.perks || []).forEach(p => { %><li><%= p %></li><% }) %></ul><% } else { %><p class="mono-label tier-count"><%= (t.perks || []).length %> benefits · see table below</p><% } %>
       <div class="tier-foot">
         <% if (t.available) { %><span class="badge-green"><%= t.available %></span><% } else { %><span></span><% } %>
         <a class="btn <%= t.featured ? 'btn-dark' : 'btn-soft' %> btn-sm" href="/partner?tier=<%= encodeURIComponent(t.name) %>#enquire">Enquire</a>

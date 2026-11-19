@@ -1,0 +1,13 @@
+<% const ed = c.investowise || []; const metrics = [['registrations', 'Registrations'], ['teamSize', 'Team size'], ['impressions', 'Impressions'], ['prizePool', 'Prize pool'], ['poweredBy', 'Powered by']]; %>
+<% if (ed.length) { %>
+<div class="matrix-wrap reveal">
+  <table class="matrix matrix-stats">
+    <thead><tr><th scope="col">Investowise</th><% ed.forEach(e => { %><th scope="col"><%= e.edition %></th><% }) %></tr></thead>
+    <tbody>
+      <% metrics.forEach(([k, l]) => { if (!ed.some(e => e[k])) return; %>
+        <tr><td><%= l %></td><% ed.forEach(e => { %><td class="c <%= k === 'poweredBy' ? '' : 'mono num' %>"><%= e[k] || '—' %></td><% }) %></tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<% } %>

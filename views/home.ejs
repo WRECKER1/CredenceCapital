@@ -30,6 +30,33 @@
 
 <section class="section">
   <div class="wrap">
+    <div class="split intro">
+      <div><p class="eyebrow">Who we are</p><h2><%= hm.introTitle %></h2></div>
+      <div class="prose"><%- h.paras(hm.introBody) %><a class="link" href="/about">More about the club →</a></div>
+    </div>
+    <%- include('partials/pillars') %>
+  </div>
+</section>
+
+<% const nv = c.nivesh || {}; if (nv.edition) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="nivesh-feature reveal">
+      <div class="nivesh-copy">
+        <p class="eyebrow eyebrow-light">Flagship · <%= nv.tagline %></p>
+        <h2><%= nv.edition %></h2>
+        <p><%= nv.lead %></p>
+        <ol class="nivesh-steps"><% (c.formats || []).forEach((f, i) => { %><li><span class="mono"><%= String(i + 1).padStart(2, '0') %></span><%= f.title %></li><% }) %></ol>
+        <div class="btn-row"><a class="btn btn-light" href="/nivesh">Explore <%= nv.edition %></a><a class="btn btn-ghost" href="/nivesh#sponsor">Sponsorship brackets</a></div>
+      </div>
+      <% if (nv.image) { %><div class="nivesh-photo" style="background-image:url('<%= nv.image %>')" role="img" aria-label="<%= nv.edition %>"></div><% } %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Why partner</p>
       <h2><%= hm.whyTitle %></h2>
@@ -61,7 +88,7 @@
             <span class="explorer-body"><%= t.blurb %></span>
           </button>
         <% }) %>
-        <a class="btn btn-dark" href="/partner#tiers">Compare all packages</a>
+        <a class="btn btn-dark" href="/nivesh#sponsor">Compare benefits</a>
       </div>
       <div class="panel explorer-panel">
         <% tiers.forEach((t, i) => { %>
