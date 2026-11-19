@@ -89,8 +89,18 @@ if (modal) {
 }
 
 // Research filters
-document.querySelectorAll('.chip[data-filter]').forEach((chip) => chip.addEventListener('click', () => {
-  document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === chip));
+document.querySelectorAll('.chip-btn[data-filter]').forEach((chip) => chip.addEventListener('click', () => {
+  document.querySelectorAll('.chip-btn').forEach((c) => c.classList.toggle('active', c === chip));
   const f = chip.dataset.filter;
   document.querySelectorAll('.paper').forEach((p) => { p.style.display = f === 'all' || p.dataset.type === f ? '' : 'none'; });
 }));
+
+// Tier explorer (home): list on the left drives the card on the right
+document.querySelectorAll('[data-explorer]').forEach((ex) => {
+  const items = ex.querySelectorAll('.explorer-item');
+  const mocks = ex.querySelectorAll('.mock');
+  items.forEach((it) => it.addEventListener('click', () => {
+    items.forEach((x) => { const on = x === it; x.classList.toggle('open', on); x.setAttribute('aria-expanded', on); });
+    mocks.forEach((m) => m.classList.toggle('show', m.dataset.i === it.dataset.i));
+  }));
+});

@@ -1,4 +1,6 @@
-<form class="form card" data-endpoint="/api/enquiry" id="enquiry-form">
+<form class="form-card" data-endpoint="/api/enquiry" id="enquiry-form">
+  <% if (typeof heading !== 'undefined' && heading) { %><h2><%= heading %></h2><% } %>
+  <% if (typeof intro !== 'undefined' && intro) { %><p class="muted form-intro"><%= intro %></p><% } %>
   <input type="hidden" name="type" value="<%= type %>">
   <input name="website" class="hp" tabindex="-1" autocomplete="off">
   <div class="grid-2">
@@ -19,7 +21,9 @@
     <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
     <% } %>
   </div>
-  <label>Message<textarea name="message" rows="4" placeholder="<%= type === 'sponsorship' ? 'What would you like to achieve with this partnership?' : 'How can we help?' %>"></textarea></label>
-  <button class="btn btn-gold" type="submit"><%= type === 'sponsorship' ? 'Request a proposal' : 'Send message' %></button>
-  <p class="form-msg" role="status"></p>
+  <label>Anything else?<textarea name="message" rows="4" placeholder="<%= type === 'sponsorship' ? 'What would you like to achieve with this partnership?' : 'How can we help?' %>"></textarea></label>
+  <div class="form-foot">
+    <p class="form-msg" role="status"></p>
+    <button class="btn btn-dark" type="submit"><%= type === 'sponsorship' ? 'Request a proposal' : 'Send message' %></button>
+  </div>
 </form>

@@ -19,7 +19,7 @@
     return n;
   }
   const svg = (paths) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 48 48'); s.innerHTML = paths; return s; };
-  const logo = () => svg('<rect width="48" height="48" rx="10" fill="#0f2238"/><rect x=".75" y=".75" width="46.5" height="46.5" rx="9.25" fill="none" stroke="#c9a44c" stroke-opacity=".5" stroke-width="1.5"/><path d="M30.5 15.2A11 11 0 1 0 30.5 32.8" fill="none" stroke="#e6cf8f" stroke-width="3" stroke-linecap="round"/><path d="M22 28.5l4.5-5 3 3 6-7.5" fill="none" stroke="#c9a44c" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>');
+  const logo = () => svg('<rect width="48" height="48" rx="12" fill="#fff"/><path d="M30.5 15.2A11 11 0 1 0 30.5 32.8" fill="none" stroke="#000" stroke-width="3.4" stroke-linecap="round"/><path d="M22 28.5l4.5-5 3 3 6-7.5" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>');
 
   async function api(path, opts = {}) {
     const init = { method: opts.method || 'GET', headers: { 'X-CC-Admin': '1' }, credentials: 'same-origin' };

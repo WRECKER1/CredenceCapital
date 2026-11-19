@@ -1,28 +1,29 @@
 <%- include('partials/top') %>
 <% const list = h.byDateDesc(c.research); const types = [...new Set(list.map(r => r.type))]; %>
-<%- include('partials/page-head', { eyebrow: 'Research desk', heading: 'Research & *publications*', lead: 'Equity research, sector reports and market commentary written by our members.' }) %>
-<section class="section">
+<%- include('partials/page-head', { eyebrow: 'Research desk', heading: 'Research and publications', lead: 'Sector reports, The Bottom Line and commentary written by our fund managers.' }) %>
+<section class="section section-first">
   <div class="wrap">
     <% if (types.length > 1) { %>
     <div class="filters" role="tablist">
-      <button class="chip active" data-filter="all">All</button>
-      <% types.forEach(t => { %><button class="chip" data-filter="<%= t %>"><%= t %></button><% }) %>
+      <button class="chip-btn active" data-filter="all">All <span class="mono"><%= list.length %></span></button>
+      <% types.forEach(t => { %><button class="chip-btn" data-filter="<%= t %>"><%= t %> <span class="mono"><%= list.filter(r => r.type === t).length %></span></button><% }) %>
     </div>
     <% } %>
-    <div class="papers">
+    <div class="rows">
       <% list.forEach(r => { const href = r.file || r.link; %>
-        <article class="paper reveal" data-type="<%= r.type %>">
-          <div class="paper-meta"><span class="tag"><%= r.type %></span><span class="muted small"><%= h.date(r.date, { month: 'short', year: 'numeric' }) %></span></div>
-          <h3><%= r.title %></h3>
-          <% if (r.author) { %><p class="paper-author">By <%= r.author %></p><% } %>
-          <p><%= r.summary %></p>
-          <% if (href) { %><a class="link" href="<%= href %>" target="_blank" rel="noopener"><%= r.file ? 'Read the PDF →' : 'Read more →' %></a><% } %>
+        <article class="row-item paper reveal" data-type="<%= r.type %>">
+          <div class="row-date mono"><%= h.date(r.date, { month: 'short', year: 'numeric' }).toUpperCase() %></div>
+          <div class="row-main">
+            <h3><% if (href) { %><a href="<%= href %>" target="_blank" rel="noopener"><%= r.title %></a><% } else { %><%= r.title %><% } %></h3>
+            <p class="muted"><%= [r.author ? `By ${r.author}` : '', r.summary].filter(Boolean).join(' · ') %></p>
+          </div>
+          <div class="row-meta"><span class="chip"><%= r.type %></span><% if (href) { %><a class="arrow" href="<%= href %>" target="_blank" rel="noopener" aria-label="Open <%= r.title %>"><%= r.file ? 'PDF ↗' : '↗' %></a><% } %></div>
         </article>
       <% }) %>
     </div>
-    <div class="callout">
-      <div><h3>Co-publish with our research desk</h3><p class="muted">Knowledge partners can co-author reports and newsletters that reach students and alumni across the country.</p></div>
-      <a class="btn btn-primary" href="/partner?tier=Knowledge%20Partner#enquire">Become a knowledge partner</a>
+    <div class="panel callout">
+      <div><h3>Co-publish with our research desk</h3><p class="muted">Knowledge partners can co-author sector reports and newsletters that reach students and alumni across the country.</p></div>
+      <a class="btn btn-dark" href="/partner?tier=Knowledge%20Partner#enquire">Become a knowledge partner</a>
     </div>
   </div>
 </section>

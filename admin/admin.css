@@ -1,11 +1,11 @@
 :root {
-  --ink: #0a1626; --ink-2: #0f2238; --ink-3: #17324f;
-  --gold: #c9a44c; --gold-2: #e6cf8f; --gold-deep: #9c7a2b;
-  --bg: #f5f4f0; --panel: #fff; --text: #1a2330; --muted: #667180; --line: #e6e2d8;
+  --ink: #000000; --ink-2: #111111; --ink-3: #262626;
+  --gold: #eb3417; --gold-2: #ffffff; --gold-deep: #c22a12;
+  --bg: #f4f4f4; --panel: #fff; --text: #000; --muted: #6e6e6e; --line: #e2e2e2;
   --green: #2f8f5b; --red: #b3261e; --blue: #2c5d9e; --amber: #b7791f;
   --radius: 12px;
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --serif: 'Fraunces', Georgia, serif;
+  --serif: 'Inter Tight', 'Inter', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
 body { margin: 0; font: 14px/1.5 var(--sans); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
@@ -20,7 +20,7 @@ h2 { font-size: 1rem; }
 
 /* Login */
 .login { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
-.login-art { background: radial-gradient(800px 500px at 80% 0%, #1b3a5c, transparent 60%), var(--ink); color: rgba(255,255,255,.7); padding: 56px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.login-art { background: var(--ink); color: rgba(255,255,255,.7); padding: 56px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
 .login-art::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 56px 56px; }
 .login-art h2 { font-family: var(--serif); font-weight: 500; font-size: 2.4rem; color: #fff; line-height: 1.15; max-width: 420px; position: relative; z-index: 1; }
 .login-art h2 em { color: var(--gold); }
@@ -39,8 +39,8 @@ h2 { font-size: 1rem; }
 .side-group { font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.38); padding: 18px 12px 6px; }
 .side a.item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 500; color: rgba(255,255,255,.75); }
 .side a.item:hover { background: rgba(255,255,255,.06); color: #fff; }
-.side a.item.active { background: rgba(201,164,76,.16); color: var(--gold-2); }
-.badge { background: var(--gold); color: var(--ink); font-size: 11px; font-weight: 700; border-radius: 99px; padding: 1px 7px; }
+.side a.item.active { background: rgba(255,255,255,.1); color: #fff; }
+.badge { background: var(--gold); color: #fff; font-size: 11px; font-weight: 700; border-radius: 99px; padding: 1px 7px; }
 .side-foot { margin-top: auto; padding: 16px 12px 4px; border-top: 1px solid rgba(255,255,255,.08); font-size: 12.5px; }
 .side-foot a { color: var(--gold-2); text-decoration: none; margin-right: 12px; cursor: pointer; }
 .main { padding: 32px 40px 80px; min-width: 0; }
@@ -71,11 +71,11 @@ h2 { font-size: 1rem; }
 .kpi b { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.9rem; color: var(--ink); line-height: 1.2; }
 .kpi span { color: var(--muted); font-size: 12.5px; }
 .kpi.gold { background: var(--ink); border-color: var(--ink); }
-.kpi.gold b { color: var(--gold); }
+.kpi.gold b { color: #fff; }
 .kpi.gold span { color: rgba(255,255,255,.65); }
 .dash { grid-template-columns: 1.4fr 1fr; }
-.bar { height: 8px; background: #efebe1; border-radius: 99px; overflow: hidden; margin: 6px 0 4px; }
-.bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--gold-deep), var(--gold)); }
+.bar { height: 8px; background: #ebebeb; border-radius: 99px; overflow: hidden; margin: 6px 0 4px; }
+.bar span { display: block; height: 100%; background: #000; }
 .pipe { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .pipe div { background: var(--bg); border-radius: 8px; padding: 10px; text-align: center; }
 .pipe b { display: block; font-size: 1.3rem; }
@@ -90,7 +90,7 @@ h2 { font-size: 1rem; }
 .list .sub { color: var(--muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .list li.clickable { cursor: pointer; }
 .list li.clickable:hover { background: #fbfaf6; }
-.list li.selected { background: #fbf6e7; }
+.list li.selected { background: #f0f0f0; }
 .thumb { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; background: var(--bg); flex: none; display: grid; place-items: center; font-weight: 700; color: var(--gold-deep); font-size: 12px; }
 .empty { padding: 48px 20px; text-align: center; color: var(--muted); }
 .pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 600; background: var(--bg); color: var(--muted); text-transform: capitalize; }

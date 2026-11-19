@@ -1,15 +1,13 @@
-<article class="event reveal">
-  <div class="event-date">
-    <% if (x.date) { %><span class="d"><%= h.date(x.date, { day: '2-digit' }) %></span><span class="m"><%= h.date(x.date, { month: 'short', year: 'numeric' }) %></span><% } else { %><span class="m">TBA</span><% } %>
-  </div>
-  <div class="event-body">
-    <div class="event-meta"><span class="tag"><%= x.category %></span><% if (x.location) { %><span class="muted small"><%= x.location %></span><% } %></div>
+<% const isUp = x.date && new Date(x.date) >= new Date(new Date().toDateString()); %>
+<article class="row-item event reveal">
+  <div class="row-date mono"><% if (x.date) { %><%= h.date(x.date, { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %><% } else { %>TBA<% } %></div>
+  <div class="row-main">
     <h3><%= x.title %></h3>
-    <p><%= x.summary %></p>
-    <div class="event-foot">
-      <% if (x.reach) { %><span class="small muted"><%= x.reach %></span><% } %>
+    <p class="muted"><%= x.summary %></p>
+    <div class="row-links">
       <% if (x.link) { %><a class="link" href="<%= x.link %>" target="_blank" rel="noopener">Details →</a><% } %>
-      <% if (x.sponsorSlot && (!x.date || new Date(x.date) >= new Date(new Date().toDateString()))) { %><a class="link link-gold" href="/partner?event=<%= encodeURIComponent(x.title) %>#enquire">Sponsor this event →</a><% } %>
+      <% if (x.sponsorSlot && (!x.date || isUp)) { %><a class="link link-accent" href="/partner?event=<%= encodeURIComponent(x.title) %>#enquire">Sponsor this event →</a><% } %>
     </div>
   </div>
+  <div class="row-meta"><span class="chip"><%= x.category %></span><% if (x.location) { %><span class="mono-label"><%= x.location %></span><% } %><% if (x.reach) { %><span class="mono-label"><%= x.reach %></span><% } %></div>
 </article>

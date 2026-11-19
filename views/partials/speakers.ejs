@@ -2,7 +2,8 @@
   <% (c.speakers || []).forEach(sp => { %>
     <div class="speaker reveal">
       <% if (sp.photo) { %><img src="<%= sp.photo %>" alt="<%= sp.name %>" loading="lazy"><% } else { %><span class="avatar"><%= h.initials(sp.name) %></span><% } %>
-      <div><strong><%= sp.name %></strong><span><%= [sp.title, sp.org].filter(Boolean).join(', ') %></span><% if (sp.event) { %><small><%= sp.event %></small><% } %></div>
+      <div><strong><%= sp.name %></strong><span><%= [sp.title, sp.org].filter(Boolean).join(', ') %></span></div>
+      <% if (sp.event) { %><span class="mono-label speaker-event"><%= sp.event %></span><% } %>
     </div>
   <% }) %>
 </div>

@@ -1,14 +1,14 @@
 <div class="tiers">
   <% (c.tiers || []).forEach(t => { %>
-    <article class="tier reveal <%= t.featured ? 'tier-featured' : '' %>">
-      <% if (t.featured) { %><span class="tier-badge">Recommended</span><% } %>
-      <h3><%= t.name %></h3>
+    <article class="card tier reveal <%= t.featured ? 'tier-featured' : '' %>">
+      <div class="card-top"><h3><%= t.name %></h3><% if (t.featured) { %><span class="chip-mini">Recommended</span><% } %></div>
+      <span class="mono-label">Contribution</span>
       <p class="tier-price"><%= t.price %></p>
-      <p class="tier-blurb"><%= t.blurb %></p>
-      <ul class="ticks"><% (t.perks || []).forEach(p => { %><li><%= p %></li><% }) %></ul>
+      <p class="muted tier-blurb"><%= t.blurb %></p>
+      <ul class="list-check"><% (t.perks || []).forEach(p => { %><li><%= p %></li><% }) %></ul>
       <div class="tier-foot">
-        <% if (t.available) { %><span class="small"><%= t.available %></span><% } %>
-        <a class="btn <%= t.featured ? 'btn-gold' : 'btn-outline-light' %> btn-sm" href="/partner?tier=<%= encodeURIComponent(t.name) %>#enquire">Enquire</a>
+        <% if (t.available) { %><span class="badge-green"><%= t.available %></span><% } else { %><span></span><% } %>
+        <a class="btn <%= t.featured ? 'btn-dark' : 'btn-soft' %> btn-sm" href="/partner?tier=<%= encodeURIComponent(t.name) %>#enquire">Enquire</a>
       </div>
     </article>
   <% }) %>

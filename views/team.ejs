@@ -1,19 +1,19 @@
 <%- include('partials/top') %>
 <% const groups = ['Fund Managers', 'Faculty Advisor', 'Core Team', 'Alumni']; %>
-<%- include('partials/page-head', { eyebrow: 'People', heading: 'The *fund managers*', lead: 'Each batch, a small group of IIM Lucknow students is chosen through a rigorous internal selection process to manage the fund. Senior members mentor them, and the faculty advise.' }) %>
+<%- include('partials/page-head', { eyebrow: 'People', heading: 'The fund managers', lead: 'Each batch, a small group of IIM Lucknow students is chosen through a rigorous internal selection process to manage the fund. Senior members mentor them, and the faculty advise.' }) %>
 <% groups.forEach(g => { const list = (c.team || []).filter(m => m.group === g); if (!list.length) return; const batches = [...new Set(list.map(m => m.batch).filter(Boolean))]; const compact = g === 'Alumni'; %>
-<section class="section section-compact <%= compact ? 'section-tint' : '' %>">
+<section class="section section-compact">
   <div class="wrap">
-    <h2 class="h3"><%= g === 'Faculty Advisor' && list.length > 1 ? 'Faculty Advisors' : g %><% if (batches.length === 1) { %> <span class="muted batch"><%= batches[0] %></span><% } %></h2>
+    <p class="eyebrow"><%= g === 'Faculty Advisor' && list.length > 1 ? 'Faculty Advisors' : g %><% if (batches.length === 1) { %> · <%= batches[0] %><% } %></p>
     <div class="people <%= compact ? '' : 'people-full' %>">
       <% list.forEach(m => { %>
-        <div class="person reveal">
+        <div class="card person reveal">
           <div class="person-top">
             <% if (m.photo) { %><img src="<%= m.photo %>" alt="<%= m.name %>" loading="lazy"><% } else { %><span class="avatar"><%= h.initials(m.name) %></span><% } %>
             <div>
               <h3><%= m.name %></h3>
               <p><%= m.role %><% if (batches.length > 1 && m.batch) { %> · <%= m.batch %><% } %></p>
-              <% if (m.internship) { %><p class="muted small">Summer internship: <%= m.internship %></p><% } %>
+              <% if (m.internship) { %><p class="mono-label">Summer · <%= m.internship %></p><% } %>
               <div class="person-links">
                 <% if (m.linkedin) { %><a href="<%= m.linkedin %>" target="_blank" rel="noopener" aria-label="<%= m.name %> on LinkedIn">in</a><% } %>
                 <% if (m.email) { %><a href="mailto:<%= m.email %>" aria-label="Email <%= m.name %>">@</a><% } %>

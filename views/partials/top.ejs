@@ -8,32 +8,27 @@
   <meta property="og:title" content="<%= title || s.siteName %>">
   <meta property="og:description" content="<%= s.seoDescription %>">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0a1626">
+  <meta name="theme-color" content="#f4f4f4">
   <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/site.css">
 </head>
 <body class="page-<%= page %>">
 <a class="skip" href="#main">Skip to content</a>
 <% if (s.announcementOn && s.announcement) { %>
-<div class="announce">
-  <div class="wrap"><span class="dot"></span><%= s.announcement %><% if (s.announcementLink) { %> <a href="<%= s.announcementLink %>">Learn more →</a><% } %></div>
-</div>
+<div class="announce"><span class="live-dot"></span><%= s.announcement %><% if (s.announcementLink) { %> <a href="<%= s.announcementLink %>">Learn more →</a><% } %></div>
 <% } %>
-<header class="nav" id="top">
-  <div class="wrap nav-inner">
-    <a class="brand" href="/" aria-label="<%= s.siteName %> home">
-      <%- include('logo') %>
-      <span class="brand-text"><strong><%= s.siteName %></strong><small>IIM Lucknow</small></span>
-    </a>
+<header class="nav">
+  <div class="nav-bar">
+    <a class="brand" href="/" aria-label="<%= s.siteName %> home"><%- include('logo') %><span><%= s.siteName %></span></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav-links" aria-label="Primary">
-      <% [['/about','About'],['/events','Events'],['/research','Research'],['/team','Team'],['/contact','Contact']].forEach(([href,label]) => { %>
+      <% [['/about','About'],['/partner','Partners'],['/events','Events'],['/research','Research'],['/team','Team']].forEach(([href,label]) => { %>
         <a href="<%= href %>" class="<%= page === href.slice(1) ? 'active' : '' %>"><%= label %></a>
       <% }) %>
-      <a href="/partner" class="btn btn-gold btn-sm">Partner with us</a>
+      <a href="/contact" class="btn btn-dark btn-nav">Contact</a>
     </nav>
   </div>
 </header>

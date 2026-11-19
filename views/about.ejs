@@ -1,6 +1,9 @@
 <%- include('partials/top') %>
 <% const a = c.about || {}; %>
 <%- include('partials/page-head', { eyebrow: s.tagline, heading: a.title, lead: a.lead }) %>
+<% if ((c.stats || []).length) { %>
+<section class="stats-band"><div class="wrap stats"><% c.stats.forEach(x => { %><div class="stat"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %></div></section>
+<% } %>
 <section class="section">
   <div class="wrap split">
     <div><p class="eyebrow">Our story</p><h2>Learning investing by doing it.</h2>
@@ -8,19 +11,26 @@
     <div class="prose"><%- h.paras(a.story) %></div>
   </div>
 </section>
-<section class="section section-dark">
-  <div class="wrap mv">
-    <div class="reveal"><p class="eyebrow eyebrow-light">Mission</p><p class="mv-text"><%= a.mission %></p></div>
-    <div class="reveal"><p class="eyebrow eyebrow-light">Vision</p><p class="mv-text"><%= a.vision %></p></div>
+<section class="section">
+  <div class="wrap cards-2">
+    <div class="panel mv reveal"><p class="eyebrow">Mission</p><p class="mv-text"><%= a.mission %></p></div>
+    <div class="panel mv reveal"><p class="eyebrow">Vision</p><p class="mv-text"><%= a.vision %></p></div>
   </div>
 </section>
+<% if ((c.testimonials || []).length) { %>
 <section class="section">
   <div class="wrap">
-    <div class="stat-row"><% (c.stats || []).forEach(x => { %><div class="stat reveal"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %></div>
+    <div class="section-head"><p class="eyebrow">From the faculty</p><h2>What IIM Lucknow says</h2></div>
+    <div class="cards-2">
+      <% c.testimonials.forEach(t => { %>
+        <figure class="card quote reveal"><blockquote>“<%= t.quote %>”</blockquote><figcaption><strong><%= t.name %></strong><span class="muted"><%= [t.title, t.org].filter(Boolean).join(', ') %></span></figcaption></figure>
+      <% }) %>
+    </div>
   </div>
 </section>
+<% } %>
 <% if ((c.press || []).length) { %>
-<section class="section section-tint" id="press">
+<section class="section" id="press">
   <div class="wrap">
     <div class="section-head"><p class="eyebrow">Media coverage</p><h2>In the press</h2></div>
     <%- include('partials/press') %>

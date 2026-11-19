@@ -1,20 +1,20 @@
 <%- include('partials/top') %>
 <% const up = h.upcoming(c.events); const pa = h.past(c.events); %>
-<%- include('partials/page-head', { eyebrow: 'Events', heading: 'Competitions, conclaves & *conversations*', lead: 'Our calendar brings practitioners and students together across the year. Many events are open for sponsorship.' }) %>
-<section class="section">
+<%- include('partials/page-head', { eyebrow: 'Events', heading: 'Summits, competitions and conversations', lead: 'Nivesh, our Annual Investment Summit, and Investowise anchor a calendar that brings practitioners and students together. Many events are open for sponsorship.' }) %>
+<section class="section section-first">
   <div class="wrap">
-    <h2 class="h3">Upcoming</h2>
-    <% if (up.length) { %><div class="events"><% up.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+    <p class="eyebrow">Upcoming</p>
+    <% if (up.length) { %><div class="rows"><% up.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
     <% } else { %><p class="muted">New events will be announced soon.</p><% } %>
   </div>
 </section>
 <% if (pa.length) { %>
-<section class="section section-tint">
+<section class="section">
   <div class="wrap">
-    <h2 class="h3">Past events</h2>
-    <div class="events events-past"><% pa.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+    <p class="eyebrow">Past events</p>
+    <div class="rows"><% pa.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
   </div>
 </section>
 <% } %>
-<%- include('partials/cta', { title: 'Put your brand on our next event.', body: 'Title, presenting and prize-pool partnerships are available for every competition and conclave.' }) %>
+<%- include('partials/cta', { title: 'Put your brand on our next event.', body: 'Title, presenting and prize-pool partnerships are available for Nivesh and Investowise.' }) %>
 <%- include('partials/bottom') %>

@@ -1,13 +1,13 @@
 <% const p = h.pct(x.raised, x.goal); const d = h.daysLeft(x.deadline); %>
-<article class="campaign reveal">
-  <div class="campaign-top">
-    <span class="tag <%= x.status === 'completed' ? 'tag-muted' : 'tag-live' %>"><%= x.status === 'completed' ? 'Funded' : 'Live campaign' %></span>
-    <% if (x.status === 'active' && d !== null && d >= 0) { %><span class="muted small"><%= d %> days left</span><% } %>
+<article class="card campaign reveal">
+  <div class="card-top">
+    <span class="<%= x.status === 'completed' ? 'badge-grey' : 'badge-green' %>"><%= x.status === 'completed' ? 'Funded' : 'Live' %></span>
+    <% if (x.status === 'active' && d !== null && d >= 0) { %><span class="mono-label"><%= d %> days left</span><% } %>
   </div>
   <h3><%= x.title %></h3>
-  <p><%= x.summary %></p>
+  <p class="muted"><%= x.summary %></p>
+  <div class="campaign-figure"><span class="mono-label">Raised</span><b><%= h.inr(x.raised) %></b><span class="muted">of <%= h.inr(x.goal) %> goal</span></div>
   <div class="progress" role="progressbar" aria-valuenow="<%= p %>" aria-valuemin="0" aria-valuemax="100"><span style="--w:<%= p %>%"></span></div>
-  <div class="campaign-nums"><strong><%= h.inr(x.raised) %></strong> <span class="muted">raised of <%= h.inr(x.goal) %></span><span class="pct"><%= p %>%</span></div>
-  <% if (x.uses && x.uses.length) { %><ul class="ticks small"><% x.uses.forEach(u => { %><li><%= u %></li><% }) %></ul><% } %>
-  <% if (x.status === 'active') { %><button class="btn btn-outline btn-sm" data-pledge="<%= x.title %>">Pledge support</button><% } %>
+  <% if (x.uses && x.uses.length) { %><ul class="list-lines"><% x.uses.forEach(u => { %><li><%= u %></li><% }) %></ul><% } %>
+  <% if (x.status === 'active') { %><button class="btn btn-dark btn-sm" data-pledge="<%= x.title %>">Pledge support</button><% } %>
 </article>

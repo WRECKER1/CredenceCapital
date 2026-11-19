@@ -1,5 +1,5 @@
 <dialog class="modal" id="pledge-modal">
-  <form class="form" data-endpoint="/api/enquiry" method="dialog">
+  <form class="form-card form-modal" data-endpoint="/api/enquiry">
     <button class="modal-x" type="button" data-close aria-label="Close">×</button>
     <p class="eyebrow">Pledge support</p>
     <h3 data-campaign-title>Campaign</h3>
@@ -14,7 +14,6 @@
       <label>Pledge amount (₹)<input name="amount" type="number" min="0" step="1000"></label>
     </div>
     <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
-    <button class="btn btn-gold" type="submit">Submit pledge</button>
-    <p class="form-msg" role="status"></p>
+    <div class="form-foot"><p class="form-msg" role="status"></p><button class="btn btn-dark" type="submit">Submit pledge</button></div>
   </form>
 </dialog>
