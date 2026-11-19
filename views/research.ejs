@@ -1,0 +1,28 @@
+<%- include('partials/top') %>
+<% const list = h.byDateDesc(c.research); const types = [...new Set(list.map(r => r.type))]; %>
+<%- include('partials/page-head', { eyebrow: 'Research desk', heading: 'Research & *publications*', lead: 'Equity research, sector reports and market commentary written by our members.' }) %>
+<section class="section">
+  <div class="wrap">
+    <% if (types.length > 1) { %>
+    <div class="filters" role="tablist">
+      <button class="chip active" data-filter="all">All</button>
+      <% types.forEach(t => { %><button class="chip" data-filter="<%= t %>"><%= t %></button><% }) %>
+    </div>
+    <% } %>
+    <div class="papers">
+      <% list.forEach(r => { const href = r.file || r.link; %>
+        <article class="paper reveal" data-type="<%= r.type %>">
+          <div class="paper-meta"><span class="tag"><%= r.type %></span><span class="muted small"><%= h.date(r.date) %></span></div>
+          <h3><%= r.title %></h3>
+          <p><%= r.summary %></p>
+          <% if (href) { %><a class="link" href="<%= href %>" target="_blank" rel="noopener"><%= r.file ? 'Read the PDF →' : 'Read more →' %></a><% } %>
+        </article>
+      <% }) %>
+    </div>
+    <div class="callout">
+      <div><h3>Co-publish with our research desk</h3><p class="muted">Knowledge partners can co-author reports and newsletters that reach students and alumni across the country.</p></div>
+      <a class="btn btn-primary" href="/partner?tier=Knowledge%20Partner#enquire">Become a knowledge partner</a>
+    </div>
+  </div>
+</section>
+<%- include('partials/bottom') %>

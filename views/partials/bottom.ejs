@@ -1,0 +1,42 @@
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><%- include('logo') %><span class="brand-text"><strong><%= s.siteName %></strong><small><%= s.tagline %></small></span></a>
+      <p class="muted"><%= s.institute %></p>
+      <form class="subscribe" data-endpoint="/api/subscribe">
+        <label for="sub-email">Get our market outlook in your inbox</label>
+        <div class="subscribe-row">
+          <input id="sub-email" name="email" type="email" placeholder="you@company.com" required>
+          <input name="website" class="hp" tabindex="-1" autocomplete="off">
+          <button class="btn btn-gold btn-sm" type="submit">Subscribe</button>
+        </div>
+        <p class="form-msg" role="status"></p>
+      </form>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="/about">About</a><a href="/events">Events</a><a href="/research">Research</a><a href="/team">Team</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="/partner">Sponsorship tiers</a><a href="/partner#campaigns">Fundraising</a><a href="/partner#enquire">Enquire</a>
+      <% if (s.sponsorDeck) { %><a href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Download deck</a><% } %>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <% if (s.sponsorEmail || s.email) { %><a href="mailto:<%= s.sponsorEmail || s.email %>"><%= s.sponsorEmail || s.email %></a><% } %>
+      <% if (s.phone) { %><a href="tel:<%= s.phone.replace(/\s/g,'') %>"><%= s.phone %></a><% } %>
+      <div class="socials">
+        <% [['linkedin','LinkedIn'],['instagram','Instagram'],['twitter','X'],['youtube','YouTube']].forEach(([k,l]) => { if (s[k]) { %><a href="<%= s[k] %>" target="_blank" rel="noopener"><%= l %></a><% } }) %>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <%= new Date().getFullYear() %> <%= s.siteName %>, <%= s.institute %>.</span>
+    <a href="/admin/">CMS login</a>
+  </div>
+</footer>
+<script src="/static/js/site.js" defer></script>
+</body>
+</html>

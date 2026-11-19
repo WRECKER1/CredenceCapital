@@ -1,0 +1,23 @@
+<%- include('partials/top') %>
+<% const a = c.about || {}; %>
+<%- include('partials/page-head', { eyebrow: s.tagline, heading: a.title, lead: a.lead }) %>
+<section class="section">
+  <div class="wrap split">
+    <div><p class="eyebrow">Our story</p><h2>Learning investing by doing it.</h2>
+      <% if (a.image) { %><img class="feature-img" src="<%= a.image %>" alt=""><% } %></div>
+    <div class="prose"><%- h.paras(a.story) %></div>
+  </div>
+</section>
+<section class="section section-dark">
+  <div class="wrap mv">
+    <div class="reveal"><p class="eyebrow eyebrow-light">Mission</p><p class="mv-text"><%= a.mission %></p></div>
+    <div class="reveal"><p class="eyebrow eyebrow-light">Vision</p><p class="mv-text"><%= a.vision %></p></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="stat-row"><% (c.stats || []).forEach(x => { %><div class="stat reveal"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %></div>
+  </div>
+</section>
+<%- include('partials/cta', { title: (c.home || {}).ctaTitle, body: (c.home || {}).ctaBody }) %>
+<%- include('partials/bottom') %>

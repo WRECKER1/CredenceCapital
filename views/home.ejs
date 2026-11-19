@@ -1,0 +1,130 @@
+<%- include('partials/top') %>
+<% const hm = c.home || {}; const stats = c.stats || []; const up = h.upcoming(c.events).slice(0, 3); const camps = (c.campaigns || []).filter(x => x.status === 'active'); %>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg class="hero-chart" viewBox="0 0 1200 500" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="hc" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9a44c" stop-opacity=".28"/><stop offset="1" stop-color="#c9a44c" stop-opacity="0"/></linearGradient>
+      </defs>
+      <path class="area" d="M0 420 L80 400 L160 410 L240 360 L320 372 L400 320 L480 334 L560 280 L640 296 L720 236 L800 250 L880 190 L960 204 L1040 140 L1120 120 L1200 80 L1200 500 L0 500Z" fill="url(#hc)"/>
+      <path class="line" d="M0 420 L80 400 L160 410 L240 360 L320 372 L400 320 L480 334 L560 280 L640 296 L720 236 L800 250 L880 190 L960 204 L1040 140 L1120 120 L1200 80" fill="none" stroke="#c9a44c" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-light"><%= hm.heroEyebrow %></p>
+      <h1><%- h.accent(hm.heroTitle) %></h1>
+      <p class="hero-sub"><%= hm.heroSubtitle %></p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="/partner"><%= hm.heroPrimaryCta || 'Become a partner' %></a>
+        <% if (s.sponsorDeck) { %><a class="btn btn-ghost" href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Download sponsorship deck</a>
+        <% } else { %><a class="btn btn-ghost" href="/about"><%= hm.heroSecondaryCta || 'Explore our work' %></a><% } %>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Partnership snapshot">
+      <p class="hero-card-label">Partnership season 2026–27</p>
+      <ul>
+        <% (c.tiers || []).slice(0, 4).forEach(t => { %>
+          <li><span><%= t.name %></span><b class="<%= t.available ? 'up' : '' %>"><%= t.available || 'Open' %></b></li>
+        <% }) %>
+      </ul>
+      <a class="link link-gold" href="/partner#tiers">View all packages →</a>
+    </aside>
+  </div>
+  <% if (stats.length) { %>
+  <div class="ticker" aria-label="Key numbers">
+    <div class="ticker-track">
+      <% for (let r = 0; r < 2; r++) { stats.forEach(x => { %>
+        <span class="tick" <%= r ? 'aria-hidden=true' : '' %>><b><%= x.value %></b> <%= x.label %> <i>▲</i></span>
+      <% }) } %>
+    </div>
+  </div>
+  <% } %>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Who we are</p>
+      <h2><%= hm.introTitle %></h2>
+    </div>
+    <div class="prose"><%- h.paras(hm.introBody) %><a class="link" href="/about">More about the club →</a></div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">For partners</p>
+      <h2><%= hm.whyTitle %></h2>
+      <p class="lead"><%= hm.whyBody %></p>
+    </div>
+    <div class="benefits">
+      <% (c.benefits || []).forEach(b => { %>
+        <div class="benefit reveal"><span class="icon"><%- h.icon(b.icon) %></span><h3><%= b.title %></h3><p><%= b.body %></p></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="tiers">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-light">Sponsorship packages</p>
+      <h2>Choose your level of impact</h2>
+    </div>
+    <%- include('partials/tiers') %>
+  </div>
+</section>
+
+<% if (camps.length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Fundraising</p><h2>Back a campaign</h2></div>
+      <a class="link" href="/partner#campaigns">All campaigns →</a>
+    </div>
+    <div class="campaigns"><% camps.slice(0, 2).forEach(x => { %><%- include('partials/campaign', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Partners</p><h2>In good company</h2></div>
+      <a class="link" href="/partner#enquire">Join them →</a>
+    </div>
+    <%- include('partials/sponsors') %>
+  </div>
+</section>
+
+<% if (up.length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Calendar</p><h2>Upcoming events</h2></div>
+      <a class="link" href="/events">Full calendar →</a>
+    </div>
+    <div class="events"><% up.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.testimonials || []).length) { %>
+<section class="section section-tint">
+  <div class="wrap quotes">
+    <% c.testimonials.slice(0, 2).forEach(t => { %>
+      <figure class="quote reveal">
+        <blockquote>“<%= t.quote %>”</blockquote>
+        <figcaption><strong><%= t.name %></strong><span><%= [t.title, t.org].filter(Boolean).join(', ') %></span></figcaption>
+      </figure>
+    <% }) %>
+  </div>
+</section>
+<% } %>
+
+<%- include('partials/cta', { title: hm.ctaTitle, body: hm.ctaBody }) %>
+<%- include('partials/pledge-modal') %>
+<%- include('partials/bottom') %>

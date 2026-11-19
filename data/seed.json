@@ -1,0 +1,107 @@
+{
+  "settings": {
+    "siteName": "Credence Capital",
+    "tagline": "The Investment Club of IIM Lucknow",
+    "institute": "Indian Institute of Management Lucknow",
+    "logo": "",
+    "email": "credencecapital@iiml.ac.in",
+    "sponsorEmail": "credencecapital@iiml.ac.in",
+    "phone": "",
+    "address": "Indian Institute of Management Lucknow\nPrabandh Nagar, Off Sitapur Road\nLucknow, Uttar Pradesh 226013",
+    "linkedin": "https://www.linkedin.com/",
+    "instagram": "https://www.instagram.com/",
+    "twitter": "",
+    "youtube": "",
+    "sponsorDeck": "",
+    "announcementOn": true,
+    "announcement": "Partnerships for the 2026–27 season are now open. Title partner slot available.",
+    "announcementLink": "/partner",
+    "seoDescription": "Credence Capital is the investment club of IIM Lucknow. Partner with us to reach India's next generation of finance leaders through flagship events, research and competitions."
+  },
+  "home": {
+    "heroEyebrow": "The Investment Club of IIM Lucknow",
+    "heroTitle": "Where India's next *investors* are made.",
+    "heroSubtitle": "Credence Capital brings together IIM Lucknow's sharpest finance minds through research, competitions and conversations with industry. Partner with us to put your brand in front of the talent that will manage tomorrow's capital.",
+    "heroPrimaryCta": "Become a partner",
+    "heroSecondaryCta": "Explore our work",
+    "introTitle": "A student-run club, an industry-grade platform.",
+    "introBody": "We are the community for investing at IIM Lucknow. Our members write equity research, run stock-pitch and portfolio competitions, and host practitioners from asset management, private equity, banking and fintech.\n\nEvery initiative is built around one question: how do we close the gap between the classroom and the markets? Our partners help us answer it — and in return gain direct access to a highly selective pool of future leaders.",
+    "whyTitle": "Why leading firms partner with Credence",
+    "whyBody": "Sponsorship with us is not a logo on a banner. It is sustained, measurable engagement with an audience that is hard to reach any other way.",
+    "ctaTitle": "Let's build the season together.",
+    "ctaBody": "Tell us what you want to achieve — hiring, brand visibility, thought leadership or product adoption — and we will design a partnership around it."
+  },
+  "about": {
+    "title": "About Credence Capital",
+    "lead": "Credence Capital is the investment club of the Indian Institute of Management Lucknow — a student-driven forum for equity research, portfolio thinking and conversations with the people who move markets.",
+    "story": "The club was founded by students who believed that the best way to learn investing is to do it: to build models, defend theses and be challenged by practitioners. Over the years it has grown into one of the most active communities on campus.\n\nToday our members run research desks across sectors, publish regular market commentary, and organise competitions that draw participants from B-schools across the country. Alumni of the club now work across asset management, investment banking, private equity, consulting and fintech.",
+    "mission": "To build investing judgement through practice — research, debate and mentorship — and to connect IIM Lucknow's talent with the industry that will shape their careers.",
+    "vision": "To be the most trusted student investment platform in India, known for the rigour of its research and the strength of its partnerships.",
+    "image": ""
+  },
+  "partner": {
+    "title": "Partner with Credence Capital",
+    "lead": "Reach a curated audience of finance-focused MBA students, faculty and alumni through events, competitions, research and digital channels — with packages built around your goals.",
+    "audienceTitle": "Who you reach",
+    "audienceBody": "IIM Lucknow admits some of India's most selective MBA cohorts. Our programming reaches students across the PGP, PGP-ABM and executive programmes on campus, participants from peer B-schools through our national competitions, and a growing alumni network in financial services.",
+    "customTitle": "Need something different?",
+    "customBody": "Every package can be tailored. Sponsor a single flagship event, underwrite a competition prize pool, co-author a research report, or run a hiring-focused campus engagement. Tell us your objective and we will design around it.",
+    "formTitle": "Start a conversation",
+    "formBody": "Share a few details and a member of our partnerships team will respond within two working days with a tailored proposal."
+  },
+  "stats": [
+    { "id": "s1", "value": "1984", "label": "IIM Lucknow established" },
+    { "id": "s2", "value": "10+", "label": "Events each season" },
+    { "id": "s3", "value": "5,000+", "label": "Students reached annually" },
+    { "id": "s4", "value": "40+", "label": "B-schools in our competitions" },
+    { "id": "s5", "value": "25+", "label": "Research reports a year" }
+  ],
+  "benefits": [
+    { "id": "b1", "icon": "talent", "title": "Early access to top finance talent", "body": "Meet students before placement season through case challenges, pre-placement talks and résumé books shared with your recruiters." },
+    { "id": "b2", "icon": "brand", "title": "Brand presence where it matters", "body": "Naming rights on flagship events, co-branded competitions and visibility across our campus and digital channels." },
+    { "id": "b3", "icon": "insight", "title": "Thought leadership", "body": "Host a keynote, judge a stock-pitch final or co-publish a market outlook with our research desk." },
+    { "id": "b4", "icon": "audience", "title": "A national B-school audience", "body": "Our inter-college competitions draw participants from leading business schools across India." },
+    { "id": "b5", "icon": "network", "title": "An engaged alumni network", "body": "Connect with club alumni now working across asset management, banking, PE/VC and fintech." },
+    { "id": "b6", "icon": "impact", "title": "Measurable outcomes", "body": "Every partner receives a post-event report covering reach, registrations, engagement and impressions." }
+  ],
+  "tiers": [
+    { "id": "t1", "name": "Title Partner", "price": "On request", "blurb": "Exclusive season-long association with the club and naming rights on our flagship event.", "perks": ["\"Credence Capital, powered by [Your Brand]\" for the season", "Naming rights on the flagship investment conclave", "Keynote slot and judging panel seat", "Exclusive pre-placement talk and résumé access", "Logo on all merchandise, reports and certificates", "Dedicated social campaign and quarterly impact report"], "featured": true, "available": "1 slot" },
+    { "id": "t2", "name": "Associate Partner", "price": "On request", "blurb": "High-visibility partnership across our competitions and speaker series.", "perks": ["Co-branding on two national competitions", "Speaker session on campus or online", "Logo on website, posters and certificates", "Social media features across the season", "Post-event engagement reports"], "featured": false, "available": "3 slots" },
+    { "id": "t3", "name": "Event Partner", "price": "On request", "blurb": "Sponsor a single event or competition and own the moment.", "perks": ["\"Presented by\" branding on one event", "Prize pool and certificate co-branding", "Brand mention in event communication", "Participant data (with consent)"], "featured": false, "available": "" },
+    { "id": "t4", "name": "Knowledge Partner", "price": "In-kind", "blurb": "For research platforms, data providers and publishers.", "perks": ["Co-authored research report or newsletter edition", "Platform access for members", "Workshop or masterclass slot", "Knowledge partner credit across publications"], "featured": false, "available": "" }
+  ],
+  "campaigns": [
+    { "id": "c1", "title": "Investment Conclave 2027", "status": "active", "summary": "Help us bring fund managers, founders and economists to campus for our largest annual gathering on Indian markets.", "goal": 800000, "raised": 320000, "deadline": "2027-01-15", "uses": ["Speaker travel and hosting", "Venue, production and live streaming", "Participant kits and certificates"], "image": "" },
+    { "id": "c2", "title": "National Stock-Pitch Prize Pool", "status": "active", "summary": "Fund the prize pool for our inter-B-school stock-pitch challenge and get your brand in front of every finalist.", "goal": 300000, "raised": 90000, "deadline": "2027-02-10", "uses": ["Prize money for winners and runners-up", "Data and research tools for finalists", "Judging and jury logistics"], "image": "" }
+  ],
+  "sponsors": [],
+  "testimonials": [
+    { "id": "q1", "quote": "Replace this with a quote from a past partner, judge or speaker about their experience working with Credence Capital.", "name": "Partner name", "title": "Designation", "org": "Organisation" }
+  ],
+  "events": [
+    { "id": "e1", "title": "Credence Investment Conclave", "category": "Flagship", "date": "2027-01-24", "location": "IIM Lucknow campus", "summary": "Our flagship gathering of fund managers, founders and economists debating the next decade of Indian markets.", "image": "", "link": "", "reach": "", "sponsorSlot": true },
+    { "id": "e2", "title": "National Stock-Pitch Challenge", "category": "Competition", "date": "2027-02-21", "location": "Online + campus finale", "summary": "Teams from B-schools across India pitch long/short ideas to a jury of investment professionals.", "image": "", "link": "", "reach": "", "sponsorSlot": true },
+    { "id": "e3", "title": "Portfolio Management Simulation", "category": "Competition", "date": "2026-12-12", "location": "Online", "summary": "A multi-week simulated portfolio contest rewarding risk-adjusted returns and a clear investment process.", "image": "", "link": "", "reach": "", "sponsorSlot": true },
+    { "id": "e4", "title": "Equity Research Bootcamp", "category": "Workshop", "date": "2026-08-30", "location": "IIM Lucknow campus", "summary": "A hands-on bootcamp on financial modelling, valuation and writing an initiating-coverage report.", "image": "", "link": "", "reach": "", "sponsorSlot": false },
+    { "id": "e5", "title": "Fireside Chat: Investing Through Cycles", "category": "Speaker Session", "date": "2026-10-04", "location": "IIM Lucknow campus", "summary": "An evening conversation with a senior investment professional on discipline, risk and long-term compounding.", "image": "", "link": "", "reach": "", "sponsorSlot": false }
+  ],
+  "research": [
+    { "id": "r1", "title": "Market Outlook — Edition placeholder", "type": "Newsletter", "date": "2026-10-15", "summary": "Our monthly view on macro, rates and sector rotations. Upload the PDF from the CMS.", "file": "", "link": "" },
+    { "id": "r2", "title": "Sector Report — placeholder", "type": "Sector Report", "date": "2026-09-01", "summary": "A deep-dive written by our research desk. Replace with a real report from the CMS.", "file": "", "link": "" },
+    { "id": "r3", "title": "Initiating Coverage — placeholder", "type": "Equity Research", "date": "2026-07-20", "summary": "Company analysis, valuation and investment thesis from our members.", "file": "", "link": "" }
+  ],
+  "team": [
+    { "id": "m1", "name": "Faculty Advisor", "role": "Faculty Advisor, Finance & Accounting", "group": "Faculty Advisor", "batch": "", "photo": "", "linkedin": "", "email": "" },
+    { "id": "m2", "name": "Club Coordinator", "role": "Coordinator", "group": "Core Team", "batch": "PGP 2025–27", "photo": "", "linkedin": "", "email": "" },
+    { "id": "m3", "name": "Club Coordinator", "role": "Coordinator", "group": "Core Team", "batch": "PGP 2025–27", "photo": "", "linkedin": "", "email": "" },
+    { "id": "m4", "name": "Partnerships Lead", "role": "Head of Partnerships", "group": "Core Team", "batch": "PGP 2025–27", "photo": "", "linkedin": "", "email": "" },
+    { "id": "m5", "name": "Research Lead", "role": "Head of Research", "group": "Core Team", "batch": "PGP 2025–27", "photo": "", "linkedin": "", "email": "" },
+    { "id": "m6", "name": "Events Lead", "role": "Head of Events", "group": "Core Team", "batch": "PGP 2025–27", "photo": "", "linkedin": "", "email": "" }
+  ],
+  "faqs": [
+    { "id": "f1", "question": "Can we customise a sponsorship package?", "answer": "Yes. The tiers are starting points. Most partnerships are tailored around a specific objective such as hiring, brand awareness or product adoption." },
+    { "id": "f2", "question": "How do payments and invoicing work?", "answer": "Contributions are processed through IIM Lucknow's official channels, and a formal invoice and receipt are issued. Our team will share details once the scope is agreed." },
+    { "id": "f3", "question": "What will we receive after the event?", "answer": "Every partner receives a post-event report with reach, registrations, social impressions, photographs and participant feedback." },
+    { "id": "f4", "question": "Can individuals or alumni contribute?", "answer": "Absolutely. Alumni and individuals can pledge towards any of our active fundraising campaigns, and we will reach out with next steps." }
+  ]
+}

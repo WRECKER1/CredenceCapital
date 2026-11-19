@@ -1,0 +1,15 @@
+<div class="tiers">
+  <% (c.tiers || []).forEach(t => { %>
+    <article class="tier reveal <%= t.featured ? 'tier-featured' : '' %>">
+      <% if (t.featured) { %><span class="tier-badge">Recommended</span><% } %>
+      <h3><%= t.name %></h3>
+      <p class="tier-price"><%= t.price %></p>
+      <p class="tier-blurb"><%= t.blurb %></p>
+      <ul class="ticks"><% (t.perks || []).forEach(p => { %><li><%= p %></li><% }) %></ul>
+      <div class="tier-foot">
+        <% if (t.available) { %><span class="small"><%= t.available %></span><% } %>
+        <a class="btn <%= t.featured ? 'btn-gold' : 'btn-outline-light' %> btn-sm" href="/partner?tier=<%= encodeURIComponent(t.name) %>#enquire">Enquire</a>
+      </div>
+    </article>
+  <% }) %>
+</div>

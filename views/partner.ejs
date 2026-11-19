@@ -1,0 +1,90 @@
+<%- include('partials/top') %>
+<% const p = c.partner || {}; const camps = (c.campaigns || []).filter(x => x.status !== 'draft'); %>
+<%- include('partials/page-head', { eyebrow: 'Sponsorship & fundraising', heading: p.title, lead: p.lead }) %>
+
+<section class="section section-flush">
+  <div class="wrap">
+    <div class="stat-row">
+      <% (c.stats || []).slice(0, 4).forEach(x => { %><div class="stat reveal"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div><p class="eyebrow">Audience</p><h2><%= p.audienceTitle %></h2></div>
+    <div class="prose"><%- h.paras(p.audienceBody) %>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#enquire">Request a proposal</a>
+        <% if (s.sponsorDeck) { %><a class="btn btn-outline" href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Download deck (PDF)</a><% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Value</p><h2>What partners get</h2></div>
+    <div class="benefits">
+      <% (c.benefits || []).forEach(b => { %>
+        <div class="benefit reveal"><span class="icon"><%- h.icon(b.icon) %></span><h3><%= b.title %></h3><p><%= b.body %></p></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="tiers">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow eyebrow-light">Packages</p><h2>Sponsorship tiers</h2></div>
+    <%- include('partials/tiers') %>
+    <div class="custom-note">
+      <div><h3><%= p.customTitle %></h3><p><%= p.customBody %></p></div>
+      <a class="btn btn-outline-light" href="#enquire">Design a package</a>
+    </div>
+  </div>
+</section>
+
+<% if (camps.length) { %>
+<section class="section" id="campaigns">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Fundraising</p><h2>Campaigns you can back today</h2>
+      <p class="lead">Corporates, alumni and well-wishers can pledge towards specific initiatives. Every rupee is accounted for in a post-campaign report.</p></div>
+    <div class="campaigns"><% camps.forEach(x => { %><%- include('partials/campaign', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<% const sponsorable = h.upcoming(c.events).filter(e => e.sponsorSlot); if (sponsorable.length) { %>
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Open slots</p><h2>Events seeking partners</h2></div>
+    <div class="events"><% sponsorable.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Partners</p><h2>Current &amp; past partners</h2></div>
+    <%- include('partials/sponsors') %>
+  </div>
+</section>
+
+<section class="section section-tint" id="enquire">
+  <div class="wrap split split-form">
+    <div>
+      <p class="eyebrow">Enquire</p>
+      <h2><%= p.formTitle %></h2>
+      <p class="lead"><%= p.formBody %></p>
+      <% if (s.sponsorEmail || s.email) { %><p class="muted">Prefer email? Write to <a class="link" href="mailto:<%= s.sponsorEmail || s.email %>"><%= s.sponsorEmail || s.email %></a></p><% } %>
+      <% if ((c.faqs || []).length) { %>
+      <div class="faqs">
+        <% c.faqs.forEach(f => { %><details><summary><%= f.question %></summary><p><%= f.answer %></p></details><% }) %>
+      </div>
+      <% } %>
+    </div>
+    <%- include('partials/enquiry', { type: 'sponsorship' }) %>
+  </div>
+</section>
+<%- include('partials/pledge-modal') %>
+<%- include('partials/bottom') %>

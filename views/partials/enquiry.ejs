@@ -1,0 +1,25 @@
+<form class="form card" data-endpoint="/api/enquiry" id="enquiry-form">
+  <input type="hidden" name="type" value="<%= type %>">
+  <input name="website" class="hp" tabindex="-1" autocomplete="off">
+  <div class="grid-2">
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Work email<input name="email" type="email" required autocomplete="email"></label>
+    <% if (type === 'sponsorship') { %>
+    <label>Organisation<input name="organisation" required autocomplete="organization"></label>
+    <label>Designation<input name="designation" autocomplete="organization-title"></label>
+    <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+    <label>Interested in
+      <select name="interest">
+        <% (c.tiers || []).forEach(t => { %><option><%= t.name %></option><% }) %>
+        <option>A specific event</option><option>Fundraising campaign</option><option>Custom partnership</option>
+      </select>
+    </label>
+    <% } else { %>
+    <label>Organisation (optional)<input name="organisation" autocomplete="organization"></label>
+    <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+    <% } %>
+  </div>
+  <label>Message<textarea name="message" rows="4" placeholder="<%= type === 'sponsorship' ? 'What would you like to achieve with this partnership?' : 'How can we help?' %>"></textarea></label>
+  <button class="btn btn-gold" type="submit"><%= type === 'sponsorship' ? 'Request a proposal' : 'Send message' %></button>
+  <p class="form-msg" role="status"></p>
+</form>

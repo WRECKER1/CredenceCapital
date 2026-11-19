@@ -1,0 +1,15 @@
+<%- include('partials/top') %>
+<%- include('partials/page-head', { eyebrow: 'Contact', heading: 'Get in *touch*', lead: 'Questions about the club, our events or research? We would love to hear from you.' }) %>
+<section class="section">
+  <div class="wrap split split-form">
+    <div class="contact-info">
+      <% if (s.email) { %><div><h4>General</h4><a class="link" href="mailto:<%= s.email %>"><%= s.email %></a></div><% } %>
+      <% if (s.sponsorEmail) { %><div><h4>Partnerships</h4><a class="link" href="mailto:<%= s.sponsorEmail %>"><%= s.sponsorEmail %></a></div><% } %>
+      <% if (s.phone) { %><div><h4>Phone</h4><a class="link" href="tel:<%= s.phone.replace(/\s/g,'') %>"><%= s.phone %></a></div><% } %>
+      <% if (s.address) { %><div><h4>Address</h4><p><%- h.esc(s.address).replace(/\n/g, '<br>') %></p></div><% } %>
+      <div class="callout callout-small"><p><strong>Looking to sponsor?</strong> Use the partnership form for a faster, tailored response.</p><a class="link link-gold" href="/partner#enquire">Partnership enquiry →</a></div>
+    </div>
+    <%- include('partials/enquiry', { type: 'contact' }) %>
+  </div>
+</section>
+<%- include('partials/bottom') %>
