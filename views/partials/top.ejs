@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/site.css">
 </head>
-<body class="page-<%= page %>">
+<body class="page-<%= page %>"<% if (typeof staticSite !== 'undefined' && staticSite) { %> data-static data-email="<%= s.sponsorEmail || s.email %>"<% } %>>
 <a class="skip" href="#main">Skip to content</a>
 <% if (s.announcementOn && s.announcement) { %>
 <div class="announce"><span class="live-dot"></span><%= s.announcement %><% if (s.announcementLink) { %> <a href="<%= s.announcementLink %>">Learn more →</a><% } %></div>

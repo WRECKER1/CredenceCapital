@@ -1,15 +1,19 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:static",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "headers": [
     {
-      "src": "api/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["views/**", "public/**", "admin/**", "data/seed.json"]
-      }
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
     }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/index.js" }
   ]
 }

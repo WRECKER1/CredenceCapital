@@ -44,34 +44,37 @@ Tip: in headlines, wrap words in `*asterisks*` to show them in gold italics.
 
 The content model is in `lib/schema.js`. Add a field there and it appears in the CMS automatically. Then use it in the matching template in `views/`.
 
-## Deploying to Vercel (recommended)
+## Deploying to Vercel
 
-The repo is ready for Vercel: `vercel.json` runs the whole app as a single serverless function. Vercel has no permanent disk, so storage moves to two Vercel add-ons. Both have free tiers.
+### Option A: public website only (current setup, no CMS)
 
-| What | Where it's stored on Vercel | Env vars (set automatically when you connect the add-on) |
+`vercel.json` builds the site as plain static pages from `data/seed.json` (`npm run build:static` → `dist/`). It needs no database, add-ons or environment variables.
+
+1. In Vercel, go to **Add New → Project**, import `WRECKER1/CredenceCapital` and click **Deploy**.
+
+In this mode:
+
+- The site's forms (sponsorship, pledge, contact, newsletter) open the visitor's email app with a pre-filled message to the club's email.
+- The visitor counter and the CMS link are hidden.
+- To change content, edit `data/seed.json` and push; Vercel redeploys automatically.
+
+### Option B: full site with the CMS
+
+1. Replace `vercel.json` with `vercel.cms.json`. This runs the whole app as one serverless function.
+2. Under the project's **Storage** tab, create **Upstash for Redis** and **Blob**, and connect both to the project.
+3. Add `ADMIN_EMAIL` and `ADMIN_PASSWORD` under **Settings → Environment Variables**.
+4. Redeploy and open `/admin`.
+
+In this mode:
+
+| What | Stored in | Env vars (set automatically when you connect the add-on) |
 |---|---|---|
-| Content, leads, subscribers, users, activity, visitor counts | **Upstash Redis** (Vercel Marketplace) | `KV_REST_API_URL`, `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_*`) |
-| Media library uploads | **Vercel Blob** | `BLOB_READ_WRITE_TOKEN` |
+| Content, leads, subscribers, users, activity, visitor counts | Upstash Redis | `KV_REST_API_URL`, `KV_REST_API_TOKEN` |
+| Media uploads | Vercel Blob | `BLOB_READ_WRITE_TOKEN` |
 
-**Steps**
-
-1. **Import the repo.** In Vercel, go to **Add New → Project** and import `WRECKER1/CredenceCapital`. Name the project `credence-capital`. Leave the framework as **Other** and don't set a build command.
-2. **Choose the branch to deploy.** Vercel deploys the default branch to production. Either merge this branch into `main`, or set **Settings → Git → Production Branch** to this branch.
-3. **Add Redis.** Under the project's **Storage** tab, choose **Create Database → Upstash for Redis** (free plan) and connect it to the project.
-4. **Add Blob storage.** Still under **Storage**, choose **Create → Blob** and connect it to the project.
-5. **Set environment variables** under **Settings → Environment Variables**:
-   - `ADMIN_EMAIL` and `ADMIN_PASSWORD`: the first CMS login, created on the first visit. Change the password afterwards under *My account*.
-   - `SESSION_SECRET` (optional): a long random string. If it's missing, one is generated and kept in Redis.
-6. **Redeploy** under **Deployments → ⋯ → Redeploy**. Then open `/admin`.
-
-The first request seeds the site with the content in `data/seed.json`.
-
-If Redis or Blob isn't connected, the site still runs, but the CMS shows a red warning that changes and uploads won't be kept.
-
-**Vercel limits**
-
-- **Uploads:** each upload through the CMS is capped at **4 MB**, because of Vercel's request size limit. For a bigger file, like the sponsorship deck PDF, upload it anywhere (Google Drive, Dropbox, Blob dashboard) and paste the link into the field.
-- **Locked out?** Run `npm run reset-password -- you@iiml.ac.in 'new-password'` locally, with `KV_REST_API_URL` and `KV_REST_API_TOKEN` copied from Vercel. It writes straight to the production database.
+- If storage isn't connected, the CMS shows a red warning that changes won't be kept.
+- Uploads through the CMS are capped at 4 MB on Vercel. Link to bigger files instead.
+- `SESSION_SECRET` is optional; one is generated and stored in Redis if it's not set.
 
 ## Deploying elsewhere (Docker, VPS, Render, Railway)
 

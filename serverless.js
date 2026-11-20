@@ -1,2 +1,2 @@
 // Vercel serverless entry point: the whole Express app runs as one function.
-module.exports = require('../server');
+module.exports = require('./server');

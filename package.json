@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "reset-password": "node scripts/reset-password.js",
-    "import-files": "node scripts/import-remote-files.js"
+    "import-files": "node scripts/import-remote-files.js",
+    "build:static": "node scripts/build-static.js"
   },
   "engines": {
     "node": "22.x"

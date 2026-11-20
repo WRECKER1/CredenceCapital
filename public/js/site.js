@@ -40,9 +40,32 @@ if (enquiry) {
 }
 
 // AJAX forms
+// Static hosting (no server): forms open the visitor's email app instead.
+const STATIC_EMAIL = document.body.hasAttribute('data-static') ? document.body.dataset.email : null;
+const FIELD_LABELS = { name: 'Name', email: 'Email', phone: 'Phone', organisation: 'Organisation', designation: 'Designation', interest: 'Interested in', campaign: 'Campaign', amount: 'Pledge amount (₹)', message: 'Message' };
+function sendByEmail(form, data) {
+  const subjects = {
+    sponsorship: `Sponsorship enquiry${data.organisation ? ` — ${data.organisation}` : ''}`,
+    pledge: `Pledge for ${data.campaign || 'a Credence campaign'}`,
+    contact: 'Message via the Credence Capital website',
+  };
+  const subject = data.type ? subjects[data.type] : 'Please add me to the Credence Capital newsletter';
+  const body = Object.entries(FIELD_LABELS).filter(([k]) => data[k]).map(([k, l]) => `${l}: ${data[k]}`).join('\n');
+  window.location.href = `mailto:${STATIC_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const msg = form.querySelector('.form-msg');
+  msg.className = 'form-msg ok';
+  msg.textContent = `Your email app should open with this message ready to send. If it doesn't, write to ${STATIC_EMAIL}.`;
+}
+
 document.querySelectorAll('form[data-endpoint]').forEach((form) => {
   form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
+    if (STATIC_EMAIL) {
+      const fields = Object.fromEntries(new FormData(form).entries());
+      if (fields.website) return; // honeypot
+      sendByEmail(form, fields);
+      return;
+    }
     const msg = form.querySelector('.form-msg');
     const btn = form.querySelector('button[type=submit]');
     const data = Object.fromEntries(new FormData(form).entries());
