@@ -1,0 +1,12 @@
+<section class="cta">
+  <div class="wrap cta-inner">
+    <p class="eyebrow">Partner with Credence</p>
+    <h2><%= title %></h2>
+    <p class="lead"><%= body %></p>
+    <div class="btn-row">
+      <a class="btn btn-dark" href="/partner#enquire">Request a proposal</a>
+      <% if (s.sponsorDeck) { %><a class="btn btn-soft" href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Download deck</a>
+      <% } else if (s.sponsorEmail || s.email) { %><a class="btn btn-soft" href="mailto:<%= s.sponsorEmail || s.email %>">Email us</a><% } %>
+    </div>
+  </div>
+</section>

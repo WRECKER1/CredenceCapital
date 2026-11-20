@@ -1,0 +1,13 @@
+<% const p = h.pct(x.raised, x.goal); const d = h.daysLeft(x.deadline); %>
+<article class="card campaign reveal">
+  <div class="card-top">
+    <span class="<%= x.status === 'completed' ? 'badge-grey' : 'badge-green' %>"><%= x.status === 'completed' ? 'Funded' : 'Live' %></span>
+    <% if (x.status === 'active' && d !== null && d >= 0) { %><span class="mono-label"><%= d %> days left</span><% } %>
+  </div>
+  <h3><%= x.title %></h3>
+  <p class="muted"><%= x.summary %></p>
+  <div class="campaign-figure"><span class="mono-label">Raised</span><b><%= h.inr(x.raised) %></b><span class="muted">of <%= h.inr(x.goal) %> goal</span></div>
+  <div class="progress" role="progressbar" aria-valuenow="<%= p %>" aria-valuemin="0" aria-valuemax="100"><span style="--w:<%= p %>%"></span></div>
+  <% if (x.uses && x.uses.length) { %><ul class="list-lines"><% x.uses.forEach(u => { %><li><%= u %></li><% }) %></ul><% } %>
+  <% if (x.status === 'active') { %><button class="btn btn-dark btn-sm" data-pledge="<%= x.title %>">Pledge support</button><% } %>
+</article>

@@ -1,0 +1,109 @@
+<%- include('partials/top') %>
+<% const p = c.partner || {}; const camps = (c.campaigns || []).filter(x => x.status !== 'draft'); %>
+<%- include('partials/page-head', { eyebrow: 'Sponsorship & fundraising', heading: p.title, lead: p.lead }) %>
+<div class="wrap page-head-cta btn-row">
+  <a class="btn btn-dark" href="#enquire">Request a proposal</a>
+  <% if (s.sponsorDeck) { %><a class="btn btn-soft" href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Download deck (PDF)</a><% } else { %><a class="btn btn-soft" href="#tiers">View packages</a><% } %>
+</div>
+
+<% if ((c.stats || []).length) { %>
+<section class="stats-band"><div class="wrap stats"><% c.stats.forEach(x => { %><div class="stat"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %></div></section>
+<% } %>
+
+<section class="section">
+  <div class="wrap split">
+    <div><p class="eyebrow">Audience</p><h2><%= p.audienceTitle %></h2></div>
+    <div class="prose"><%- h.paras(p.audienceBody) %></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Value</p><h2>What partners get</h2></div>
+    <div class="cards-3">
+      <% (c.benefits || []).forEach(b => { %>
+        <article class="feature reveal"><div class="panel"><%- include('partials/illus', { kind: b.icon }) %></div><h3><%= b.title %></h3><p><%= b.body %></p></article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tiers">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Packages</p><h2>Sponsorship tiers</h2></div>
+    <%- include('partials/tiers', { compact: true }) %>
+    <h3 class="matrix-title">Benefits by bracket</h3>
+    <%- include('partials/matrix') %>
+    <div class="panel custom-note">
+      <div><h3><%= p.customTitle %></h3><p class="muted"><%= p.customBody %></p></div>
+      <a class="btn btn-dark" href="#enquire">Design a package</a>
+    </div>
+  </div>
+</section>
+
+<% if (camps.length) { %>
+<section class="section" id="campaigns">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Fundraising</p><h2>Campaigns you can back today</h2>
+      <p class="lead">Corporates, alumni and well-wishers can pledge towards specific initiatives. Every rupee is accounted for in a post-campaign report.</p></div>
+    <div class="cards-2"><% camps.forEach(x => { %><%- include('partials/campaign', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.investowise || []).length) { %>
+<section class="section">
+  <div class="wrap split">
+    <div><p class="eyebrow">Reach</p><h2>Investowise, year on year</h2><p class="lead"><%= (c.nivesh || {}).investowiseBody %></p></div>
+    <div><%- include('partials/investowise') %></div>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.speakers || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Your peers on stage</p><h2>Who has spoken at Nivesh</h2>
+      <p class="lead">Our summit has hosted CIOs, fund managers and investors from India's leading asset managers and private equity firms.</p></div>
+    <%- include('partials/speakers') %>
+  </div>
+</section>
+<% } %>
+
+<% const sponsorable = h.upcoming(c.events).filter(e => e.sponsorSlot); if (sponsorable.length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Open slots</p><h2>Events seeking partners</h2></div>
+    <div class="rows"><% sponsorable.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Partners</p><h2>Current &amp; past partners</h2></div>
+    <%- include('partials/sponsors') %>
+  </div>
+</section>
+
+<% if ((c.faqs || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <h2 class="faq-title">FAQ</h2>
+    <div class="faqs">
+      <% c.faqs.forEach((f, i) => { %>
+        <details <%= i === 0 ? 'open' : '' %>><summary><span class="mono-label"><%= String(i + 1).padStart(2, '0') %></span><span class="faq-q"><%= f.question %></span><span class="faq-icon"></span></summary><p><%= f.answer %></p></details>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section class="section form-section" id="enquire">
+  <div class="wrap">
+    <%- include('partials/enquiry', { type: 'sponsorship', heading: p.formTitle, intro: p.formBody }) %>
+    <% if (s.sponsorEmail || s.email) { %><p class="muted center small-note">Prefer email? Write to <a class="link" href="mailto:<%= s.sponsorEmail || s.email %>"><%= s.sponsorEmail || s.email %></a></p><% } %>
+  </div>
+</section>
+<%- include('partials/pledge-modal') %>
+<%- include('partials/bottom') %>

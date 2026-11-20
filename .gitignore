@@ -1,0 +1,10 @@
+node_modules/
+data/*
+!data/seed.json
+!data/.gitkeep
+uploads/*
+!uploads/.gitkeep
+.env
+screenshots/
+dist/
+.vercel/

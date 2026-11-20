@@ -1,0 +1,1536 @@
+{
+  "settings": {
+    "siteName": "Credence Capital",
+    "tagline": "The Investment Club of IIM Lucknow",
+    "institute": "Indian Institute of Management Lucknow",
+    "logo": "",
+    "email": "credence@iiml.ac.in",
+    "sponsorEmail": "credence@iiml.ac.in",
+    "phone": "",
+    "address": "Indian Institute of Management Lucknow\nIIM Rd, Prabandh Nagar, Mubarakpur\nLucknow, Uttar Pradesh 226013",
+    "linkedin": "",
+    "instagram": "",
+    "twitter": "https://twitter.com/cciiml",
+    "youtube": "",
+    "sponsorDeck": "",
+    "announcementOn": true,
+    "announcement": "Sponsorships for Nivesh 2026 are open: Title (₹2L+) and Power (₹1L+) brackets.",
+    "announcementLink": "/nivesh#sponsor",
+    "seoDescription": "Credence Capital, the investment club of IIM Lucknow, has managed one of the largest and oldest student-run investment funds since 2005. It hosts Nivesh, IIM Lucknow's Annual Investment Summit, and Investowise, a pan-India stock pitch competition.",
+    "facebook": "https://www.facebook.com/credenceiiml/",
+    "disclaimer": "The Fund is a separate legal entity and IIM Lucknow does not bear any fund-related liabilities.",
+    "showVisitorCounter": true
+  },
+  "home": {
+    "heroEyebrow": "The Investment Club of IIM Lucknow · Since 2005",
+    "heroTitle": "Two decades of *student-run* investing.",
+    "heroSubtitle": "Since 2005, Credence Capital has managed one of the largest and oldest student-run investment funds. Partner with Nivesh, IIM Lucknow's Annual Investment Summit, to reach the finance talent of India's top B-schools.",
+    "heroPrimaryCta": "Become a partner",
+    "heroSecondaryCta": "Explore our work",
+    "introTitle": "Hands-on investment management, not just theory.",
+    "introBody": "Credence Capital is the investment club of IIM Lucknow. Founded in 2005, it manages one of the largest and oldest student-run investment funds, which has consistently outperformed the benchmark indices over the last decade.\n\nEach year a small group of fund managers is chosen through a rigorous internal selection process and mentored by senior members. Their strategies span value investing, bottom fishing, arbitrage, mathematical models and technical and fundamental analysis, and they change with every new batch.",
+    "whyTitle": "Why leading firms partner with Credence",
+    "whyBody": "Our partners get more than a logo on a banner. They get steady, measurable engagement with an audience that is hard to reach any other way: student fund managers, finance-focused MBA students, faculty and participants from B-schools across India.",
+    "ctaTitle": "Let's build the season together.",
+    "ctaBody": "Tell us what you want to achieve — hiring, brand visibility, thought leadership or product adoption — and we will design a partnership around it."
+  },
+  "about": {
+    "title": "About Credence Capital",
+    "lead": "Credence Capital is the investment club of the Indian Institute of Management Lucknow. Founded in 2005, it manages one of the largest and oldest student-run investment funds.",
+    "story": "The fund gives IIM Lucknow students hands-on experience in investment management that builds on what they learn in class and at work. The investment approach combines multiple strategies (value investing, bottom fishing, arbitrage opportunities, mathematical models, and technical and fundamental analysis), and these change with every new batch.\n\nMembers are selected through a rigorous internal selection process, and the new fund advisors are mentored and trained by senior club members. The club's work includes advising on investments, industry analysis, publishing newsletters, knowledge-sharing sessions, and stock valuations and recommendations. Faculty are regularly consulted, and the club has worked closely with them since its inception.\n\nThe club has gained wide recognition in financial circles, and the fund's record has been covered by Bloomberg Quint, Business Standard, The Hindu BusinessLine and India Today.",
+    "mission": "To further the IIM Lucknow community's knowledge of financial markets, asset markets and personal finance through hands-on investment analysis.",
+    "vision": "To remain the benchmark for student-run investing in India, known for disciplined research, a consistent track record and strong ties with the investment industry.",
+    "image": "/static/img/seed/credence-team.jpg",
+    "iimTitle": "IIM Lucknow: nurturing talent since 1984",
+    "iimQuote": "IIM Lucknow was instituted with the core values of disseminating knowledge and shaping management practice.",
+    "iimBody": "Situated on a 185-acre campus designed with world-class facilities, IIM Lucknow is a centre of excellence, as reflected by its illustrious alumni network. It believes in creating leaders who not only scale heights in the corporate world, but also bring about meaningful social change.",
+    "iimImage": "/static/img/seed/campus-rotunda.jpg"
+  },
+  "nivesh": {
+    "edition": "Nivesh 2026",
+    "tagline": "IIM Lucknow's Annual Investment Summit",
+    "lead": "Nivesh aims to promote a culture of investing and management of personal finances among B-school students through an investing workshop, a competition, and interactive knowledge-sharing sessions and panel discussions with leading investors and experts.",
+    "image": "/static/img/seed/nivesh-audience.jpg",
+    "investowiseTitle": "Investowise",
+    "investowiseBody": "Investowise is a pan-India stock pitch and industry analysis competition conducted under Nivesh. It saw ~1,000 teams and 50K+ impressions across IIM A, B, C, L, K, I, ISB and XLRI in the last two years. Investowise 2025 was sponsored by Motilal Oswal.",
+    "campuses": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "IIM Lucknow",
+      "IIM Kozhikode",
+      "IIM Indore",
+      "ISB",
+      "XLRI"
+    ]
+  },
+  "partner": {
+    "title": "Partner with Credence Capital",
+    "lead": "Reach a curated audience of finance-focused MBA students, faculty and alumni through events, competitions, research and digital channels — with packages built around your goals.",
+    "audienceTitle": "Who you reach",
+    "audienceBody": "IIM Lucknow admits some of India's most selective MBA cohorts. Our fund managers bring experience from, and intern at, firms such as Goldman Sachs, Barclays, Multiples, I Squared Capital, Kearney, EY IB, PwC and O3 Capital.\n\nBeyond the club, Nivesh reaches the wider IIM Lucknow student body, finance faculty and external participants. Investowise, our pan-India stock pitch competition, drew ~1,000 teams and 50K+ impressions across IIM A, B, C, L, K, I, ISB and XLRI over the last two years.",
+    "customTitle": "Need something different?",
+    "customBody": "Every package can be tailored. Sponsor a single flagship event, underwrite a competition prize pool, co-author a research report, or run a hiring-focused campus engagement. Tell us your objective and we will design around it.",
+    "formTitle": "Start a conversation",
+    "formBody": "Share a few details and a member of our partnerships team will respond within two working days with a tailored proposal."
+  },
+  "pillars": [
+    {
+      "id": "pl1",
+      "icon": "fund",
+      "title": "One of the oldest student-run funds",
+      "body": "Founded in 2005, Credence Capital manages one of the largest and oldest student-run investment funds, which has consistently outperformed the benchmark indices over the last decade."
+    },
+    {
+      "id": "pl2",
+      "icon": "knowledge",
+      "title": "Knowledge of markets",
+      "body": "We impart knowledge of financial markets and macroeconomic trends through various initiatives, including working with esteemed value investors."
+    },
+    {
+      "id": "pl3",
+      "icon": "community",
+      "title": "A culture of investing",
+      "body": "We foster an interest in investment and finance across the IIM Lucknow community by creating a conducive learning environment."
+    },
+    {
+      "id": "pl4",
+      "icon": "platform",
+      "title": "One platform for investors and B-schools",
+      "body": "Through Nivesh, our annual investment summit, and Investowise, a pan-India stock pitch competition, we bring leading investors and students from the country's top B-schools onto one platform."
+    }
+  ],
+  "formats": [
+    {
+      "id": "fm1",
+      "title": "Workshop",
+      "body": "To foster the interest of the entire batch in investing and personal finance, we invite investors with multi-baggers to their credit to explain their investment philosophy."
+    },
+    {
+      "id": "fm2",
+      "title": "Investowise",
+      "body": "The final round of a pan-India stock pitch competition held after the workshop, giving students from the country's top MBA colleges a chance to compete and learn."
+    },
+    {
+      "id": "fm3",
+      "title": "Speaker session",
+      "body": "Our flagship event, launched annually with a new theme, features stalwart investors with decades of industry experience sharing their insights."
+    },
+    {
+      "id": "fm4",
+      "title": "Panel discussion",
+      "body": "The summit culminates in a panel discussion on prevailing market opportunities and macroeconomic trends."
+    }
+  ],
+  "investowise": [
+    {
+      "id": "iw1",
+      "edition": "2025",
+      "registrations": "850+",
+      "teamSize": "1–3",
+      "impressions": "30K+",
+      "prizePool": "₹1.6L",
+      "poweredBy": "Motilal Oswal"
+    },
+    {
+      "id": "iw2",
+      "edition": "2024",
+      "registrations": "650+",
+      "teamSize": "2–3",
+      "impressions": "25K+",
+      "prizePool": "₹90K",
+      "poweredBy": "Screener"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "image": "/static/img/seed/credence-team.jpg",
+      "caption": "The Credence Capital team"
+    },
+    {
+      "id": "g2",
+      "image": "/static/img/seed/nivesh-audience.jpg",
+      "caption": "Speakers and students at Nivesh"
+    },
+    {
+      "id": "g3",
+      "image": "/static/img/seed/speaker-session.jpg",
+      "caption": "A speaker session on campus"
+    },
+    {
+      "id": "g4",
+      "image": "/static/img/seed/campus-rotunda.jpg",
+      "caption": "The IIM Lucknow campus"
+    },
+    {
+      "id": "g5",
+      "image": "/static/img/seed/campus-corridor.jpg",
+      "caption": "Campus corridors"
+    }
+  ],
+  "stats": [
+    {
+      "id": "s1",
+      "value": "2005",
+      "label": "Year founded"
+    },
+    {
+      "id": "s2",
+      "value": "175%",
+      "label": "Return in 16 months, 2013–15"
+    },
+    {
+      "id": "s3",
+      "value": "~1,000",
+      "label": "Investowise teams, last 2 years"
+    },
+    {
+      "id": "s4",
+      "value": "50K+",
+      "label": "Investowise impressions"
+    },
+    {
+      "id": "s5",
+      "value": "20+",
+      "label": "Investors and fund managers hosted"
+    }
+  ],
+  "benefits": [
+    {
+      "id": "b1",
+      "icon": "talent",
+      "title": "Early access to top finance talent",
+      "body": "Meet students before placement season through case challenges, pre-placement talks and résumé books shared with your recruiters."
+    },
+    {
+      "id": "b2",
+      "icon": "brand",
+      "title": "Brand presence where it matters",
+      "body": "Naming rights on flagship events, co-branded competitions and visibility across our campus and digital channels."
+    },
+    {
+      "id": "b3",
+      "icon": "insight",
+      "title": "Thought leadership",
+      "body": "Address Nivesh from the speaker-session stage alongside past speakers such as Aswath Damodaran, Prashant Jain and Sankaran Naren, or set a business problem for our case competition."
+    },
+    {
+      "id": "b4",
+      "icon": "audience",
+      "title": "A national B-school audience",
+      "body": "Investowise drew ~1,000 teams and 50K+ impressions across IIM A, B, C, L, K, I, ISB and XLRI over the last two years."
+    },
+    {
+      "id": "b5",
+      "icon": "network",
+      "title": "An engaged alumni network",
+      "body": "Connect with two decades of former fund managers now working across investment banking, private equity, asset management and consulting."
+    },
+    {
+      "id": "b6",
+      "icon": "impact",
+      "title": "Measurable outcomes",
+      "body": "Partners get access to the participant database and a post-event report covering reach, registrations and impressions."
+    }
+  ],
+  "tiers": [
+    {
+      "id": "t1",
+      "name": "Title Sponsor",
+      "price": "₹2,00,000+",
+      "blurb": "The headline partnership for Nivesh 2026, with the speaker-session stage, on-ground activation and a case competition built around your business.",
+      "perks": [
+        "Address the audience via the speaker session platform",
+        "Logo on main posters, flex, certificates and social media",
+        "Link to your website on the Credence Capital website",
+        "Video presentation played between events",
+        "Personalised souvenirs presented to speakers and winners",
+        "Stall or canopy at the summit",
+        "Promotional events in an allotted area",
+        "Display of products and services at strategic locations",
+        "Promotional banners and posters",
+        "Access to the participant database",
+        "A business problem solved through a case competition"
+      ],
+      "featured": true,
+      "available": "1 slot"
+    },
+    {
+      "id": "t2",
+      "name": "Power Sponsor",
+      "price": "₹1,00,000+",
+      "blurb": "Strong visibility across Nivesh and Investowise, with participant access and your own workshop for students.",
+      "perks": [
+        "Logo on main posters, flex, certificates and social media",
+        "Link to your website on the Credence Capital website",
+        "Video presentation played between events",
+        "Personalised souvenirs presented to speakers and winners",
+        "Display of products and services at strategic locations",
+        "Access to the participant database",
+        "Conduct workshops"
+      ],
+      "featured": false,
+      "available": ""
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "c1",
+      "title": "Nivesh 2026: Annual Investment Summit",
+      "status": "active",
+      "summary": "Help us bring fund managers, investors and founders to campus for our flagship summit on Indian markets.",
+      "goal": 800000,
+      "raised": 0,
+      "deadline": "2027-01-15",
+      "uses": [
+        "Speaker travel and hosting",
+        "Venue, production and live streaming",
+        "Participant kits and certificates"
+      ],
+      "image": ""
+    },
+    {
+      "id": "c2",
+      "title": "Investowise 2026–27 Prize Pool",
+      "status": "active",
+      "summary": "Fund the prize pool for our pan-India stock pitch competition and put your brand in front of every finalist. Last year's prizes were worth ₹1.6L.",
+      "goal": 300000,
+      "raised": 0,
+      "deadline": "2027-02-10",
+      "uses": [
+        "Prize money for winners and runners-up",
+        "Data and research tools for finalists",
+        "Jury and finale logistics"
+      ],
+      "image": ""
+    }
+  ],
+  "sponsors": [
+    {
+      "id": "sp1",
+      "name": "Motilal Oswal",
+      "logo": "",
+      "url": "https://www.motilaloswal.com/",
+      "category": "Event Partner",
+      "since": "Investowise 2025–26",
+      "visible": true
+    },
+    {
+      "id": "sp2",
+      "name": "Screener",
+      "logo": "",
+      "url": "https://www.screener.in/",
+      "category": "Event Partner",
+      "since": "Investowise 2024–25",
+      "visible": true
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "q1",
+      "quote": "Members of Credence Capital apply their learning of financial and valuation concepts in their activities to benefit from market opportunities through intelligent risk taking. Not just trading, they are also involved in spreading their knowledge in IIM Lucknow community. They remain updated on what happens in the business world, set high targets and break them every time.",
+      "name": "Dr. Ajay Garg",
+      "title": "Chairman, PGP",
+      "org": "IIM Lucknow"
+    },
+    {
+      "id": "q2",
+      "quote": "As an investment fund, it has brought smiles on the faces of its investors by delivering returns beyond their expectations. As a club, Credence has spread interest in finance, and trading in particular, among the students, building knowledge of finance and economic developments for students from diverse backgrounds.",
+      "name": "Dr. Madhumita Chakraborty",
+      "title": "Chair, Finance Area",
+      "org": "IIM Lucknow"
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "title": "Nivesh 2026: Annual Investment Summit",
+      "category": "Flagship",
+      "date": "2027-01-24",
+      "location": "IIM Lucknow campus",
+      "summary": "A workshop, the Investowise final, a themed speaker session and a closing panel on market opportunities and macro trends. (Date to be confirmed.)",
+      "image": "",
+      "link": "/nivesh",
+      "reach": "",
+      "sponsorSlot": true
+    },
+    {
+      "id": "e2",
+      "title": "Investowise 2026–27",
+      "category": "Competition",
+      "date": "2027-02-21",
+      "location": "Online + campus finale",
+      "summary": "A pan-India stock pitch and industry analysis competition for B-school teams, judged by investment professionals. (Date to be confirmed.)",
+      "image": "",
+      "link": "/nivesh#investowise",
+      "reach": "",
+      "sponsorSlot": true
+    },
+    {
+      "id": "e3",
+      "title": "Nivesh 2021",
+      "category": "Flagship",
+      "date": "2021-01-03",
+      "location": "",
+      "summary": "Five speaker sessions with Rahul Mukim (Carlyle), Kalpen Parekh (DSP Mutual Fund), Sankaran Naren (ICICI Prudential AMC), Anand Lunia (India Quotient) and Mihir Vora (Max Life Insurance), alongside the Investowise competition.",
+      "image": "",
+      "link": "https://www.credencecapital.in/nivesh2021",
+      "reach": "~300 teams in Investowise",
+      "sponsorSlot": false
+    },
+    {
+      "id": "e4",
+      "title": "Nivesh 2019",
+      "category": "Flagship",
+      "date": "2019-12-08",
+      "location": "IIM Lucknow campus",
+      "summary": "Keynotes by Nithya Easwaran (Multiples PE), Siddhartha Rastogi (Ambit Capital), Mukul Arora (SAIF Partners) and Ramesh Damani, with a panel on investing across market cycles moderated by Bloomberg Quint's Alex Mathew.",
+      "image": "",
+      "link": "https://www.credencecapital.in/copy-of-investment-summit",
+      "reach": "",
+      "sponsorSlot": false
+    },
+    {
+      "id": "e5",
+      "title": "Nivesh 2018",
+      "category": "Flagship",
+      "date": "2018-12-02",
+      "location": "IIM Lucknow campus",
+      "summary": "\"Mastering investment and business cycles\": speaker sessions with leaders from Kotak Mahindra AMC, Multiples Equity, Motilal Oswal, ICICI Prudential and L&T Mutual Fund, a panel led by Mangalam Maloo, a value-investing workshop and a pan-India equity research competition.",
+      "image": "",
+      "link": "https://www.credencecapital.in/nivesh2018",
+      "reach": "",
+      "sponsorSlot": false
+    },
+    {
+      "id": "e6",
+      "title": "Value Investing Workshop with Screener.in",
+      "category": "Workshop",
+      "date": "2017-10-30",
+      "location": "IIM Lucknow campus",
+      "summary": "Pratyush and Ayush Mittal, founders of Screener.in, on bottom-up value investing, small caps at inflection points, and the red flags to check before buying a stock.",
+      "image": "",
+      "link": "https://www.credencecapital.in/value-investing-workshop-1",
+      "reach": "",
+      "sponsorSlot": false
+    }
+  ],
+  "research": [
+    {
+      "id": "r1",
+      "title": "Power Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Anshul",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_6a2a2a339c7f44928e75a95145262a37.pdf",
+      "link": ""
+    },
+    {
+      "id": "r2",
+      "title": "Pharma Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Priyanshu",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_ff7cc17bf35049f48cbbf4230677ce27.pdf",
+      "link": ""
+    },
+    {
+      "id": "r3",
+      "title": "BFSI Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Arav",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "",
+      "link": ""
+    },
+    {
+      "id": "r4",
+      "title": "Automobile Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Saharsh",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_f164892406b8419f92a8aa0afa83651d.pdf",
+      "link": ""
+    },
+    {
+      "id": "r5",
+      "title": "Information Technology Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Jitesh",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_df78a7f7c9714bd0adae112fa8ab409a.pdf",
+      "link": ""
+    },
+    {
+      "id": "r6",
+      "title": "FMCG Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Shazad",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_2d5279a901bb41bbb70d0f19f5b7239d.pdf",
+      "link": ""
+    },
+    {
+      "id": "r7",
+      "title": "Oil & Gas Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Sanskar",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_e9c7ae06930749d58c41e0e1e769d406.pdf",
+      "link": ""
+    },
+    {
+      "id": "r8",
+      "title": "Platform Business Sector Report 2023",
+      "type": "Sector Report",
+      "author": "Sanchit",
+      "date": "2023-01-01",
+      "summary": "Part of the 2023 series covering eight sectors.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_62a615e26d5c44c2b77c8e79a259eba1.pdf",
+      "link": ""
+    },
+    {
+      "id": "r9",
+      "title": "Automobiles Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_8ef5703922a6484cb48dd13b24e7e479.pdf",
+      "link": ""
+    },
+    {
+      "id": "r10",
+      "title": "Banking Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_7f17a7fc73a943bf883f3dccd46eab67.pdf",
+      "link": ""
+    },
+    {
+      "id": "r11",
+      "title": "Cement Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_b85043594431476d863a54c00a9486ee.pdf",
+      "link": ""
+    },
+    {
+      "id": "r12",
+      "title": "FMCG Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_7107b7503e7343519e9d43ffaa9c32e6.pdf",
+      "link": ""
+    },
+    {
+      "id": "r13",
+      "title": "IT Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_b2afede7409743a580c389874fd01c48.pdf",
+      "link": ""
+    },
+    {
+      "id": "r14",
+      "title": "Oil & Gas Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_dcb2807762f0499eb814493d669b4bc1.pdf",
+      "link": ""
+    },
+    {
+      "id": "r15",
+      "title": "Pharma Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_641c1898b8414f488611ffcac7f16bbe.pdf",
+      "link": ""
+    },
+    {
+      "id": "r16",
+      "title": "Power Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_432a185c2bfe4fa5b48d67a8951123c3.pdf",
+      "link": ""
+    },
+    {
+      "id": "r17",
+      "title": "Telecom Sector Report",
+      "type": "Sector Report",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "From our earlier series of sector reports.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_ff75500be24f4c2aa45692428c5c77fb.pdf",
+      "link": ""
+    },
+    {
+      "id": "r18",
+      "title": "The Bottom Line: Financing the Green Frontier",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-09-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_a3bf0f5d906849f78cec90fcab48de36.pdf",
+      "link": ""
+    },
+    {
+      "id": "r19",
+      "title": "The Bottom Line: Indian IPO Boom: A Bubble About to Burst?",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-08-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_2e78462eadc848c98bba5cf8f79d6e88.pdf",
+      "link": ""
+    },
+    {
+      "id": "r20",
+      "title": "The Bottom Line: FinTech Edition",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-07-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_b984f6d8772e4fa2bd033d28460db21a.pdf",
+      "link": ""
+    },
+    {
+      "id": "r21",
+      "title": "The Bottom Line: Unicorn Boom",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-06-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "",
+      "link": ""
+    },
+    {
+      "id": "r22",
+      "title": "The Bottom Line: PE/VC",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-05-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "",
+      "link": ""
+    },
+    {
+      "id": "r23",
+      "title": "The Bottom Line: Indian Banking System",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-04-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_36faca9583aa4289999471e8ecde13f4.pdf",
+      "link": ""
+    },
+    {
+      "id": "r24",
+      "title": "The Bottom Line: Market Efficiency",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-03-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_d5f20015111841fdb1ec016062782914.pdf",
+      "link": ""
+    },
+    {
+      "id": "r25",
+      "title": "The Bottom Line: Personal Wealth Management",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-02-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_dcc1571d40ac4bb9ac3584c20ba0d77a.pdf",
+      "link": ""
+    },
+    {
+      "id": "r26",
+      "title": "The Bottom Line: Mergers & Acquisitions",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2021-01-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_ab17f40e9a544217ae96cb4624a0a849.pdf",
+      "link": ""
+    },
+    {
+      "id": "r27",
+      "title": "The Bottom Line: Role of Monetary Policy in the World Today",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2020-12-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_fb49f59fb57145c9b78edea3ecd40c7a.pdf",
+      "link": ""
+    },
+    {
+      "id": "r28",
+      "title": "The Bottom Line: Technology in Finance",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2020-11-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_260f074a041740bfaed8e1ededfd5167.pdf",
+      "link": ""
+    },
+    {
+      "id": "r29",
+      "title": "The Bottom Line: Impending Threat of Bankruptcies",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2020-10-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_2063f95ddbab4a30b1d4c7c6b2cfdb27.pdf",
+      "link": ""
+    },
+    {
+      "id": "r30",
+      "title": "The Bottom Line: Exploring Alternative Investments",
+      "type": "The Bottom Line",
+      "author": "",
+      "date": "2020-09-01",
+      "summary": "The monthly magazine published by the finance clubs of IIMs A, B, C and L.",
+      "file": "https://www.credencecapital.in/_files/ugd/cc31e9_8a98cb3131d54f49b4e54240bcc388b8.pdf",
+      "link": ""
+    },
+    {
+      "id": "r31",
+      "title": "Why we got it all so wrong",
+      "type": "Blog",
+      "author": "Credence Capital",
+      "date": "2020-07-12",
+      "summary": "3 min read",
+      "file": "",
+      "link": "https://www.credencecapital.in/post/why-we-got-it-all-so-wrong"
+    },
+    {
+      "id": "r32",
+      "title": "Learning to make trade-offs: An essential part of investing",
+      "type": "Blog",
+      "author": "Credence Capital",
+      "date": "2020-07-12",
+      "summary": "1 min read",
+      "file": "",
+      "link": "https://www.credencecapital.in/post/learning-to-make-trade-offs-an-essential-part-of-investing"
+    },
+    {
+      "id": "r33",
+      "title": "What does the low(er) interest rate environment mean for India?",
+      "type": "Blog",
+      "author": "Credence Capital",
+      "date": "2020-07-12",
+      "summary": "1 min read",
+      "file": "",
+      "link": "https://www.credencecapital.in/post/what-does-the-lower-interest-rate-environment-mean-for-india"
+    },
+    {
+      "id": "r34",
+      "title": "Why Central Banks Matter",
+      "type": "Blog",
+      "author": "Credence Capital",
+      "date": "2020-07-12",
+      "summary": "6 min read",
+      "file": "",
+      "link": "https://www.credencecapital.in/post/why-central-banks-matter-1"
+    }
+  ],
+  "team": [
+    {
+      "id": "ct1",
+      "name": "Akshat Kala",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "I Squared Capital",
+      "photo": "/static/img/seed/team/akshat-kala.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct2",
+      "name": "Bhavesh Rathod",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Shapoorji Pallonji",
+      "photo": "/static/img/seed/team/bhavesh-rathod.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct3",
+      "name": "Dhruv Singh",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Barclays",
+      "photo": "/static/img/seed/team/dhruv-singh.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct4",
+      "name": "Raghav Maheshwari",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Multiples",
+      "photo": "/static/img/seed/team/raghav-maheshwari.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct5",
+      "name": "Rahil Parekh",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Accenture",
+      "photo": "/static/img/seed/team/rahil-parekh.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct6",
+      "name": "Somya Yadav",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Kearney",
+      "photo": "/static/img/seed/team/somya-yadav.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct7",
+      "name": "Tanay Gosar",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "Goldman Sachs",
+      "photo": "/static/img/seed/team/tanay-gosar.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "ct8",
+      "name": "Vibhav Agrawal",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2026–27",
+      "bio": "",
+      "internship": "P&G",
+      "photo": "/static/img/seed/team/vibhav-agrawal.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn1",
+      "name": "Bhavik Sapra",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "Reliance",
+      "photo": "/static/img/seed/team/bhavik-sapra.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn2",
+      "name": "Kaustuv Prateeq",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "I Squared Capital",
+      "photo": "/static/img/seed/team/kaustuv-prateeq.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn3",
+      "name": "Krisha Zaveri",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "EY IB",
+      "photo": "/static/img/seed/team/krisha-zaveri.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn4",
+      "name": "Kushveen Kochhar",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "O3 Capital",
+      "photo": "/static/img/seed/team/kushveen-kochhar.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn5",
+      "name": "Shubh Goyal",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "Samara Capital",
+      "photo": "/static/img/seed/team/shubh-goyal.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn6",
+      "name": "Sparsh Khiroria",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "EY IB",
+      "photo": "/static/img/seed/team/sparsh-khiroria.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn7",
+      "name": "Vedant Khanna",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "PwC",
+      "photo": "/static/img/seed/team/vedant-khanna.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "cn8",
+      "name": "Veer Shah",
+      "role": "Fund Manager",
+      "group": "Credence Team",
+      "batch": "Team 2027–28",
+      "bio": "",
+      "internship": "O3 Capital",
+      "photo": "/static/img/seed/team/veer-shah.jpg",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m1",
+      "name": "Aditya Gupta",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "Diploma in aircraft maintenance; 1.5 years at IndiGo. Active investor in Indian small and mid caps; cleared CFA Level 1.",
+      "internship": "Avendus (IB)",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m2",
+      "name": "Karan Khemani",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "B.Com (Hons.), St. Xavier's College, Kolkata. FRM and all three CFA levels; 2.5 years as an equity research analyst at VT Capital covering IT and metals.",
+      "internship": "Multiples PE",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m3",
+      "name": "Kedar Gattani",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "Chartered accountant (AIR 8, CA CPT). Interned at Deloitte; ran his own CA practice in fundraising, risk consulting and assurance.",
+      "internship": "Avendus (IB)",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m4",
+      "name": "Shreya",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "BMS (Finance), SSCBS, University of Delhi. 2+ years in private capital advisory for a global investment bank at TresVista.",
+      "internship": "Bain & Co.",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m5",
+      "name": "Sristi Bhimrajka",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "B.Com (Hons.), SRCC. Investment banking analyst at J.P. Morgan, Financial Institutions Group (EMEA); cleared CFA Level 1.",
+      "internship": "Bain & Co.",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m6",
+      "name": "Umang Dungarwal",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "BBA (Finance), NMIMS. Interned in wealth management and business development.",
+      "internship": "Dolat Capital",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m7",
+      "name": "Upanshu Mahawar",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "Economics, Shaheed Bhagat Singh College. 2.5 years as a research and investment analyst at TresVista; cleared CFA Level 2; active options trader.",
+      "internship": "JPMC Markets",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "m8",
+      "name": "Vishal Agarwal",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2023–25",
+      "bio": "Economics, SRCC. Investment analyst at Asha Ventures, an impact-focused VC; cleared CFA Level 1.",
+      "internship": "SBICap Ventures (Neev Fund)",
+      "photo": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "id": "a1",
+      "name": "Anshul",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "Lincoln International (IB)",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/anshul--verma/",
+      "email": ""
+    },
+    {
+      "id": "a2",
+      "name": "Arav Sangai",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "Multiples PE",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/arav-s-7b6b38122/",
+      "email": ""
+    },
+    {
+      "id": "a3",
+      "name": "Jitesh Kumar Prasad",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "Berger Paints",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/jitesh-k-prasad/",
+      "email": ""
+    },
+    {
+      "id": "a4",
+      "name": "Priyanshu Jain",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "J.P. Morgan Chase Markets",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/priyanshu-jain-bb4193179/",
+      "email": ""
+    },
+    {
+      "id": "a5",
+      "name": "Saharsh Singhania",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "McKinsey & Co.",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/saharsh-singhania/",
+      "email": ""
+    },
+    {
+      "id": "a6",
+      "name": "Sanchit Gangwani",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "Avendus",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/sanchit-gangwani/",
+      "email": ""
+    },
+    {
+      "id": "a7",
+      "name": "Sanskar Patel",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "HDFC IB (ECM)",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/sanskar-patel-847012166/",
+      "email": ""
+    },
+    {
+      "id": "a8",
+      "name": "Shazad Shroff",
+      "role": "Fund Manager",
+      "group": "Alumni",
+      "batch": "PGP 2022–24",
+      "bio": "",
+      "internship": "Bain & Co.",
+      "photo": "",
+      "linkedin": "https://www.linkedin.com/in/shazad-shroff/",
+      "email": ""
+    }
+  ],
+  "press": [
+    {
+      "id": "p1",
+      "outlet": "Bloomberg Quint",
+      "title": "These IIM-Lucknow Students Are Also Managing Their Classmates' Money",
+      "date": "2019-12-13",
+      "summary": "By Alex Mathew. Eight students each year manage an investment fund; the club behind it was then in its 15th year.",
+      "highlight": "",
+      "highlightLabel": "",
+      "url": "https://www.bloombergquint.com/markets/these-iim-lucknow-students-are-also-managing-their-classmates-money"
+    },
+    {
+      "id": "p2",
+      "outlet": "InsideIIM",
+      "title": "A Finance Club for Investments at IIM Lucknow",
+      "date": "2018-09-07",
+      "summary": "Devisa Todi and Shubham Jain on how the club manages money.",
+      "highlight": "",
+      "highlightLabel": "",
+      "url": "https://insideiim.com/finance-club-investments-iim-lucknow-credence-capital-mahindra-war-room"
+    },
+    {
+      "id": "p3",
+      "outlet": "Business Standard",
+      "title": "IIM-L students' fund outperforms Nifty",
+      "date": "2015-02-23",
+      "summary": "The fund achieved 175% returns in 16 months while the Nifty rose 50% over the same 2013–15 period.",
+      "highlight": "175%",
+      "highlightLabel": "Return in 16 months (2013–15) vs. Nifty's 50%",
+      "url": "https://www.business-standard.com/article/markets/iim-l-students-fund-outperforms-nifty-115022300600_1.html"
+    },
+    {
+      "id": "p4",
+      "outlet": "The Hindu BusinessLine",
+      "title": "Managing funds at IIML keeps students ahead of the curve",
+      "date": "2013-02-23",
+      "summary": "",
+      "highlight": "",
+      "highlightLabel": "",
+      "url": "http://www.thehindubusinessline.com/markets/managing-funds-at-iimlucknow-keeps-students-ahead-of-the-curve/article4449454.ece"
+    },
+    {
+      "id": "p5",
+      "outlet": "India PR Wire",
+      "title": "Credence Capital outperforms the NIFTY",
+      "date": "2013-02-21",
+      "summary": "The Equities Fund returned 20.10% against the Nifty's 18.6%; the Derivatives Fund returned 29.8%.",
+      "highlight": "29.8%",
+      "highlightLabel": "Derivatives fund return (2013), alongside 20.1% on equities vs. Nifty's 18.6%",
+      "url": "http://www.indiaprwire.com/pressrelease/education/20130221156369.htm"
+    },
+    {
+      "id": "p6",
+      "outlet": "India Today",
+      "title": "Young IIM graduates' fund gives record fat returns",
+      "date": "2011-03-15",
+      "summary": "Students at IIM Lucknow delivered market-beating returns while many seasoned fund managers trailed their benchmarks.",
+      "highlight": "",
+      "highlightLabel": "",
+      "url": "http://indiatoday.intoday.in/story/young-iim-graduates%E2%80%99-mutual-fund-gives-record-fat-returns/1/132435.html"
+    },
+    {
+      "id": "p7",
+      "outlet": "Mint",
+      "title": "Meet the young student fund managers of IIMs, B-schools",
+      "date": "2023-03-23",
+      "summary": "By Shipra Singh.",
+      "highlight": "",
+      "highlightLabel": "",
+      "url": ""
+    }
+  ],
+  "speakers": [
+    {
+      "id": "k1",
+      "name": "Nithya Easwaran",
+      "title": "Managing Director",
+      "org": "Multiples Private Equity",
+      "event": "Nivesh 2018 & 2019",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k2",
+      "name": "Dheeraj Mehta",
+      "title": "Director",
+      "org": "Temasek",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k3",
+      "name": "Ramesh Damani",
+      "title": "Individual Investor",
+      "org": "",
+      "event": "Nivesh 2019",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k4",
+      "name": "Siddhartha Rastogi",
+      "title": "Managing Director",
+      "org": "Ambit Capital",
+      "event": "Nivesh 2019",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k5",
+      "name": "Rahul Mukim",
+      "title": "Principal",
+      "org": "Carlyle",
+      "event": "Nivesh 2021",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k6",
+      "name": "Harsha Upadhyaya",
+      "title": "CIO – Equity Investments",
+      "org": "Kotak Mahindra AMC",
+      "event": "Nivesh 2018",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k7",
+      "name": "Aswath Damodaran",
+      "title": "Professor of Finance",
+      "org": "NYU Stern School of Business",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k8",
+      "name": "Anish Tawakley",
+      "title": "Fund Manager",
+      "org": "ICICI Prudential AMC",
+      "event": "Nivesh 2018",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k9",
+      "name": "Vihang Naik",
+      "title": "Fund Manager",
+      "org": "L&T Mutual Fund",
+      "event": "Nivesh 2018",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k10",
+      "name": "Sankaran Naren",
+      "title": "CIO & Executive Director",
+      "org": "ICICI Prudential AMC",
+      "event": "Nivesh 2021",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k11",
+      "name": "Prashant Jain",
+      "title": "CIO",
+      "org": "HDFC Asset Management",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k12",
+      "name": "Anand Shah",
+      "title": "Deputy CEO",
+      "org": "BNP Paribas AM",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k13",
+      "name": "Porinju Veliyath",
+      "title": "MD & Portfolio Manager",
+      "org": "Equity Intelligence",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k14",
+      "name": "Avnish Jain",
+      "title": "Head of Fixed Income",
+      "org": "Canara Robeco AM",
+      "event": "",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k15",
+      "name": "Mihir Vora",
+      "title": "CIO & Senior Director",
+      "org": "Max Life Insurance",
+      "event": "Nivesh 2021",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k16",
+      "name": "Kalpen Parekh",
+      "title": "",
+      "org": "DSP Mutual Fund",
+      "event": "Nivesh 2021",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k17",
+      "name": "Anand Lunia",
+      "title": "",
+      "org": "India Quotient",
+      "event": "Nivesh 2021",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k18",
+      "name": "Akash Singhania",
+      "title": "Senior VP",
+      "org": "Motilal Oswal",
+      "event": "Nivesh 2018",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k19",
+      "name": "Mangalam Maloo",
+      "title": "Panel moderator",
+      "org": "",
+      "event": "Nivesh 2018",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "k20",
+      "name": "Pratyush & Ayush Mittal",
+      "title": "Founders",
+      "org": "Screener.in",
+      "event": "Value Investing Workshop",
+      "scope": "Credence Capital",
+      "photo": ""
+    },
+    {
+      "id": "ki1",
+      "name": "Dr. Wilfried Aulbur",
+      "title": "Senior Partner",
+      "org": "Roland Berger",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki2",
+      "name": "Meera Sanyal (late)",
+      "title": "Former CEO and Chairperson",
+      "org": "Royal Bank of Scotland",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki3",
+      "name": "Kalpana Morparia",
+      "title": "CEO",
+      "org": "J.P. Morgan India",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki4",
+      "name": "N. R. Narayana Murthy",
+      "title": "Founder",
+      "org": "Infosys",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki5",
+      "name": "Aditya Puri",
+      "title": "Former MD",
+      "org": "HDFC Bank",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki6",
+      "name": "Bunty Bohra",
+      "title": "Former MD",
+      "org": "Goldman Sachs India",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki7",
+      "name": "K. Subramanian",
+      "title": "Former Chief Economic Advisor",
+      "org": "Government of India",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki8",
+      "name": "Harsh Mariwala",
+      "title": "Chairman",
+      "org": "Marico",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki9",
+      "name": "N. Chandrasekaran",
+      "title": "Chairman, Tata Sons; Board of Governors",
+      "org": "IIM Lucknow",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki10",
+      "name": "Arun Sawhney",
+      "title": "Former MD and CEO",
+      "org": "Ranbaxy",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki11",
+      "name": "Amitabh Ghosh",
+      "title": "Former Governor",
+      "org": "Reserve Bank of India",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    },
+    {
+      "id": "ki12",
+      "name": "Gurcharan Das",
+      "title": "Former CEO",
+      "org": "P&G India",
+      "event": "",
+      "scope": "IIM Lucknow",
+      "photo": ""
+    }
+  ],
+  "faqs": [
+    {
+      "id": "f0",
+      "question": "What are the sponsorship brackets for Nivesh 2026?",
+      "answer": "Title Sponsor starts at ₹2 lakh and Power Sponsor at ₹1 lakh. The benefits table on this page shows exactly what each includes, and every package can be tailored."
+    },
+    {
+      "id": "f1",
+      "question": "Can we customise a sponsorship package?",
+      "answer": "Yes. The tiers are starting points. Most partnerships are tailored around a specific objective such as hiring, brand awareness or product adoption."
+    },
+    {
+      "id": "f2",
+      "question": "How do payments and invoicing work?",
+      "answer": "Contributions are processed through IIM Lucknow's official channels, and a formal invoice and receipt are issued. Our team will share details once the scope is agreed."
+    },
+    {
+      "id": "f3",
+      "question": "What will we receive after the event?",
+      "answer": "Every partner receives a post-event report with reach, registrations, social impressions, photographs and participant feedback."
+    },
+    {
+      "id": "f4",
+      "question": "Can alumni or individuals contribute?",
+      "answer": "Absolutely. Alumni and individuals can pledge towards any of our active fundraising campaigns, and we will reach out with next steps."
+    }
+  ]
+}

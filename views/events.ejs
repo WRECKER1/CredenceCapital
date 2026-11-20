@@ -1,0 +1,20 @@
+<%- include('partials/top') %>
+<% const up = h.upcoming(c.events); const pa = h.past(c.events); %>
+<%- include('partials/page-head', { eyebrow: 'Events', heading: 'Summits, competitions and conversations', lead: 'Nivesh, our Annual Investment Summit, and Investowise anchor a calendar that brings practitioners and students together. Many events are open for sponsorship.' }) %>
+<section class="section section-first">
+  <div class="wrap">
+    <p class="eyebrow">Upcoming</p>
+    <% if (up.length) { %><div class="rows"><% up.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+    <% } else { %><p class="muted">New events will be announced soon.</p><% } %>
+  </div>
+</section>
+<% if (pa.length) { %>
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Past events</p>
+    <div class="rows"><% pa.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+<%- include('partials/cta', { title: 'Put your brand on our next event.', body: 'Title, presenting and prize-pool partnerships are available for Nivesh and Investowise.' }) %>
+<%- include('partials/bottom') %>

@@ -1,0 +1,185 @@
+<%- include('partials/top') %>
+<% const hm = c.home || {}; const stats = c.stats || []; const up = h.upcoming(c.events).slice(0, 3); const camps = (c.campaigns || []).filter(x => x.status === 'active'); const tiers = c.tiers || []; %>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow"><%= hm.heroEyebrow %></p>
+    <h1><%- h.accent(hm.heroTitle) %></h1>
+    <p class="hero-sub"><%= hm.heroSubtitle %></p>
+    <div class="btn-row">
+      <a class="btn btn-dark" href="/partner"><%= hm.heroPrimaryCta || 'Become a partner' %></a>
+      <% if (s.sponsorDeck) { %><a class="btn btn-soft" href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Sponsorship deck</a>
+      <% } else { %><a class="btn btn-soft" href="/about"><%= hm.heroSecondaryCta || 'Explore our work' %></a><% } %>
+    </div>
+  </div>
+  <svg class="hero-lines" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <% [[0.18, 70], [0.32, 40], [0.55, 10], [1, -22]].forEach(([o, off], i) => { %>
+      <polyline class="hl" style="--d:<%= i * 180 %>ms" fill="none" stroke="rgba(0,0,0,<%= o %>)" stroke-width="<%= i === 3 ? 1.4 : 1 %>"
+        points="<%= Array.from({ length: 19 }, (_, k) => `${k * 80},${Math.round(190 - k * 7.2 + off + (k % 3 === 1 ? 9 : k % 3 === 2 ? -4 : 0))}`).join(' ') %>"/>
+    <% }) %>
+  </svg>
+</section>
+
+<% if (stats.length) { %>
+<section class="stats-band">
+  <div class="wrap stats">
+    <% stats.forEach(x => { %><div class="stat"><b><%= x.value %></b><span><%= x.label %></span></div><% }) %>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split intro">
+      <div><p class="eyebrow">Who we are</p><h2><%= hm.introTitle %></h2></div>
+      <div class="prose"><%- h.paras(hm.introBody) %><a class="link" href="/about">More about the club →</a></div>
+    </div>
+    <%- include('partials/pillars') %>
+  </div>
+</section>
+
+<% const nv = c.nivesh || {}; if (nv.edition) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="nivesh-feature reveal">
+      <div class="nivesh-copy">
+        <p class="eyebrow eyebrow-light">Flagship · <%= nv.tagline %></p>
+        <h2><%= nv.edition %></h2>
+        <p><%= nv.lead %></p>
+        <ol class="nivesh-steps"><% (c.formats || []).forEach((f, i) => { %><li><span class="mono"><%= String(i + 1).padStart(2, '0') %></span><%= f.title %></li><% }) %></ol>
+        <div class="btn-row"><a class="btn btn-light" href="/nivesh">Explore <%= nv.edition %></a><a class="btn btn-ghost" href="/nivesh#sponsor">Sponsorship brackets</a></div>
+      </div>
+      <% if (nv.image) { %><div class="nivesh-photo" style="background-image:url('<%= nv.image %>')" role="img" aria-label="<%= nv.edition %>"></div><% } %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why partner</p>
+      <h2><%= hm.whyTitle %></h2>
+    </div>
+    <div class="cards-3">
+      <% (c.benefits || []).forEach(b => { %>
+        <article class="feature reveal">
+          <div class="panel"><%- include('partials/illus', { kind: b.icon }) %></div>
+          <h3><%= b.title %></h3>
+          <p><%= b.body %></p>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<% if (tiers.length) { %>
+<section class="section" id="tiers">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sponsorship packages</p>
+      <h2>Choose your level of partnership</h2>
+    </div>
+    <div class="explorer" data-explorer>
+      <div class="explorer-list">
+        <% tiers.forEach((t, i) => { %>
+          <button class="explorer-item <%= i === 0 ? 'open' : '' %>" data-i="<%= i %>" aria-expanded="<%= i === 0 %>">
+            <span class="explorer-title"><%= t.name %><% if (t.featured) { %><span class="chip-mini">Recommended</span><% } %></span>
+            <span class="explorer-body"><%= t.blurb %></span>
+          </button>
+        <% }) %>
+        <a class="btn btn-dark" href="/nivesh#sponsor">Compare benefits</a>
+      </div>
+      <div class="panel explorer-panel">
+        <% tiers.forEach((t, i) => { %>
+          <div class="mock <%= i === 0 ? 'show' : '' %>" data-i="<%= i %>">
+            <div class="mock-head"><span class="mock-avatar"><%= h.initials(t.name) %></span><strong><%= t.name %></strong>
+              <% if (t.available) { %><span class="badge-green"><%= t.available %></span><% } %></div>
+            <span class="mock-label">Contribution</span>
+            <div class="mock-figure"><%= t.price %></div>
+            <ul class="mock-list">
+              <% (t.perks || []).slice(0, 4).forEach(p => { %><li><span class="tick-box"></span><%= p %></li><% }) %>
+            </ul>
+            <a class="mock-cta" href="/partner?tier=<%= encodeURIComponent(t.name) %>#enquire">Enquire about <%= t.name %> →</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.press || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Track record</p><h2>A track record covered by the financial press</h2></div>
+      <a class="link" href="/about#press">All coverage →</a>
+    </div>
+    <%- include('partials/press') %>
+  </div>
+</section>
+<% } %>
+
+<% if (camps.length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Fundraising</p><h2>Back a campaign</h2></div>
+      <a class="link" href="/partner#campaigns">All campaigns →</a>
+    </div>
+    <div class="cards-2"><% camps.slice(0, 2).forEach(x => { %><%- include('partials/campaign', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<% const t0 = (c.testimonials || [])[0]; if (t0) { %>
+<section class="section">
+  <div class="wrap">
+    <figure class="story reveal">
+      <svg class="story-lines" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><% for (let i = 0; i < 14; i++) { %><path d="M<%= -40 + i * 46 %> 400 Q <%= 120 + i * 40 %> <%= 250 - i * 6 %> 640 <%= 40 + i * 22 %>" fill="none" stroke="rgba(255,255,255,<%= 0.04 + i * 0.008 %>)"/><% } %></svg>
+      <p class="eyebrow eyebrow-light">From the faculty</p>
+      <blockquote>“<%= t0.quote %>”</blockquote>
+      <figcaption><strong><%= t0.name %></strong> · <%= [t0.title, t0.org].filter(Boolean).join(', ') %></figcaption>
+    </figure>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.speakers || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">On our stage</p><h2>Speakers who have joined us</h2></div>
+      <a class="link" href="/partner#enquire">Host a session →</a>
+    </div>
+    <%- include('partials/speakers') %>
+  </div>
+</section>
+<% } %>
+
+<% if (up.length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Calendar</p><h2>Upcoming events</h2></div>
+      <a class="link" href="/events">Full calendar →</a>
+    </div>
+    <div class="rows"><% up.forEach(x => { %><%- include('partials/event', { x }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <div><p class="eyebrow">Partners</p><h2>In good company</h2></div>
+      <a class="link" href="/partner#enquire">Join them →</a>
+    </div>
+    <%- include('partials/sponsors') %>
+  </div>
+</section>
+
+<%- include('partials/cta', { title: hm.ctaTitle, body: hm.ctaBody }) %>
+<%- include('partials/pledge-modal') %>
+<%- include('partials/bottom') %>

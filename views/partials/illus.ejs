@@ -1,0 +1,48 @@
+<%# Monochrome line-art illustrations for grey panels. `kind` selects the drawing. %>
+<% const L = '#c8c8c8', D = '#111'; %>
+<svg class="illus" viewBox="0 0 400 300" aria-hidden="true" font-family="JetBrains Mono, monospace">
+<% if (kind === 'talent') { const hs = [40, 52, 68, 86, 110, 138, 172, 212]; %>
+  <% hs.forEach((v, i) => { const x = 100 + i * 28, y = 250 - v, last = i === hs.length - 1; %>
+    <line x1="<%= x %>" y1="250" x2="<%= x %>" y2="<%= y %>" stroke="<%= last ? D : L %>" stroke-width="<%= last ? 1.5 : 1 %>" class="draw" style="--d:<%= i * 90 %>ms"/>
+    <rect x="<%= x - 3.5 %>" y="<%= y - 3.5 %>" width="7" height="7" rx="1.5" fill="<%= last ? D : '#f4f4f4' %>" stroke="<%= last ? D : '#9a9a9a' %>"/>
+  <% }) %>
+  <text x="296" y="22" font-size="11" fill="#555" text-anchor="middle">PRE-PLACEMENT</text>
+<% } else if (kind === 'audience') { %>
+  <% for (let r = 0; r < 5; r++) for (let c = 0; c < 11; c++) { const on = [[1,3],[2,6],[0,8],[3,2],[4,7],[2,9],[1,5]].some(([a,b]) => a === r && b === c); %>
+    <rect x="<%= 52 + c * 28 %>" y="<%= 80 + r * 30 %>" width="8" height="8" rx="2" fill="<%= on ? D : 'none' %>" stroke="<%= on ? D : L %>"/>
+  <% } %>
+  <path d="M84 84 L136 144 M136 144 L220 114 M220 114 L304 84 M136 144 L276 204" stroke="#8a8a8a" stroke-dasharray="3 4" fill="none"/>
+  <rect x="150" y="246" width="100" height="24" rx="12" fill="<%= D %>"/><text x="200" y="262" font-size="10" fill="#fff" text-anchor="middle">B-SCHOOLS</text>
+<% } else if (kind === 'brand') { %>
+  <% [150, 126, 102, 78, 54].forEach((rx, i) => { %><ellipse cx="200" cy="<%= 150 + (i - 2) * 22 %>" rx="<%= rx + 40 %>" ry="<%= 20 + i * 2 %>" fill="none" stroke="<%= L %>"/><% }) %>
+  <circle cx="290" cy="106" r="4" fill="#f4f4f4" stroke="#9a9a9a"/><circle cx="118" cy="150" r="4" fill="#f4f4f4" stroke="#9a9a9a"/><circle cx="312" cy="172" r="4" fill="#f4f4f4" stroke="#9a9a9a"/>
+  <rect x="226" y="140" width="9" height="9" rx="2" fill="<%= D %>"/>
+  <line x1="230" y1="145" x2="196" y2="214" stroke="<%= D %>" stroke-width="1.2"/><circle cx="196" cy="214" r="3" fill="<%= D %>"/>
+  <text x="200" y="40" font-size="11" fill="#555" text-anchor="middle">YOUR BRAND</text>
+<% } else if (kind === 'insight') { %>
+  <rect x="96" y="56" width="208" height="140" rx="10" fill="#fff" stroke="#ddd"/>
+  <% [84, 100, 116].forEach((y, i) => { %><rect x="116" y="<%= y %>" width="<%= [120, 160, 96][i] %>" height="6" rx="3" fill="#e4e4e4"/><% }) %>
+  <polyline points="116,176 146,164 172,170 200,148 228,154 256,132 284,126" fill="none" stroke="<%= D %>" stroke-width="1.5"/>
+  <circle cx="284" cy="126" r="3.5" fill="<%= D %>"/>
+  <line x1="200" y1="196" x2="200" y2="236" stroke="<%= L %>"/>
+  <rect x="160" y="236" width="80" height="24" rx="12" fill="<%= D %>"/><text x="200" y="252" font-size="10" fill="#fff" text-anchor="middle">KEYNOTE</text>
+<% } else if (kind === 'network') { %>
+  <% const top = [['IB', 80], ['PE / VC', 160], ['AMC', 240], ['CONSULTING', 320]]; %>
+  <% for (let c = 0; c < 9; c++) { %><rect x="<%= 54 + c * 37 %>" y="48" width="7" height="7" rx="1.5" fill="none" stroke="<%= L %>"/><% } %>
+  <% top.forEach(([t, x]) => { %>
+    <rect x="<%= x - 4 %>" y="96" width="8" height="8" rx="2" fill="<%= D %>"/>
+    <text x="<%= x %>" y="84" font-size="9.5" fill="#333" text-anchor="middle"><%= t %></text>
+    <path d="M<%= x %> 104 V140 Q<%= x %> 152 <%= x < 200 ? x + 12 : x - 12 %> 152 H<%= x < 200 ? 176 : 224 %>" fill="none" stroke="<%= D %>" stroke-width="1.2"/>
+  <% }) %>
+  <rect x="150" y="140" width="100" height="24" rx="12" fill="<%= D %>"/><text x="200" y="156" font-size="10" fill="#fff" text-anchor="middle">ALUMNI</text>
+  <line x1="200" y1="164" x2="200" y2="236" stroke="#999"/><rect x="196" y="236" width="8" height="8" rx="2" fill="#f4f4f4" stroke="#999"/>
+  <text x="200" y="262" font-size="9.5" fill="#666" text-anchor="middle">CREDENCE</text>
+<% } else { %>
+  <% [200, 160, 120, 80].forEach(y => { %><line x1="70" y1="<%= y %>" x2="330" y2="<%= y %>" stroke="#e2e2e2"/><% }) %>
+  <polyline points="70,214 106,206 142,190 178,196 214,160 250,150 286,118 330,96" fill="none" stroke="<%= D %>" stroke-width="1.5" class="draw"/>
+  <polyline points="70,214 106,212 142,204 178,206 214,196 250,192 286,182 330,176" fill="none" stroke="#bbb" stroke-dasharray="3 4"/>
+  <circle cx="330" cy="96" r="4" fill="<%= D %>"/>
+  <rect x="262" y="58" width="86" height="22" rx="11" fill="#e7f6ef"/><text x="305" y="73" font-size="10" fill="#13a963" text-anchor="middle">+ REACH</text>
+  <text x="70" y="244" font-size="9.5" fill="#777">POST-EVENT REPORT</text>
+<% } %>
+</svg>

@@ -1,0 +1,12 @@
+<% const list = (c.sponsors || []).filter(x => x.visible !== false); const slots = Math.max(0, 6 - list.length); %>
+<div class="logo-wall">
+  <% list.forEach(x => { %>
+    <a class="logo-tile" <% if (x.url) { %>href="<%= x.url %>" target="_blank" rel="noopener"<% } %> title="<%= x.name %>">
+      <% if (x.logo) { %><img src="<%= x.logo %>" alt="<%= x.name %>" loading="lazy"><% } else { %><span class="wordmark"><%= x.name %></span><% } %>
+      <span class="mono-label"><%= x.category %></span>
+    </a>
+  <% }) %>
+  <% for (let i = 0; i < slots; i++) { %>
+    <a class="logo-tile logo-empty" href="/partner#enquire"><span class="wordmark">Your brand here</span><span class="mono-label">Available</span></a>
+  <% } %>
+</div>

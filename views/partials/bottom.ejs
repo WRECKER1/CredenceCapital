@@ -1,0 +1,47 @@
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="/"><%- include('logo') %><span><%= s.siteName %></span></a>
+      <p><%= s.tagline %><br><%= s.institute %></p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Club</h4>
+        <a href="/about">About</a><a href="/team">Fund managers</a><a href="/events">Events</a><a href="/about#press">Press</a>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <a href="/nivesh">Nivesh</a><a href="/partner#tiers">Sponsorship tiers</a><a href="/partner#campaigns">Fundraising</a><a href="/partner#enquire">Enquire</a>
+        <% if (s.sponsorDeck) { %><a href="<%= s.sponsorDeck %>" target="_blank" rel="noopener">Sponsorship deck</a><% } %>
+      </div>
+      <div>
+        <h4>Research</h4>
+        <a href="/research">Sector reports</a><a href="/research">The Bottom Line</a><a href="/research">Blog</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <% if (s.email) { %><a href="mailto:<%= s.email %>"><%= s.email %></a><% } %>
+        <% if (s.phone) { %><a href="tel:<%= s.phone.replace(/\s/g,'') %>"><%= s.phone %></a><% } %>
+        <a href="/contact">Contact form</a>
+      </div>
+      <form class="subscribe" data-endpoint="/api/subscribe">
+        <label class="sr" for="sub-email">Email address</label>
+        <input id="sub-email" name="email" type="email" placeholder="Get our market outlook" required>
+        <input name="website" class="hp" tabindex="-1" autocomplete="off">
+        <button type="submit" aria-label="Subscribe">→</button>
+        <p class="form-msg" role="status"></p>
+      </form>
+      <div class="footer-meta">
+        <% [['linkedin','LinkedIn'],['instagram','Instagram'],['facebook','Facebook'],['twitter','X'],['youtube','YouTube']].forEach(([k,l]) => { if (s[k]) { %><a href="<%= s[k] %>" target="_blank" rel="noopener"><%= l %></a><% } }) %>
+        <% if (typeof staticSite === 'undefined' || !staticSite) { %><a href="/admin/">CMS login</a><% } %>
+        <% if (s.showVisitorCounter !== false && visitors > 0) { %><span class="visitor-count" title="Unique visitors since launch"><span class="live-dot"></span><b class="mono"><%= Number(visitors).toLocaleString('en-IN') %></b> visitors</span><% } %>
+        <span>© <%= new Date().getFullYear() %> <%= s.siteName %></span>
+      </div>
+      <% if (s.disclaimer) { %><p class="footer-disclaimer"><%= s.disclaimer %></p><% } %>
+    </div>
+  </div>
+</footer>
+<script src="/static/js/site.js" defer></script>
+</body>
+</html>

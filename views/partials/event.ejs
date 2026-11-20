@@ -1,0 +1,13 @@
+<% const isUp = x.date && new Date(x.date) >= new Date(new Date().toDateString()); %>
+<article class="row-item event reveal">
+  <div class="row-date mono"><% if (x.date) { %><%= h.date(x.date, { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %><% } else { %>TBA<% } %></div>
+  <div class="row-main">
+    <h3><%= x.title %></h3>
+    <p class="muted"><%= x.summary %></p>
+    <div class="row-links">
+      <% if (x.link) { %><a class="link" href="<%= x.link %>" target="_blank" rel="noopener">Details →</a><% } %>
+      <% if (x.sponsorSlot && (!x.date || isUp)) { %><a class="link link-accent" href="/partner?event=<%= encodeURIComponent(x.title) %>#enquire">Sponsor this event →</a><% } %>
+    </div>
+  </div>
+  <div class="row-meta"><span class="chip"><%= x.category %></span><% if (x.location) { %><span class="mono-label"><%= x.location %></span><% } %><% if (x.reach) { %><span class="mono-label"><%= x.reach %></span><% } %></div>
+</article>

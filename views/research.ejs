@@ -1,0 +1,30 @@
+<%- include('partials/top') %>
+<% const list = h.byDateDesc(c.research); const types = [...new Set(list.map(r => r.type))]; %>
+<%- include('partials/page-head', { eyebrow: 'Research desk', heading: 'Research and publications', lead: 'Sector reports, The Bottom Line and commentary written by our fund managers.' }) %>
+<section class="section section-first">
+  <div class="wrap">
+    <% if (types.length > 1) { %>
+    <div class="filters" role="tablist">
+      <button class="chip-btn active" data-filter="all">All <span class="mono"><%= list.length %></span></button>
+      <% types.forEach(t => { %><button class="chip-btn" data-filter="<%= t %>"><%= t %> <span class="mono"><%= list.filter(r => r.type === t).length %></span></button><% }) %>
+    </div>
+    <% } %>
+    <div class="rows">
+      <% list.forEach(r => { const href = r.file || r.link; %>
+        <article class="row-item paper reveal" data-type="<%= r.type %>">
+          <div class="row-date mono"><%= h.date(r.date, { month: 'short', year: 'numeric' }).toUpperCase() %></div>
+          <div class="row-main">
+            <h3><% if (href) { %><a href="<%= href %>" target="_blank" rel="noopener"><%= r.title %></a><% } else { %><%= r.title %><% } %></h3>
+            <p class="muted"><%= [r.author ? `By ${r.author}` : '', r.summary].filter(Boolean).join(' · ') %></p>
+          </div>
+          <div class="row-meta"><span class="chip"><%= r.type %></span><% if (href) { %><a class="arrow" href="<%= href %>" target="_blank" rel="noopener" aria-label="Open <%= r.title %>"><%= r.file ? 'PDF ↗' : '↗' %></a><% } %></div>
+        </article>
+      <% }) %>
+    </div>
+    <div class="panel callout">
+      <div><h3>Co-publish with our research desk</h3><p class="muted">Research platforms, data providers and publishers can co-author sector reports and newsletters that reach students and alumni across the country.</p></div>
+      <a class="btn btn-dark" href="/partner?tier=Custom%20partnership#enquire">Partner with our research desk</a>
+    </div>
+  </div>
+</section>
+<%- include('partials/bottom') %>

@@ -1,0 +1,5 @@
+<div class="formats">
+  <% (c.formats || []).forEach((f, i) => { %>
+    <div class="card format reveal"><span class="format-n mono"><%= String(i + 1).padStart(2, '0') %></span><h3><%= f.title %></h3><p class="muted"><%= f.body %></p></div>
+  <% }) %>
+</div>

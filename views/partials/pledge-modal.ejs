@@ -1,0 +1,19 @@
+<dialog class="modal" id="pledge-modal">
+  <form class="form-card form-modal" data-endpoint="/api/enquiry">
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+    <p class="eyebrow">Pledge support</p>
+    <h3 data-campaign-title>Campaign</h3>
+    <p class="muted small">Tell us how you'd like to contribute. Our team will follow up with official payment details from IIM Lucknow — no payment is taken on this site.</p>
+    <input type="hidden" name="type" value="pledge">
+    <input type="hidden" name="campaign">
+    <input name="website" class="hp" tabindex="-1" autocomplete="off">
+    <div class="grid-2">
+      <label>Full name<input name="name" required></label>
+      <label>Email<input name="email" type="email" required></label>
+      <label>Organisation / batch<input name="organisation"></label>
+      <label>Pledge amount (₹)<input name="amount" type="number" min="0" step="1000"></label>
+    </div>
+    <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+    <div class="form-foot"><p class="form-msg" role="status"></p><button class="btn btn-dark" type="submit">Submit pledge</button></div>
+  </form>
+</dialog>

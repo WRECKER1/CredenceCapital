@@ -1,0 +1,73 @@
+<%- include('partials/top') %>
+<% const n = c.nivesh || {}; %>
+<%- include('partials/page-head', { eyebrow: n.tagline, heading: n.edition, lead: n.lead }) %>
+<div class="wrap page-head-cta btn-row">
+  <a class="btn btn-dark" href="#sponsor">Sponsor <%= n.edition %></a>
+  <a class="btn btn-soft" href="#investowise">About Investowise</a>
+</div>
+<% if (n.image) { %><div class="wrap"><img class="hero-photo reveal" src="<%= n.image %>" alt="<%= n.edition %>"></div><% } %>
+
+<% if ((c.formats || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">The format</p><h2>Four parts, one summit</h2></div>
+    <%- include('partials/formats') %>
+  </div>
+</section>
+<% } %>
+
+<section class="section" id="investowise">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Pan-India competition</p>
+      <h2><%= n.investowiseTitle %></h2>
+      <p class="lead"><%= n.investowiseBody %></p>
+      <% if ((n.campuses || []).length) { %><p class="mono-label campuses-label">Participants from</p><div class="campuses"><% n.campuses.forEach(x => { %><span class="chip"><%= x %></span><% }) %></div><% } %>
+    </div>
+    <div><%- include('partials/investowise') %></div>
+  </div>
+</section>
+
+<% if ((c.speakers || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">On the Nivesh stage</p><h2>Past speakers hosted by Credence Capital</h2></div>
+    <%- include('partials/speakers', { scope: 'Credence Capital' }) %>
+  </div>
+</section>
+<% } %>
+
+<section class="section" id="sponsor">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Sponsorship brackets</p><h2>Sponsor <%= n.edition %></h2>
+      <p class="lead">Two brackets, each with clearly defined benefits. Every package can be tailored to your goals.</p></div>
+    <%- include('partials/tiers', { compact: true }) %>
+    <h3 class="matrix-title">Benefits by bracket</h3>
+    <%- include('partials/matrix') %>
+  </div>
+</section>
+
+<% if ((c.sponsors || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Past partners</p><h2>Brands that have backed us</h2></div>
+    <%- include('partials/sponsors') %>
+  </div>
+</section>
+<% } %>
+
+<% if ((c.gallery || []).length) { %>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Gallery</p><h2>Scenes from Credence</h2></div>
+    <%- include('partials/gallery') %>
+  </div>
+</section>
+<% } %>
+
+<section class="section form-section" id="enquire">
+  <div class="wrap">
+    <%- include('partials/enquiry', { type: 'sponsorship', heading: `Partner with ${n.edition || 'Nivesh'}`, intro: (c.partner || {}).formBody }) %>
+  </div>
+</section>
+<%- include('partials/bottom') %>

@@ -1,0 +1,25 @@
+<% const press = h.byDateDesc(c.press); const hi = press.filter(p => p.highlight); %>
+<% if (hi.length) { %>
+<div class="cards-<%= hi.length > 2 ? 3 : 2 %> record">
+  <% hi.forEach((p, i) => { %>
+    <div class="panel record-item reveal">
+      <svg class="record-lines" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="<%= i % 2 ? '0,100 40,96 80,90 120,92 160,70 200,64 240,40 300,22' : '0,104 40,100 80,94 120,80 160,76 200,52 240,36 300,12' %>" fill="none" stroke="#111" stroke-width="1.4" class="draw"/>
+        <polyline points="0,104 60,100 120,96 180,92 240,86 300,82" fill="none" stroke="#bbb" stroke-dasharray="3 4"/>
+      </svg>
+      <b class="mono"><%= p.highlight %></b>
+      <span><%= p.highlightLabel %></span>
+      <small class="mono-label">Source: <% if (p.url) { %><a href="<%= p.url %>" target="_blank" rel="noopener"><%= p.outlet %></a><% } else { %><%= p.outlet %><% } %> · <%= h.date(p.date, { month: 'short', year: 'numeric' }) %></small>
+    </div>
+  <% }) %>
+</div>
+<% } %>
+<div class="rows press-rows">
+  <% press.forEach(p => { %>
+    <a class="row-item press-item reveal" <% if (p.url) { %>href="<%= p.url %>" target="_blank" rel="noopener"<% } %>>
+      <span class="row-date mono"><%= h.date(p.date, { month: 'short', year: 'numeric' }).toUpperCase() %></span>
+      <span class="row-main"><span class="press-title"><%= p.title %></span></span>
+      <span class="row-meta"><span class="mono-label"><%= p.outlet %></span><% if (p.url) { %><span class="arrow">↗</span><% } %></span>
+    </a>
+  <% }) %>
+</div>
