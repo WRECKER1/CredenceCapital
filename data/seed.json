@@ -18,7 +18,8 @@
     "announcementLink": "/nivesh#sponsor",
     "seoDescription": "Credence Capital, the investment club of IIM Lucknow, has managed one of the largest and oldest student-run investment funds since 2005. It hosts Nivesh, IIM Lucknow's Annual Investment Summit, and Investowise, a pan-India stock pitch competition.",
     "facebook": "https://www.facebook.com/credenceiiml/",
-    "disclaimer": "The Fund is a separate legal entity and IIM Lucknow does not bear any fund-related liabilities."
+    "disclaimer": "The Fund is a separate legal entity and IIM Lucknow does not bear any fund-related liabilities.",
+    "showVisitorCounter": true
   },
   "home": {
     "heroEyebrow": "The Investment Club of IIM Lucknow · Since 2005",
@@ -67,7 +68,7 @@
     "title": "Partner with Credence Capital",
     "lead": "Reach a curated audience of finance-focused MBA students, faculty and alumni through events, competitions, research and digital channels — with packages built around your goals.",
     "audienceTitle": "Who you reach",
-    "audienceBody": "IIM Lucknow admits some of India's most selective MBA cohorts. Our fund managers bring experience from, and intern at, firms such as Goldman Sachs, Barclays, Multiples, I Squared Capital, Kearney, EY, PwC and O3 Capital.\n\nBeyond the club, Nivesh reaches the wider IIM Lucknow student body, finance faculty and external participants. Investowise, our pan-India stock pitch competition, drew ~1,000 teams and 50K+ impressions across IIM A, B, C, L, K, I, ISB and XLRI over the last two years.",
+    "audienceBody": "IIM Lucknow admits some of India's most selective MBA cohorts. Our fund managers bring experience from, and intern at, firms such as Goldman Sachs, Barclays, Multiples, I Squared Capital, Kearney, EY IB, PwC and O3 Capital.\n\nBeyond the club, Nivesh reaches the wider IIM Lucknow student body, finance faculty and external participants. Investowise, our pan-India stock pitch competition, drew ~1,000 teams and 50K+ impressions across IIM A, B, C, L, K, I, ISB and XLRI over the last two years.",
     "customTitle": "Need something different?",
     "customBody": "Every package can be tailored. Sponsor a single flagship event, underwrite a competition prize pool, co-author a research report, or run a hiring-focused campus engagement. Tell us your objective and we will design around it.",
     "formTitle": "Start a conversation",
@@ -885,7 +886,7 @@
       "group": "Credence Team",
       "batch": "Team 2027–28",
       "bio": "",
-      "internship": "EY",
+      "internship": "EY IB",
       "photo": "/static/img/seed/team/krisha-zaveri.jpg",
       "linkedin": "",
       "email": ""
@@ -921,7 +922,7 @@
       "group": "Credence Team",
       "batch": "Team 2027–28",
       "bio": "",
-      "internship": "EY",
+      "internship": "EY IB",
       "photo": "/static/img/seed/team/sparsh-khiroria.jpg",
       "linkedin": "",
       "email": ""

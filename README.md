@@ -33,6 +33,7 @@ On first boot an admin account is created. If `ADMIN_PASSWORD` isn't set, a rand
 | **Press & track record** | Media coverage. Items with a highlight figure (e.g. 175%) appear in the track-record band |
 | **Past speakers** | The "Speakers who have joined us" grid shown to sponsors |
 | **Pages & Site settings** | Hero copy, About, Partner page text, contact details, socials, announcement bar, sponsorship deck PDF, logo |
+| **Website visitors** | A built-in, privacy-friendly counter. The total of unique visitors shows in the footer (switch it off in Site settings). The dashboard shows today, the last 7 and 30 days, a daily chart and the most viewed pages. It ignores bots and the CMS, uses a first-party cookie instead of third-party trackers, and never stores IP addresses. Data is kept in `DATA_DIR/analytics.json` |
 | **Media library** | Upload images and PDFs (drag & drop) and pick them from any field |
 | **Users** | *Admins* can do everything. *Editors* can edit content, media and leads, but can't manage users or backups |
 | **Backup & restore** | Download all data as one JSON file and restore content from it |

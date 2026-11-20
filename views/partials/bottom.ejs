@@ -35,6 +35,7 @@
       <div class="footer-meta">
         <% [['linkedin','LinkedIn'],['instagram','Instagram'],['facebook','Facebook'],['twitter','X'],['youtube','YouTube']].forEach(([k,l]) => { if (s[k]) { %><a href="<%= s[k] %>" target="_blank" rel="noopener"><%= l %></a><% } }) %>
         <a href="/admin/">CMS login</a>
+        <% if (s.showVisitorCounter !== false && visitors > 0) { %><span class="visitor-count" title="Unique visitors since launch"><span class="live-dot"></span><b class="mono"><%= Number(visitors).toLocaleString('en-IN') %></b> visitors</span><% } %>
         <span>© <%= new Date().getFullYear() %> <%= s.siteName %></span>
       </div>
       <% if (s.disclaimer) { %><p class="footer-disclaimer"><%= s.disclaimer %></p><% } %>

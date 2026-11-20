@@ -8,6 +8,7 @@ const store = require('./lib/store');
 const auth = require('./lib/auth');
 const schema = require('./lib/schema');
 const helpers = require('./lib/helpers');
+const analytics = require('./lib/analytics');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,7 +39,7 @@ app.use('/admin', express.static(path.join(__dirname, 'admin'), { index: 'index.
 // ---------------------------------------------------------------- public site
 function render(page, res, extra = {}) {
   const c = store.content;
-  res.render(page, { c, s: c.settings || {}, h: helpers, page, ...extra });
+  res.render(page, { c, s: c.settings || {}, h: helpers, page, visitors: analytics.totalVisitors(), ...extra });
 }
 
 const pages = {
@@ -52,7 +53,7 @@ const pages = {
   '/contact': ['contact', 'Contact'],
 };
 for (const [route, [view, title]] of Object.entries(pages)) {
-  app.get(route, (req, res) => render(view, res, { title }));
+  app.get(route, analytics.track, (req, res) => render(view, res, { title }));
 }
 
 // Simple in-memory rate limiter for public forms and login.
@@ -153,8 +154,12 @@ api.get('/dashboard', editor, (req, res) => {
     campaigns: campaigns.map((x) => ({ title: x.title, goal: x.goal, raised: x.raised })),
     recent: inbox.slice(0, 6),
     activity: store.activity.slice(0, 10),
+    analytics: analytics.summary(),
   });
 });
+
+api.get('/analytics', editor, (req, res) => res.json(analytics.summary()));
+api.post('/analytics/reset', admin, (req, res) => { analytics.reset(); store.log(req.user, 'reset visitor counter'); res.json({ ok: true }); });
 
 // Singletons
 api.get('/content/:key', editor, (req, res) => {

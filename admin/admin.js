@@ -122,6 +122,43 @@
     el('div', {}, el('h1', {}, title), sub ? el('p', {}, sub) : null),
     el('div', { class: 'actions' }, actions));
 
+  // ------------------------------------------------------------ visitors
+  function visitorsPanel(a) {
+    if (!a) return null;
+    const fmt = (n) => Number(n || 0).toLocaleString('en-IN');
+    const max = Math.max(1, ...a.series.map((x) => x.visitors));
+    const stat = (v, l) => el('div', { class: 'vstat' }, el('b', {}, fmt(v)), el('span', {}, l));
+    const day = (iso) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+    return el('section', { class: 'panel visitors' },
+      el('div', { class: 'panel-head' },
+        el('h2', {}, 'Website visitors'),
+        el('div', { class: 'actions' },
+          el('span', { class: 'muted small' }, `Counting since ${new Date(a.since).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`),
+          state.user.role === 'admin' ? el('button', { class: 'btn btn-sm btn-danger', onclick: async () => {
+            if (!confirmDo('Reset the visitor counter to zero? This clears all visitor history.')) return;
+            try { await api('/analytics/reset', { method: 'POST' }); toast('Visitor counter reset'); viewDashboard(); } catch (e) { fail(e); }
+          } }, 'Reset') : null)),
+      el('div', { class: 'panel-pad' },
+        el('div', { class: 'vstats' },
+          stat(a.totalVisitors, 'Unique visitors (all time)'),
+          stat(a.today.visitors, 'Visitors today'),
+          stat(a.last7.visitors, 'Visitors, last 7 days'),
+          stat(a.last30.visitors, 'Visitors, last 30 days'),
+          stat(a.totalViews, 'Page views (all time)')),
+        el('div', { class: 'vgrid' },
+          el('div', {},
+            el('div', { class: 'vchart', role: 'img', 'aria-label': 'Daily visitors over the last 30 days' },
+              a.series.map((x) => el('div', { class: 'vbar', title: `${day(x.date)}: ${x.visitors} visitor(s), ${x.views} view(s)` },
+                el('span', { style: `height:${Math.max(x.visitors ? 4 : 1, Math.round((x.visitors / max) * 100))}%` })))),
+            el('div', { class: 'vaxis small muted' }, el('span', {}, day(a.series[0].date)), el('span', {}, 'Daily unique visitors · last 30 days'), el('span', {}, 'Today'))),
+          el('div', {},
+            el('div', { class: 'small muted', style: 'margin-bottom:6px' }, 'Most viewed pages'),
+            a.topPages.length ? el('ul', { class: 'list vpages' }, a.topPages.map((p) => el('li', {},
+              el('div', { class: 'grow title' }, p.path === '/' ? 'Home' : p.path),
+              el('b', {}, fmt(p.views)))))
+              : el('p', { class: 'muted small' }, 'No visits yet.')))));
+  }
+
   // ------------------------------------------------------------ dashboard
   async function viewDashboard() {
     const d = await api('/dashboard');
@@ -138,6 +175,7 @@
         k(inr(d.counts.pledgedAmount), `Pledged across ${d.counts.pledges} pledge(s)`),
         k(d.counts.subscribers, 'Newsletter subscribers'),
         k(d.counts.sponsors, 'Partners listed')),
+      visitorsPanel(d.analytics),
       el('div', { class: 'grid dash' },
         el('div', { class: 'grid' },
           el('section', { class: 'panel' },
