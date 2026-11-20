@@ -1,0 +1,7 @@
+node_modules
+uploads
+screenshots
+data/*.json
+!data/seed.json
+data/.session-secret
+.env

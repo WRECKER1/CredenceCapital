@@ -1,7 +1,7 @@
 /* Credence CMS — single-page admin. No build step, no framework. */
 (() => {
   const app = document.getElementById('app');
-  const state = { user: null, schema: null, newCount: 0 };
+  const state = { user: null, schema: null, newCount: 0, status: {} };
 
   // ------------------------------------------------------------ utilities
   // DOM builder: el('div', {class: 'x', onclick}, child, 'text', ...). Text is never parsed as HTML.
@@ -110,7 +110,13 @@
   }
 
   function shell(content) {
-    const main = el('main', { class: 'main' },
+    const st = state.status || {};
+    const warn = st.ephemeral || st.mediaEphemeral ? el('div', { class: 'warn' },
+      el('b', {}, 'Storage not connected. '),
+      st.ephemeral ? 'Changes, leads and visitor counts are kept only temporarily and will be lost. ' : '',
+      st.mediaEphemeral ? 'Uploaded files will be lost. ' : '',
+      'Connect Upstash Redis and Vercel Blob to the Vercel project, then redeploy. See the README.') : null;
+    const main = el('main', { class: 'main' }, warn,
       el('button', { class: 'btn menu-btn', onclick: () => document.body.classList.toggle('menu-open') }, '☰ Menu'),
       content);
     app.replaceChildren(el('div', { class: 'shell' }, nav(), main));
@@ -451,7 +457,7 @@
 
   function dropzone(onDone) {
     const input = el('input', { type: 'file', multiple: true, accept: 'image/png,image/jpeg,image/webp,image/gif,image/avif,application/pdf', class: 'hide' });
-    const zone = el('div', { class: 'drop', onclick: () => input.click() }, el('b', {}, 'Drop files here or click to upload'), el('div', { class: 'small' }, 'PNG, JPG, WEBP, GIF, AVIF or PDF · up to 15 MB each'), input);
+    const zone = el('div', { class: 'drop', onclick: () => input.click() }, el('b', {}, 'Drop files here or click to upload'), el('div', { class: 'small' }, `PNG, JPG, WEBP, GIF, AVIF or PDF · up to ${(state.status && state.status.maxUploadMB) || 15} MB each`), input);
     const send = async (files) => {
       if (!files.length) return;
       const fd = new FormData();
@@ -582,6 +588,7 @@
 
   async function boot() {
     state.schema = await api('/schema');
+    state.status = await api('/status').catch(() => ({}));
     const d = await api('/dashboard').catch(() => null);
     if (d) state.newCount = d.counts.newEnquiries;
     if (!state.routed) { window.addEventListener('hashchange', route); state.routed = true; }

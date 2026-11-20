@@ -11,10 +11,11 @@
     "import-files": "node scripts/import-remote-files.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   },
   "license": "MIT",
   "dependencies": {
+    "@vercel/blob": "^2.0.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "multer": "^2.0.2"

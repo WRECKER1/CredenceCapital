@@ -33,7 +33,7 @@ On first boot an admin account is created. If `ADMIN_PASSWORD` isn't set, a rand
 | **Press & track record** | Media coverage. Items with a highlight figure (e.g. 175%) appear in the track-record band |
 | **Past speakers** | The "Speakers who have joined us" grid shown to sponsors |
 | **Pages & Site settings** | Hero copy, About, Partner page text, contact details, socials, announcement bar, sponsorship deck PDF, logo |
-| **Website visitors** | A built-in, privacy-friendly counter. The total of unique visitors shows in the footer (switch it off in Site settings). The dashboard shows today, the last 7 and 30 days, a daily chart and the most viewed pages. It ignores bots and the CMS, uses a first-party cookie instead of third-party trackers, and never stores IP addresses. Data is kept in `DATA_DIR/analytics.json` |
+| **Website visitors** | A built-in, privacy-friendly counter. The total of unique visitors shows in the footer (switch it off in Site settings). The dashboard shows today, the last 7 and 30 days, a daily chart and the most viewed pages. It ignores bots and the CMS, uses a first-party cookie instead of third-party trackers, and never stores IP addresses. Data is kept in `DATA_DIR/analytics.json`, or in Redis on Vercel |
 | **Media library** | Upload images and PDFs (drag & drop) and pick them from any field |
 | **Users** | *Admins* can do everything. *Editors* can edit content, media and leads, but can't manage users or backups |
 | **Backup & restore** | Download all data as one JSON file and restore content from it |
@@ -44,9 +44,38 @@ Tip: in headlines, wrap words in `*asterisks*` to show them in gold italics.
 
 The content model is in `lib/schema.js`. Add a field there and it appears in the CMS automatically. Then use it in the matching template in `views/`.
 
-## Deploying
+## Deploying to Vercel (recommended)
 
-The app needs a host with a **persistent disk**, because content and uploads are files. It does not suit serverless hosts like Vercel.
+The repo is ready for Vercel: `vercel.json` runs the whole app as a single serverless function. Vercel has no permanent disk, so storage moves to two Vercel add-ons. Both have free tiers.
+
+| What | Where it's stored on Vercel | Env vars (set automatically when you connect the add-on) |
+|---|---|---|
+| Content, leads, subscribers, users, activity, visitor counts | **Upstash Redis** (Vercel Marketplace) | `KV_REST_API_URL`, `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_*`) |
+| Media library uploads | **Vercel Blob** | `BLOB_READ_WRITE_TOKEN` |
+
+**Steps**
+
+1. **Import the repo.** In Vercel, go to **Add New → Project** and import `WRECKER1/CredenceCapital`. Name the project `credence-capital`. Leave the framework as **Other** and don't set a build command.
+2. **Choose the branch to deploy.** Vercel deploys the default branch to production. Either merge this branch into `main`, or set **Settings → Git → Production Branch** to this branch.
+3. **Add Redis.** Under the project's **Storage** tab, choose **Create Database → Upstash for Redis** (free plan) and connect it to the project.
+4. **Add Blob storage.** Still under **Storage**, choose **Create → Blob** and connect it to the project.
+5. **Set environment variables** under **Settings → Environment Variables**:
+   - `ADMIN_EMAIL` and `ADMIN_PASSWORD`: the first CMS login, created on the first visit. Change the password afterwards under *My account*.
+   - `SESSION_SECRET` (optional): a long random string. If it's missing, one is generated and kept in Redis.
+6. **Redeploy** under **Deployments → ⋯ → Redeploy**. Then open `/admin`.
+
+The first request seeds the site with the content in `data/seed.json`.
+
+If Redis or Blob isn't connected, the site still runs, but the CMS shows a red warning that changes and uploads won't be kept.
+
+**Vercel limits**
+
+- **Uploads:** each upload through the CMS is capped at **4 MB**, because of Vercel's request size limit. For a bigger file, like the sponsorship deck PDF, upload it anywhere (Google Drive, Dropbox, Blob dashboard) and paste the link into the field.
+- **Locked out?** Run `npm run reset-password -- you@iiml.ac.in 'new-password'` locally, with `KV_REST_API_URL` and `KV_REST_API_TOKEN` copied from Vercel. It writes straight to the production database.
+
+## Deploying elsewhere (Docker, VPS, Render, Railway)
+
+Any host with a **persistent disk** works with no add-ons: data is stored as files.
 
 - **Docker:** `docker build -t credence . && docker run -p 3000:3000 -v credence-data:/data -e ADMIN_PASSWORD=... credence`
 - **Render / Railway / Fly.io / a VPS:** run `npm start` and mount a disk. Point `DATA_DIR` and `UPLOAD_DIR` at it.
@@ -54,13 +83,23 @@ The app needs a host with a **persistent disk**, because content and uploads are
 | Env var | Purpose |
 |---|---|
 | `PORT` | HTTP port (default 3000) |
-| `DATA_DIR` | Where content, leads, users live (default `./data`) |
+| `DATA_DIR` | Where content, leads, users and visitor counts live (default `./data`) |
 | `UPLOAD_DIR` | Where uploaded media lives (default `./uploads`) |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | First admin account (used only when no users exist) |
-| `SESSION_SECRET` | Optional; otherwise generated and stored in `DATA_DIR` |
+| `SESSION_SECRET` | Optional; otherwise generated and stored with the data |
 | `NODE_ENV=production` | Marks cookies `Secure` (serve over HTTPS) |
+| `KV_REST_API_URL` / `KV_REST_API_TOKEN` | Optional: use Upstash Redis instead of files |
+| `BLOB_READ_WRITE_TOKEN` | Optional: use Vercel Blob instead of the uploads folder |
 
-Back up `DATA_DIR` and `UPLOAD_DIR` regularly. You can also use *Backup & restore* in the CMS.
+Back up your data regularly. You can use *Backup & restore* in the CMS.
+
+## How storage works
+
+`lib/store.js` exposes the same async API for both backends.
+
+- **Redis writes are compare-and-set.** If two requests change the same record at once, one retries on the fresh data instead of overwriting the other.
+- **Public submissions go through an append-only queue.** Sponsor enquiries, pledges and newsletter sign-ups never conflict with CMS edits and can't be lost.
+- **Testing:** this was checked with 180 simultaneous enquiries across two server instances while an admin edited the inbox. All were saved.
 
 ## Content imported from the old site
 
