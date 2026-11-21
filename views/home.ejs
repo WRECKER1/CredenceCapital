@@ -109,14 +109,18 @@
 </section>
 <% } %>
 
-<% if ((c.press || []).length) { %>
+<% if ((c.press || []).length || (c.performance || []).length) { %>
 <section class="section">
   <div class="wrap">
     <div class="section-head row">
-      <div><p class="eyebrow">Track record</p><h2>A track record covered by the financial press</h2></div>
-      <a class="link" href="/about#press">All coverage →</a>
+      <div><p class="eyebrow">Track record</p><h2>Ahead of the Nifty 50, every period since 2011</h2></div>
+      <a class="link" href="/about#performance">Full performance →</a>
     </div>
-    <%- include('partials/press') %>
+    <%- include('partials/performance') %>
+    <div class="press-block">
+      <p class="eyebrow">In the press</p>
+      <%- include('partials/press') %>
+    </div>
   </div>
 </section>
 <% } %>
