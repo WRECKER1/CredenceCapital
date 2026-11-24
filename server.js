@@ -8,6 +8,7 @@ const schema = require('./lib/schema');
 const helpers = require('./lib/helpers');
 const analytics = require('./lib/analytics');
 const media = require('./lib/media');
+const assetVersion = require('./lib/asset-version');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -46,7 +47,7 @@ app.use('/api', express.json({ limit: '100kb' }));
 async function render(page, res, extra = {}) {
   const c = await store.get('content');
   const visitors = res.locals.visitors ?? await analytics.total().catch(() => 0);
-  res.render(page, { c, s: c.settings || {}, h: helpers, page, visitors, ...extra });
+  res.render(page, { c, s: c.settings || {}, h: helpers, page, visitors, assetVersion, ...extra });
 }
 
 const pages = {
