@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
 const helpers = require('../lib/helpers');
+const assetVersion = require('../lib/asset-version');
 
 const root = path.join(__dirname, '..');
 const out = path.join(root, 'dist');
@@ -29,7 +30,7 @@ const pages = {
 
   for (const [file, [view, title]] of Object.entries(pages)) {
     const html = await ejs.renderFile(path.join(root, 'views', `${view}.ejs`), {
-      c: content, s: content.settings || {}, h: helpers, page: view, title, visitors: 0, staticSite: true,
+      c: content, s: content.settings || {}, h: helpers, page: view, title, visitors: 0, staticSite: true, assetVersion,
     });
     fs.writeFileSync(path.join(out, `${file}.html`), html);
   }
