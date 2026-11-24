@@ -555,3 +555,85 @@ details[open] .faq-icon::after { transform: rotate(0); }
   .perf-cap { font-size: 10px; }
 }
 .press-block { margin-top: 72px; }
+
+/* ------------------------------------------------------------------
+   Brand: Credence blue & red (from the CC monogram), used sparingly
+   ------------------------------------------------------------------ */
+:root {
+  --blue: #1f5fd6;        /* UI blue: white text on it passes AA */
+  --blue-bright: #3b82f0; /* the logo's blue */
+  --blue-deep: #0e2f6b;
+  --blue-tint: #eaf2fe;
+  --red: #e03a1a;         /* the logo's red */
+  --red-tint: #fdece7;
+}
+
+/* Logo + wordmark */
+.nav-bar { padding: 6px 6px 6px 16px; }
+.brand { gap: 12px; font-size: 21px; font-weight: 600; letter-spacing: -.025em; }
+.logo-mark { width: auto; height: 38px; color: inherit; }
+.logo-img { width: auto; height: 38px; }
+.brand-light { --logo-key: #000; font-size: 22px; }
+.brand-light .logo-mark { height: 44px; }
+
+/* Announcement bar */
+.announce { background: var(--blue); color: rgba(255, 255, 255, .9); border-bottom: 0; }
+.announce a { color: #fff; }
+.announce .live-dot { background: #fff; }
+
+/* Small accents */
+.eyebrow { color: var(--blue); }
+.eyebrow-light { color: rgba(255, 255, 255, .7); }
+.hero .eyebrow { color: var(--blue); }
+.pillar-icon { background: var(--blue-tint); color: var(--blue); }
+.chip-mini { background: var(--red); }
+.tier-featured { box-shadow: inset 0 0 0 2px var(--blue); }
+.tick-box, .list-check li::before { background: var(--blue); }
+.format-n { color: var(--red); font-weight: 500; }
+.format { border-top: 3px solid var(--blue); }
+.record-item { background: var(--blue-tint); }
+.record-item b { color: var(--blue-deep); }
+.link-accent { color: var(--red); }
+.iim-quote { border-left-color: var(--red); }
+
+/* Nivesh feature on Home: brand blue */
+.nivesh-feature { background: radial-gradient(900px 500px at 0% 0%, #2a6ee6 0%, transparent 60%), linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%); color: rgba(255, 255, 255, .8); }
+.nivesh-feature .nivesh-steps { border-top-color: rgba(255, 255, 255, .2); }
+.nivesh-feature .nivesh-steps li { border-bottom-color: rgba(255, 255, 255, .2); }
+.nivesh-feature .nivesh-steps li .mono { color: #ffb4a3; }
+.nivesh-feature .btn-light { color: var(--blue-deep); }
+
+/* Coloured page header (Nivesh page) */
+.page-head-brand { position: relative; overflow: hidden; color: rgba(255, 255, 255, .85); background: radial-gradient(1000px 520px at 100% 0%, #2a6ee6 0%, transparent 60%), linear-gradient(160deg, var(--blue-deep) 0%, var(--blue) 100%); margin: 24px 16px 0; border-radius: var(--r-lg); padding: 96px 0 88px; }
+.page-head-brand h1 { color: #fff; }
+.page-head-brand .lead { color: rgba(255, 255, 255, .8); }
+.page-head-brand .eyebrow { color: #ffb4a3; }
+.page-head-brand .btn-row { justify-content: center; margin-top: 36px; }
+.page-head-brand::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--red); }
+.page-head-brand + .wrap .hero-photo { margin-top: 24px; }
+
+/* Closing call to action: soft blue panel */
+.cta { padding: 120px 0 0; }
+.cta-inner { background: var(--blue-tint); border-radius: var(--r-lg); padding: 72px 24px; }
+.cta h2 { color: var(--blue-deep); }
+
+/* Partner logos in colour */
+.logo-tile img { filter: none; opacity: 1; max-height: 56px; max-width: 72%; }
+.logo-tile { background: #fff; border: 1px solid var(--line); }
+a.logo-tile:hover { background: #fff; border-color: var(--blue); }
+.logo-empty { background: transparent; border: 1px dashed #c4c4c4; }
+
+@media (max-width: 640px) {
+  .brand { font-size: 19px; gap: 10px; }
+  .logo-mark, .logo-img { height: 32px; }
+  .logo-wall { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .logo-tile { aspect-ratio: auto; min-height: 112px; padding: 16px 10px; }
+  .logo-tile img { max-height: 44px; max-width: 80%; }
+  .logo-tile .wordmark { font-size: 15px; }
+  .page-head-brand { margin: 16px 8px 0; padding: 72px 0 64px; }
+  .cta { padding-top: 88px; }
+  .cta-inner { padding: 48px 20px; }
+}
+.nav-bar { --logo-key: #e9e9e9; }
+.nav-bar .logo-mark, .nav-bar .logo-img { height: 44px; }
+@media (max-width: 640px) { .nav-bar .logo-mark, .nav-bar .logo-img { height: 36px; } }

@@ -1,10 +1,16 @@
 <%- include('partials/top') %>
 <% const n = c.nivesh || {}; %>
-<%- include('partials/page-head', { eyebrow: n.tagline, heading: n.edition, lead: n.lead }) %>
-<div class="wrap page-head-cta btn-row">
-  <a class="btn btn-dark" href="#sponsor">Sponsor <%= n.edition %></a>
-  <a class="btn btn-soft" href="#investowise">About Investowise</a>
-</div>
+<section class="page-head page-head-brand">
+  <div class="wrap">
+    <p class="eyebrow"><%= n.tagline %></p>
+    <h1><%= n.edition %></h1>
+    <% if (n.lead) { %><p class="lead"><%= n.lead %></p><% } %>
+    <div class="btn-row">
+      <a class="btn btn-light" href="#sponsor">Sponsor <%= n.edition %></a>
+      <a class="btn btn-ghost" href="#investowise">About Investowise</a>
+    </div>
+  </div>
+</section>
 <% if (n.image) { %><div class="wrap"><img class="hero-photo reveal" src="<%= n.image %>" alt="<%= n.edition %>"></div><% } %>
 
 <% if ((c.formats || []).length) { %>
