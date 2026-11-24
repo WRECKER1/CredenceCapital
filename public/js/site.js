@@ -127,3 +127,32 @@ document.querySelectorAll('[data-explorer]').forEach((ex) => {
     mocks.forEach((m) => m.classList.toggle('show', m.dataset.i === it.dataset.i));
   }));
 });
+
+// Fund performance chart: tooltip on hover / keyboard focus
+document.querySelectorAll('.perf-chart').forEach((chart) => {
+  const tip = chart.querySelector('.perf-tip');
+  const show = (col) => {
+    const gap = Number(col.dataset.gap);
+    tip.innerHTML = '';
+    const t = document.createElement('b'); t.textContent = col.dataset.period; tip.append(t);
+    [['Credence Capital', col.dataset.cc, '#2a78d6'], ['Nifty 50', col.dataset.nf, '#eb6834']].forEach(([l, v, c]) => {
+      const r = document.createElement('div'); r.className = 'row';
+      const a = document.createElement('span'); const i = document.createElement('i'); i.style.background = c; a.append(i, l);
+      const b = document.createElement('span'); b.textContent = v; r.append(a, b); tip.append(r);
+    });
+    const g = document.createElement('div'); g.className = 'gap';
+    g.textContent = `${gap >= 0 ? '+' : '−'}${Math.abs(gap).toFixed(1)} pts vs the index`; tip.append(g);
+    tip.hidden = false;
+    const cr = chart.getBoundingClientRect(); const r = col.getBoundingClientRect();
+    let left = r.left - cr.left + r.width / 2 - tip.offsetWidth / 2;
+    left = Math.max(0, Math.min(left, cr.width - tip.offsetWidth));
+    tip.style.left = `${left}px`;
+    tip.style.top = '8px';
+  };
+  chart.querySelectorAll('.perf-col').forEach((col) => {
+    col.addEventListener('mouseenter', () => show(col));
+    col.addEventListener('focus', () => show(col));
+    col.addEventListener('mouseleave', () => { tip.hidden = true; });
+    col.addEventListener('blur', () => { tip.hidden = true; });
+  });
+});

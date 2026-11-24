@@ -58,6 +58,15 @@
   </div>
 </section>
 <% } %>
+<% if ((c.performance || []).length) { %>
+<section class="section" id="performance">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Fund performance</p><h2>Credence Capital vs the Nifty 50</h2>
+      <p class="lead">Each batch of fund managers runs the portfolio for its term. Here is how the fund has done against India's benchmark index in every period since 2011–12.</p></div>
+    <%- include('partials/performance') %>
+  </div>
+</section>
+<% } %>
 <% if ((c.press || []).length) { %>
 <section class="section" id="press">
   <div class="wrap">

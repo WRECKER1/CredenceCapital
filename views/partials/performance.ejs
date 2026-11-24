@@ -1,0 +1,73 @@
+<%
+  const rows = (c.performance || []).filter((r) => r.period);
+  if (rows.length) {
+    const num = (v) => Number(v) || 0;
+    const pct = (v) => `${num(v) > 0 ? '' : num(v) < 0 ? '−' : ''}${Math.abs(num(v)).toFixed(1)}%`;
+    const median = (a) => { const s = [...a].sort((x, y) => x - y); const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+    const full = rows.filter((r) => !r.partial);
+    const beat = rows.filter((r) => num(r.credence) > num(r.nifty)).length;
+    const down = rows.filter((r) => num(r.nifty) < 0);
+    const downPositive = down.filter((r) => num(r.credence) > 0).length;
+
+    // Axis: round outward to 20s; cap very tall bars so one outlier doesn't flatten the rest.
+    const values = rows.flatMap((r) => [num(r.credence), num(r.nifty)]);
+    const sorted = [...values].sort((a, b) => a - b);
+    const p90 = sorted[Math.floor(sorted.length * 0.92)];
+    const MAX = Math.max(20, Math.ceil(p90 / 20) * 20);
+    const MIN = Math.min(0, Math.floor(Math.min(...values) / 20) * 20);
+    const span = MAX - MIN;
+    const ticks = []; for (let t = MIN; t <= MAX; t += 20) ticks.push(t);
+    const y = (v) => ((MAX - v) / span) * 100; // % from top
+    const bar = (v) => {
+      const val = num(v);
+      if (val >= 0) { const shown = Math.min(val, MAX); return { cls: 'up' + (val > MAX ? ' capped' : ''), style: `top:${y(shown)}%;height:${(shown / span) * 100}%` }; }
+      const shown = Math.max(val, MIN);
+      return { cls: 'down', style: `top:${y(0)}%;height:${(-shown / span) * 100}%` };
+    };
+    const short = (p) => p.replace(/^20(\d\d)-(\d\d).*$/, '$1–$2');
+%>
+<div class="perf reveal">
+  <div class="perf-stats">
+    <div class="perf-stat"><b><%= beat %>/<%= rows.length %></b><span>periods ahead of the Nifty 50</span></div>
+    <% if (full.length) { %><div class="perf-stat"><b><%= median(full.map((r) => num(r.credence))).toFixed(1) %>%</b><span>median annual return, vs <%= median(full.map((r) => num(r.nifty))).toFixed(1) %>% for the Nifty 50</span></div><% } %>
+    <% if (down.length) { %><div class="perf-stat"><b><%= downPositive %>/<%= down.length %></b><span>years the Nifty fell in which the fund still made money</span></div><% } %>
+  </div>
+
+  <div class="card perf-card">
+    <div class="perf-head">
+      <div><h3>Annual return vs the Nifty 50</h3><p class="muted small-text"><%= rows[0].period %> to <%= rows[rows.length - 1].period %></p></div>
+      <div class="perf-legend" aria-hidden="true"><span><i class="sw sw-cc"></i>Credence Capital</span><span><i class="sw sw-nf"></i>Nifty 50</span></div>
+    </div>
+    <div class="perf-chart" role="img" aria-label="Bar chart of Credence Capital's annual return against the Nifty 50 for <%= rows.length %> periods. Credence was ahead in <%= beat %>. Full figures are in the table below.">
+      <div class="perf-yaxis" aria-hidden="true"><% ticks.forEach((t) => { %><span style="top:<%= y(t) %>%"><%= t %>%</span><% }) %></div>
+      <div class="perf-area">
+        <% ticks.forEach((t) => { %><div class="perf-grid<%= t === 0 ? ' perf-zero' : '' %>" style="top:<%= y(t) %>%"></div><% }) %>
+        <div class="perf-cols" style="--n:<%= rows.length %>">
+          <% rows.forEach((r) => { const a = bar(r.credence), b = bar(r.nifty); %>
+            <div class="perf-col" tabindex="0" data-period="<%= r.period %>" data-cc="<%= pct(r.credence) %>" data-nf="<%= pct(r.nifty) %>" data-gap="<%= (num(r.credence) - num(r.nifty)).toFixed(1) %>">
+              <span class="perf-bar cc <%= a.cls %>" style="<%= a.style %>"><% if (num(r.credence) > MAX) { %><em class="perf-cap"><%= pct(r.credence) %></em><% } %></span>
+              <span class="perf-bar nf <%= b.cls %>" style="<%= b.style %>"></span>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      <div class="perf-x" aria-hidden="true" style="--n:<%= rows.length %>"><% rows.forEach((r) => { %><span><%= short(r.period) %><%= r.partial ? '*' : '' %></span><% }) %></div>
+      <div class="perf-tip" role="status" aria-live="polite" hidden></div>
+    </div>
+    <details class="perf-table">
+      <summary>View as table</summary>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead><tr><th scope="col">Period</th><th scope="col">Credence Capital</th><th scope="col">Nifty 50</th><th scope="col">Difference</th></tr></thead>
+          <tbody>
+            <% rows.forEach((r) => { const d = num(r.credence) - num(r.nifty); %>
+              <tr><td><%= r.period %></td><td class="c mono"><%= pct(r.credence) %></td><td class="c mono"><%= pct(r.nifty) %></td><td class="c mono"><%= d >= 0 ? '+' : '−' %><%= Math.abs(d).toFixed(1) %> pts</td></tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p class="perf-note">Returns as reported by Credence Capital for each period<%= rows.some((r) => r.partial) ? '; * part-year, excluded from the median' : '' %>. Bars taller than the chart are cut off, with their value shown. Past performance does not guarantee future returns. The fund is a separate legal entity from IIM Lucknow.</p>
+  </div>
+</div>
+<% } %>

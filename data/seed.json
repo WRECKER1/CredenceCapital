@@ -74,6 +74,106 @@
     "formTitle": "Start a conversation",
     "formBody": "Share a few details and a member of our partnerships team will respond within two working days with a tailored proposal."
   },
+  "performance": [
+    {
+      "id": "pf1",
+      "period": "2011-12",
+      "credence": 19.9,
+      "nifty": 13.9,
+      "partial": false
+    },
+    {
+      "id": "pf2",
+      "period": "2012-13",
+      "credence": 25.0,
+      "nifty": 18.6,
+      "partial": false
+    },
+    {
+      "id": "pf3",
+      "period": "2013-14",
+      "credence": 13.6,
+      "nifty": 7.3,
+      "partial": false
+    },
+    {
+      "id": "pf4",
+      "period": "2014-15",
+      "credence": 175.2,
+      "nifty": 50.3,
+      "partial": false
+    },
+    {
+      "id": "pf5",
+      "period": "2015-16",
+      "credence": 27.1,
+      "nifty": -9.0,
+      "partial": false
+    },
+    {
+      "id": "pf6",
+      "period": "2016-17",
+      "credence": 10.6,
+      "nifty": -1.9,
+      "partial": false
+    },
+    {
+      "id": "pf7",
+      "period": "2017-18",
+      "credence": 54.5,
+      "nifty": 12.0,
+      "partial": false
+    },
+    {
+      "id": "pf8",
+      "period": "2018-19",
+      "credence": 4.2,
+      "nifty": -3.3,
+      "partial": false
+    },
+    {
+      "id": "pf9",
+      "period": "2019-20",
+      "credence": 14.2,
+      "nifty": 11.5,
+      "partial": false
+    },
+    {
+      "id": "pf10",
+      "period": "2020-21",
+      "credence": 21.3,
+      "nifty": 20.6,
+      "partial": false
+    },
+    {
+      "id": "pf11",
+      "period": "2021-22",
+      "credence": 16.5,
+      "nifty": 11.6,
+      "partial": false
+    },
+    {
+      "id": "pf12",
+      "period": "2022-23",
+      "credence": 12.9,
+      "nifty": 2.2,
+      "partial": false
+    },
+    {
+      "id": "pf13",
+      "period": "2023-24",
+      "credence": 35.2,
+      "nifty": 23.8,
+      "partial": false
+    },
+    {
+      "id": "pf14",
+      "period": "2024-25 (to Q2)",
+      "credence": 13.2,
+      "nifty": 11.3,
+      "partial": true
+    }
+  ],
   "pillars": [
     {
       "id": "pl1",
@@ -310,7 +410,7 @@
     {
       "id": "sp1",
       "name": "Motilal Oswal",
-      "logo": "",
+      "logo": "/static/img/partners/motilal-oswal.svg",
       "url": "https://www.motilaloswal.com/",
       "category": "Event Partner",
       "since": "Investowise 2025–26",
@@ -319,7 +419,7 @@
     {
       "id": "sp2",
       "name": "Screener",
-      "logo": "",
+      "logo": "/static/img/partners/screener.svg",
       "url": "https://www.screener.in/",
       "category": "Event Partner",
       "since": "Investowise 2024–25",
