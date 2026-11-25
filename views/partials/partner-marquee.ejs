@@ -1,0 +1,21 @@
+<% const ml = (c.sponsors || []).filter((x) => x.visible !== false && x.logo); if (ml.length) { %>
+<div class="marquee-block">
+  <p class="marquee-label">Trusted by leading names in finance</p>
+  <div class="marquee" style="--dur:<%= Math.max(24, ml.length * 4) %>s">
+    <div class="marquee-track">
+      <% [0, 1].forEach((copy) => { %>
+        <ul class="marquee-set" <% if (copy) { %>aria-hidden="true"<% } else { %>aria-label="Past partners"<% } %>>
+          <% ml.forEach((x) => { %>
+            <li class="marquee-item">
+              <% if (x.url) { %><a href="<%= x.url %>" target="_blank" rel="noopener" <% if (copy) { %>tabindex="-1"<% } %> title="<%= x.name %><%= x.since ? ` · ${x.since}` : '' %>"><% } %>
+              <img src="<%= x.logo %>" alt="<%= copy ? '' : x.name %>" decoding="async">
+              <% if (x.url) { %></a><% } %>
+            </li>
+          <% }) %>
+        </ul>
+      <% }) %>
+    </div>
+  </div>
+  <a class="link marquee-cta" href="/partner#enquire">Join them for <%= (c.nivesh || {}).edition || 'Nivesh' %> →</a>
+</div>
+<% } %>
