@@ -1,4 +1,4 @@
-<% const list = (c.sponsors || []).filter(x => x.visible !== false); const slots = Math.max(0, 6 - list.length); %>
+<% const list = (c.sponsors || []).filter(x => x.visible !== false); const slots = list.length < 6 ? 6 - list.length : (list.length % 2 ? 1 : 0); %>
 <div class="logo-wall">
   <% list.forEach(x => { %>
     <a class="logo-tile" <% if (x.url) { %>href="<%= x.url %>" target="_blank" rel="noopener"<% } %> title="<%= x.name %>">
