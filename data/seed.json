@@ -424,6 +424,96 @@
       "category": "Event Partner",
       "since": "Investowise 2024–25",
       "visible": true
+    },
+    {
+      "id": "sp3",
+      "name": "CFA Institute",
+      "logo": "/static/img/partners/cfa.png",
+      "url": "https://www.cfainstitute.org/",
+      "category": "Knowledge Partner",
+      "since": "Investowise 2023–24",
+      "visible": true
+    },
+    {
+      "id": "sp4",
+      "name": "ICICI Securities",
+      "logo": "/static/img/partners/icici-securities.svg",
+      "url": "https://www.icicisecurities.com/",
+      "category": "Title Partner",
+      "since": "Nivesh 2023 · Sponsor",
+      "visible": true
+    },
+    {
+      "id": "sp5",
+      "name": "Futures First",
+      "logo": "/static/img/partners/futures-first.png",
+      "url": "https://futuresfirst.com/",
+      "category": "Knowledge Partner",
+      "since": "Nivesh 2023 · Workshop",
+      "visible": true
+    },
+    {
+      "id": "sp6",
+      "name": "CAIA Association",
+      "logo": "/static/img/partners/caia.png",
+      "url": "https://caia.org/",
+      "category": "Knowledge Partner",
+      "since": "Nivesh 2022 · Sessions",
+      "visible": true
+    },
+    {
+      "id": "sp7",
+      "name": "Zerodha",
+      "logo": "/static/img/partners/zerodha.svg",
+      "url": "https://zerodha.com/",
+      "category": "Associate Partner",
+      "since": "Investment workshop",
+      "visible": true
+    },
+    {
+      "id": "sp8",
+      "name": "Aditya Birla Capital",
+      "logo": "/static/img/partners/aditya-birla.png",
+      "url": "https://www.adityabirlacapital.com/",
+      "category": "Title Partner",
+      "since": "Nivesh 2019 · Presenting",
+      "visible": true
+    },
+    {
+      "id": "sp9",
+      "name": "Capital Small Finance Bank",
+      "logo": "/static/img/partners/capital-sfb.png",
+      "url": "https://www.capitalbank.co.in/",
+      "category": "Banking Partner",
+      "since": "Nivesh 2019 · Banking",
+      "visible": true
+    },
+    {
+      "id": "sp10",
+      "name": "BloombergQuint",
+      "logo": "/static/img/partners/bloombergquint.jpg",
+      "url": "",
+      "category": "Media Partner",
+      "since": "Nivesh 2019 · Media",
+      "visible": true
+    },
+    {
+      "id": "sp11",
+      "name": "IIFL",
+      "logo": "/static/img/partners/iifl.png",
+      "url": "https://www.iifl.com/",
+      "category": "Title Partner",
+      "since": "Nivesh 2018 · Powered by",
+      "visible": true
+    },
+    {
+      "id": "sp12",
+      "name": "Edelweiss",
+      "logo": "/static/img/partners/edelweiss.svg",
+      "url": "https://www.edelweissfin.com/",
+      "category": "Associate Partner",
+      "since": "Nivesh 2018 · Associate",
+      "visible": true
     }
   ],
   "testimonials": [
@@ -1248,6 +1338,7 @@
     {
       "id": "p1",
       "outlet": "Bloomberg Quint",
+      "logo": "/static/img/press/bloombergquint.jpg",
       "title": "These IIM-Lucknow Students Are Also Managing Their Classmates' Money",
       "date": "2019-12-13",
       "summary": "By Alex Mathew. Eight students each year manage an investment fund; the club behind it was then in its 15th year.",
@@ -1258,6 +1349,7 @@
     {
       "id": "p2",
       "outlet": "InsideIIM",
+      "logo": "/static/img/press/insideiim.jpg",
       "title": "A Finance Club for Investments at IIM Lucknow",
       "date": "2018-09-07",
       "summary": "Devisa Todi and Shubham Jain on how the club manages money.",
@@ -1268,6 +1360,7 @@
     {
       "id": "p3",
       "outlet": "Business Standard",
+      "logo": "/static/img/press/business-standard.svg",
       "title": "IIM-L students' fund outperforms Nifty",
       "date": "2015-02-23",
       "summary": "The fund achieved 175% returns in 16 months while the Nifty rose 50% over the same 2013–15 period.",
@@ -1278,6 +1371,7 @@
     {
       "id": "p4",
       "outlet": "The Hindu BusinessLine",
+      "logo": "/static/img/press/businessline.svg",
       "title": "Managing funds at IIML keeps students ahead of the curve",
       "date": "2013-02-23",
       "summary": "",
@@ -1288,6 +1382,7 @@
     {
       "id": "p5",
       "outlet": "India PR Wire",
+      "logo": "/static/img/press/indiaprwire.png",
       "title": "Credence Capital outperforms the NIFTY",
       "date": "2013-02-21",
       "summary": "The Equities Fund returned 20.10% against the Nifty's 18.6%; the Derivatives Fund returned 29.8%.",
@@ -1298,6 +1393,7 @@
     {
       "id": "p6",
       "outlet": "India Today",
+      "logo": "/static/img/press/india-today.png",
       "title": "Young IIM graduates' fund gives record fat returns",
       "date": "2011-03-15",
       "summary": "Students at IIM Lucknow delivered market-beating returns while many seasoned fund managers trailed their benchmarks.",
@@ -1308,6 +1404,7 @@
     {
       "id": "p7",
       "outlet": "Mint",
+      "logo": "/static/img/press/mint.png",
       "title": "Meet the young student fund managers of IIMs, B-schools",
       "date": "2023-03-23",
       "summary": "By Shipra Singh.",

@@ -57,6 +57,7 @@ In this mode:
 - The site's forms (sponsorship, pledge, contact, newsletter) open the visitor's email app with a pre-filled message to the club's email.
 - The visitor counter and the CMS link are hidden.
 - To change content, edit `data/seed.json` and push; Vercel redeploys automatically.
+- Press logos live in `public/img/press/` (set each press item's `logo`).
 - Partner logos live in `public/img/partners/`. Add the file there and set the sponsor's `logo` in `data/seed.json` to `/static/img/partners/<file>`. SVG works best; the logo shows in full colour.
 - The CC monogram is a vector (`public/img/logo-cc.svg`, also inlined in `views/partials/logo.ejs`), redrawn from the club's logo in a Times-style serif.
 

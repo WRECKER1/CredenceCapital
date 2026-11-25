@@ -9,7 +9,10 @@
       </svg>
       <b class="mono"><%= p.highlight %></b>
       <span><%= p.highlightLabel %></span>
-      <small class="mono-label">Source: <% if (p.url) { %><a href="<%= p.url %>" target="_blank" rel="noopener"><%= p.outlet %></a><% } else { %><%= p.outlet %><% } %> · <%= h.date(p.date, { month: 'short', year: 'numeric' }) %></small>
+      <small class="record-source">
+        <% if (p.logo) { %><span class="press-logo"><img src="<%= p.logo %>" alt="<%= p.outlet %>" loading="lazy"></span><% } %>
+        <span class="mono-label">Source: <% if (p.url) { %><a href="<%= p.url %>" target="_blank" rel="noopener"><%= p.outlet %></a><% } else { %><%= p.outlet %><% } %> · <%= h.date(p.date, { month: 'short', year: 'numeric' }) %></span>
+      </small>
     </div>
   <% }) %>
 </div>
@@ -17,9 +20,9 @@
 <div class="rows press-rows">
   <% press.forEach(p => { %>
     <a class="row-item press-item reveal" <% if (p.url) { %>href="<%= p.url %>" target="_blank" rel="noopener"<% } %>>
-      <span class="row-date mono"><%= h.date(p.date, { month: 'short', year: 'numeric' }).toUpperCase() %></span>
-      <span class="row-main"><span class="press-title"><%= p.title %></span></span>
-      <span class="row-meta"><span class="mono-label"><%= p.outlet %></span><% if (p.url) { %><span class="arrow">↗</span><% } %></span>
+      <span class="press-logo"><% if (p.logo) { %><img src="<%= p.logo %>" alt="<%= p.outlet %>" loading="lazy"><% } else { %><span class="mono-label"><%= p.outlet %></span><% } %></span>
+      <span class="row-main"><span class="press-title"><%= p.title %></span><span class="mono-label press-meta"><%= p.outlet %> · <%= h.date(p.date, { month: 'short', year: 'numeric' }) %></span></span>
+      <span class="row-meta"><% if (p.url) { %><span class="arrow">↗</span><% } %></span>
     </a>
   <% }) %>
 </div>
